@@ -1,3 +1,9 @@
+#logo{
+    font-size: 16px;
+    float: left;
+    padding: 14px 16px;
+    color: white;
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -24,4 +30,35 @@ li a:hover:not(.active) {
 
 .active {
     background-color: #4CAF50;
+}
+form{
+    font-size: 20px;
+}
+input[type=text],[type=number],[type=password] {
+    font-size: 20px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
+}
+input[type=submit]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
+    margin-left: 47%;
+}
+fieldset{
+    margin: auto;
+    margin-top: 5%;
+    width:45%;
+    height:60%;
+}
+label{
+    text-align: left;
 }
