@@ -45,6 +45,7 @@ input[type=text],[type=number],[type=password] {
     color: white;
 }
 input[type=submit]{
+    cursor: pointer;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
