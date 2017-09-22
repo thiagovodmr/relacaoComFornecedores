@@ -1,25 +1,20 @@
+<?php
+include 'cabecalho.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>SSexpress</title>
+	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
-
-	<ul>
-  		<li><a class="active" href="index.html">Cadastre-se</a></li>
-  		<li><a href="sobre.html">Sobre</a></li>
-  		<li><a href="#contact">Contact</a></li>
-  		<li><a href="#servicos">Serviços</a></li>
-  		<li><a href="index.html">Home</a></li>
-  		<li id="logo">SSexpress</li>
-	</ul>
 	<div id='imagem'>
 		<div id="cadastro">
 			<h2>Ainda não é cadastrado? Cadastre-se :</h2>
 			<p>Quem você é?</p>
-			<a href="cadastroempresa.html"><button>Empresa</button></a> ou
-			<a href="cadastrofornecedor.html"><button>Fornecedor</button></a>
+			<a href="cadastroempresa.php"><button>Empresa</button></a> ou
+			<a href="cadastrofornecedor.php"><button>Fornecedor</button></a>
 		</div>
 	</div>
 	

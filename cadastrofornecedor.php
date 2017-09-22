@@ -1,3 +1,6 @@
+<?php
+include 'cabecalho.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,12 +18,9 @@
   <li><a href="index.html">Home</a></li>
   <li id="logo">SSexpress</li>
 
-
 </ul>
-<a href="index.html"><button>Menu</button></a>
-
 <div id="formulario">
-        
+
     <form action="dados.php" method="POST">
     <fieldset>
     <label for="nomefornecedor">Nome:</label><br>
@@ -29,7 +29,7 @@
     <input type="text" name="cidade"><br>
     <label for="numero">Telefone:</label><br>
     <input type="number" name="telefone"><br>
-    <label for="fname">CNPJ:</label><br>
+    <label for="fname">CEP:</label><br>
     <input type="number" name="cep"><br>
     <label for="endereco">Endereço:</label><br>
     <input type="text" name="endereco"><br>
