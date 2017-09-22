@@ -10,15 +10,6 @@ include 'cabecalho.php';
 </head>
 <body>
 
-<ul>
-  <li><a class="active" href="index.html">Cadastre-se</a></li>
-  <li><a href="sobre.html">Sobre</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#servicos">Serviços</a></li>
-  <li><a href="index.html">Home</a></li>
-  <li id="logo">SSexpress</li>
-
-</ul>
 <div id="formulario">
 
     <form action="dados.php" method="POST">
