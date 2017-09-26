@@ -1,0 +1,58 @@
+#Quadro{
+	float: left;
+	margin-left: 4px;
+	margin-bottom: 5px;
+	top: 100%;
+	left: 100%;
+	bottom: 100%;
+}
+h1{
+	margin-left: 40px;
+}
+#borda{
+	background-color: #90EE90;
+	float: left;
+	border:2px solid black;
+	width: 230px;
+	margin-top: 20px;
+	margin-left: 20px;
+
+}
+#imagens{
+	margin: auto;
+	margin-right: 10%;
+	margin-top: 1.5%;
+	float: right;
+	width: 800px;
+	height: 500px;
+}
+input[type=text]{
+	font-size: 20px;
+	margin-top: 2%;
+	margin-left:25%;
+	width: 35%;
+}
+input[type=image]{
+	width: 25px;
+	height: 25px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td{
+    text-align: center;	
+}
+tr, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+#Quadro a{	
+	text-decoration: none;
+}
+#Quadro a:hover{
+	color: red;
+	transition: 1s;
+	border-color: black;
+}

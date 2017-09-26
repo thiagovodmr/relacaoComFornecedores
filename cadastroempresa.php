@@ -4,7 +4,7 @@ include 'cabecalho.php';
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SSexpress - Cadastro de Fornecedores</title>
+    <title>SSexpress - Cadastro de Empresas</title>
     <link rel="stylesheet" type="text/css" href="css/cadastro.css">
     <meta charset="utf-8">
 </head>
