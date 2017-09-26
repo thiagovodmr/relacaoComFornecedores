@@ -2,7 +2,6 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/cabecalho.css">
-	<title>Cabeçalho</title>
 </head>
 <body>
 <ul>
