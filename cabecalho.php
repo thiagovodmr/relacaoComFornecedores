@@ -8,7 +8,7 @@
 <ul>
   		<li><a class="active" href="index.php">Cadastre-se</a></li>
   		<li><a href="sobre.html">Sobre</a></li>
-  		<li><a href="#contact">Contact</a></li>
+  		<li><a href="#contact">Contatos</a></li>
   		<li><a href="#servicos">Serviços</a></li>
   		<li><a href="index.php">Home</a></li>
   		<li><a href="index.php" id="logo">SSexpress</a></li>
