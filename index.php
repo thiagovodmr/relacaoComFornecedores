@@ -8,19 +8,7 @@ include 'cabecalho.php';
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
-<body>
-	<div id='imagem'>
-		<div id="cadastro">
-			<h2>Ainda não é cadastrado? Cadastre-se :</h2>
-			<div id="embaixo">
-				<p>Quem você é?</p>
-				<a href="cadastroempresa.php"><button>Empresa</button></a> ou
-				<a href="cadastrofornecedor.php"><button>Fornecedor</button></a>
-			</div>	
-		
-		</div>
-	</div>
-	
+<body>	
 	<div id="login">
 		<form>
 			<fieldset>
@@ -29,9 +17,19 @@ include 'cabecalho.php';
 				<input type="text" name="nome"><br>
 				<label for="senha">Senha:</label>
 				<input type="password" name="senha"><br>
-				<input type="submit" value="Entrar">
+				<input type="submit" class="btn-1g" value="Entrar">
 			</fieldset>
 		</form>
+	</div>
+	<div id='imagem'>
+		<div id="cadastro">
+			<h2>Ainda não é cadastrado? Cadastre-se :</h2>
+			<div id="embaixo">
+				<p>Quem você é?</p>
+				<a href="cadastroempresa.php"><button>Empresa</button></a> ou
+				<a href="cadastrofornecedor.php"><button>Fornecedor</button></a>
+			</div>		
+		</div>
 	</div>
 </body>
 </html>

@@ -3,34 +3,47 @@ form{
 }
 
 #login{
+    margin-top: 5%;
     float: right;
     text-transform: uppercase;
     font-weight: bold;
-    margin-top: 5%;
     text-align: center;
 }
-
-input{
-    height: 30px;
+input {
+    box-sizing: border-box;
+    font-family: arial;
+    border-radius: 0.5em;
+    display: block;
     width: 100%;
-    font-size: 15px;
-    margin-bottom: 25px;
-}
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    padding: 0.1em;
+
+    background: white;
+    border: 1px solid gray;
+    box-shadow: 3px 3px 2px black;
+    }
 input[type=submit]{
-    color: white;
-    height: 40px;
+    margin: auto;
+    width: 60%;
+}
+input[type=submit]:hover{
+    transition: 2s;
     cursor: pointer;
-    width: 50%;
-    font-size: 25px;
-    background-color: #3CBC8D;
+    background-color: gray;
+}
+.btn-lg {
+    background: #3279B0;
+    color: white;
+    font-weight: bold;
+    padding: 0.8em;
 }
 #imagem{
     background-image: url("../imagens/img1.jpg");
     background-size: cover;
     margin-left: 30px; 
     margin-top: 30px;
-    float: left;
-    width: 950px;
+    width: 900px;
     height: 530px;
     border: 5px solid black;
 }
