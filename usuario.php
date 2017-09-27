@@ -11,7 +11,7 @@
 <body>
 <div id="borda">
 <div id="Quadro">
-<h1>Produtos</h1>
+<h1>Categorias</h1>
 <table>
 	<tr>
 		<td><a href="#linkdomaterial"> ADESIVOS </a></td>
