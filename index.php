@@ -1,5 +1,5 @@
 <?php
-include 'cabecalho.php';
+	include 'cabecalho.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,7 +17,6 @@ include 'cabecalho.php';
 				<a href="cadastroempresa.php"><button>Empresa</button></a> ou
 				<a href="cadastrofornecedor.php"><button>Fornecedor</button></a>
 			</div>	
-		
 		</div>
 	</div>
 	
