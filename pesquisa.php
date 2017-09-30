@@ -12,5 +12,8 @@
 		<script> 
 			window.setTimeout("location.href='usuario.php'",1000*10);
 		</script>
+		<?php
+		include 'rodape.php';
+		?>
 	</body>
 </html>

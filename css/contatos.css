@@ -1,0 +1,11 @@
+#contato table{
+	margin: auto;
+	background-color: #FFFACD;
+}
+.novo tr,td,th{
+	text-align: center;
+	font-size: 20px;
+}
+#contato {
+	font-size: 20px;
+}

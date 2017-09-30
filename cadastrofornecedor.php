@@ -10,27 +10,34 @@
 </head>
 <body>
 
-<div id="formulario">
+<div class="container">
+        <div class="card card-container">
+            <h1>Cadastre-se</h1>
+            <p id="profile-name" class="profile-name-card"></p>
 
-    <form action="dados.php" method="POST">
-    <fieldset>
-    <label for="nomefornecedor">Nome:</label><br>
-    <input type="text" name="nomefornecedor"><br>
-    <label for="cidade">Cidade:</label><br>
-    <input type="text" name="cidade"><br>
-    <label for="numero">Telefone:</label><br>
-    <input type="number" name="telefone"><br>
-    <label for="fname">CEP:</label><br>
-    <input type="number" name="cep"><br>
-    <label for="endereco">Endereço:</label><br>
-    <input type="text" name="endereco"><br>
-    <label for="login">Login</label><br>
-    <input type="text" name="login"><br>
-    <label for="senha">Senha:</label><br>
-    <input type="password" name="senha"><br>
-    </fieldset>
-    <input type="submit" valeu="Enviar">
-    </form>
-</div>
+            <form class="form-signin" action="" method="POST">
+                <span id="reauth-email" class="reauth-email"></span>
+
+                <input type="text" id="inputEmail" class="form-control" name="nome_da_fornecedor" placeholder="Nome" 
+                required autofocus>
+                <input type="text" id="inputEmail" class="form-control" name="cidade_da_fornecedor" placeholder="Cidade" 
+                required autofocus>
+                <input type="number" id="inputEmail" class="form-control" name="telefone_da_fornecedor" placeholder="Telefone" required autofocus></p>
+                <input type="text" id="inputEmail" class="form-control" name="cep_da_fornecedor" placeholder="CEP" 
+                required autofocus>
+                <input type="text" id="inputEmail" class="form-control" name="endereco_da_fornecedor" placeholder="Endereço" 
+                required autofocus>
+                <input type="text" id="inputEmail" class="form-control" name="email_da_fornecedor" placeholder="E-mail" 
+                required autofocus>
+                <input type="text" id="inputEmail" class="form-control" name="login_da_fornecedor" placeholder="Login" 
+                required autofocus>
+                <input type="password" id="inputPassword" class="form-control" name="senha_da_fornecedor" placeholder="Senha" 
+                required>
+
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Cadastrar</button>
+            </form><!-- /form -->
+
+        </div><!-- /card-container -->
+    </div><!-- /container -->
 </body>
 </html>

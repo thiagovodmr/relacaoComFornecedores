@@ -6,8 +6,8 @@
 	left: 100%;
 	bottom: 100%;
 }
-h1{
-	margin-left: 40px;
+#Quadro h1{
+	text-align: center;
 }
 #borda{
 	background-color: #90EE90;
@@ -26,24 +26,38 @@ h1{
 	width: 800px;
 	height: 500px;
 }
-input[type=text]{
+#formu input[type=text] {
+    width: 280px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
 	font-size: 20px;
 	margin-top: 2%;
 	margin-left:25%;
-	width: 35%;
 }
-input[type=image]{
+#formu input[type=text]:focus {
+    width: 30%;
+}
+#formu input[type=image]{
 	width: 25px;
 	height: 25px;
 }
-table {
+#Quadro table {
     border-collapse: collapse;
     width: 100%;
 }
-td{
+#Quadro td{
     text-align: center;	
 }
-tr, td {
+#Quadro tr, td {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;
@@ -55,4 +69,16 @@ tr, td {
 	color: red;
 	transition: 1s;
 	border-color: black;
+}
+.carousel{
+	float: right;
+	margin-right: 10%;
+	margin-top: 5%;
+	width: 60%;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+	width: 100%;
+	height: 90%;
+	margin: auto;
 }

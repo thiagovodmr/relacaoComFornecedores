@@ -6,6 +6,7 @@
 <head>
 	<title>Produtos</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/usuario.css">
 </head>
 <body>
@@ -91,17 +92,50 @@
 	</table>
 	</div>
 	</div>
-
+	</br>
+<div id="formu">
 <form action="pesquisa.php" method="POST">
 	<input type="text" name="pesquisa" placeholder="Pesquisar Produtos">
-	<input type="image" src="imagens/lupa.png" name="imagemLupa" id="lupinha">
+	<input type="image" class="fa fa-search fa-3x" aria-hidden="true" value=" ">
 </form>
-
-<div id="imagens">
-	<img id="muda" src="imagens/img2.jpg" width="800px" height="500px">
 </div>
 
-<script src="javascript/usuario.js"></script>
+<div class="container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
 
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+        <img src="imagens/img2.jpg" alt="Chania">
+      </div>
+
+      <div class="item" id="p2">
+        <img src="imagens/img1.jpg" alt="Chania">
+      </div>
+  
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<br>
+
+<?php
+include 'rodape.php';
+?>
 </body>
 </html>
