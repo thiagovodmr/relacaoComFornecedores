@@ -9,10 +9,12 @@ include 'cabecalho.php';
   <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
+
 <div class="jumbotron jumbotron-fluid">
-  <h1>SSexpress</h1>      
-  <p>O site que busca ajudar sua empresa a encontrar um fornecedor mais próximo de você!</p>
-</div>
+<p id="cadastro">Ainda não é cadastrado? Faça seu cadastro!</p>
+  <h2> Você é <a class="btn btn-primary btn-lg" href="cadastroempresa.php" role="button">Empresa</a> ou <a class="btn btn-primary btn-lg" href="cadastrofornecedor.php" role="button">Fornecedor</a></h2>
+</div>	
+
 <div class="container">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -63,6 +65,13 @@ include 'cabecalho.php';
   </div>
 </div>
 <br>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">SSexpress</h1>
+    <p class="lead">O site que busca ajudar sua empresa a encontrar um fornecedor mais próximo de você!</p>
+  </div>
+</div>
 
 <?php
 include 'rodape.php';

@@ -1,4 +1,4 @@
-<?php 
+<?php
 	include "cabecalho.php";
 ?>
 <!DOCTYPE html>
@@ -81,7 +81,7 @@
   </div>
 </div>
 <br>
-
+<script src="javascript/usuario.js"></script>
 <?php
 include 'rodape.php';
 ?>

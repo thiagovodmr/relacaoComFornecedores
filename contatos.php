@@ -10,9 +10,14 @@
 	<title>Sobre</title>
 </head>
 <body>
+
+<div class="jumbotron">
+  <h2 class="display-3">Contatos</h2>
+</div>
+
 <div id="contato">
 	
-	<h1>
+	<h2>
 		Projeto: Relacionamento com fornecedor
 	</h1>	
 	<div id="para">

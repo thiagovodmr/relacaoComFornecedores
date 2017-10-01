@@ -4,6 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="css/rodape.css">
 </head>
 <body>
+	
 <div class="rodape">
 	<table class="tabela">
 	<tr>
