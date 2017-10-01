@@ -15,7 +15,7 @@
             <h1>Cadastre-se</h1>
             <p id="profile-name" class="profile-name-card"></p>
 
-            <form class="form-signin" action="" method="POST">
+            <form class="form-signin" action="bd/cadastrarFornecedor.php" method="POST">
                 <span id="reauth-email" class="reauth-email"></span>
 
                 <input type="text" id="inputEmail" class="form-control" name="nome_da_fornecedor" placeholder="Nome" 
