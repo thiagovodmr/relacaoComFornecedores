@@ -23,8 +23,8 @@
                 <input type="text" id="inputEmail" class="form-control" name="cidade_da_fornecedor" placeholder="Cidade" 
                 required autofocus>
                 <input type="number" id="inputEmail" class="form-control" name="telefone_da_fornecedor" placeholder="Telefone" required autofocus></p>
-                <input type="text" id="inputEmail" class="form-control" name="cep_da_fornecedor" placeholder="CEP" 
-                required autofocus>
+                <input type="number" id="inputEmail" class="form-control" name="cep_da_fornecedor" placeholder="CEP" 
+                required autofocus></p>
                 <input type="text" id="inputEmail" class="form-control" name="endereco_da_fornecedor" placeholder="Endereço" 
                 required autofocus>
                 <input type="text" id="inputEmail" class="form-control" name="email_da_fornecedor" placeholder="E-mail" 

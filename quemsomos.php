@@ -4,7 +4,7 @@ include 'cabecalho.php';
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Quem somos</title>
 </head>
 <body>
 
