@@ -1,5 +1,5 @@
 <?php
-include 'cabecalho.php';
+	include 'cabecalho.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,5 +22,5 @@ include 'cabecalho.php';
 </body>
 </html>
 <?php
-include 'rodape.php';
+	include 'rodape.php';
 ?>
