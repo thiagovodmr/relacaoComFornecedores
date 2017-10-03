@@ -48,7 +48,7 @@
 <br>
 
 <?php
-include 'rodape.php';
+	include 'rodape.php';
 ?>
 </body>
 </html>
