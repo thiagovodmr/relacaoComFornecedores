@@ -25,7 +25,6 @@ $email = $_POST["email_da_fornecedor"];
 
 $sql="INSERT INTO fornecedor(FND_NOME,FND_CIDADE,FND_TELEFONE,FND_CEP,FND_ENDERECO,FND_LOGIN,FND_SENHA,FND_EMAIL) VALUES ('$nome','$cidade','$telefone','$cep','$endereco','$login','$senha','$email')";
 
-
 // CASO ESTEJA TUDO OK ADICIONA OS DADOS, SENÃO MOSTRA O ERRO
 if (!mysqli_query($id,$sql))
 {
@@ -37,4 +36,4 @@ echo "1 record added";
 
 mysqli_close($id);
 
- ?>
+?>

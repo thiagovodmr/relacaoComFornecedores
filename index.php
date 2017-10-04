@@ -1,77 +1,60 @@
-<?php
-include 'cabecalho.php';
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Menu</title>
-  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="recursos/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="recursos/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-
-<div class="jumbotron jumbotron-fluid">
-<p id="cadastro">Ainda não é cadastrado? Faça seu cadastro!</p>
-  <h2> Você é <a class="btn btn-primary btn-lg" href="cadastroempresa.php" role="button">Empresa</a> ou <a class="btn btn-primary btn-lg" href="cadastrofornecedor.php" role="button">Fornecedor</a></h2>
-</div>	
-
-<div class="container">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-
-      <div class="item active">
-        <img src="imagens/p1.jpg" alt="Chania">
-        <div class="carousel-caption" id="p1">
-          <h1><b>Praticidade</b></h1>
-          <p>Descubra o fornecedor mais próximo de você com apenas um click!</p>
+    <header>
+      <div class="container header inner">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="index.php">SSexpress</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right masthead-nav">
+              <li> <a href="usuario.php">Serviços</a></li>
+              <li> <a href="contatos.php">Contatos</a></li>
+              <li><a href="quemsomos.php">Quem somos</a></li>
+              <li><a href="login.php">Login <i class="fa fa-sign-in fa-1x" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
         </div>
+      </nav>
       </div>
-
-      <div class="item" id="p2">
-        <img src="imagens/p2.png" alt="Chania">
-        <div class="carousel-caption">
-          <h1><b>Comunicação</h1></b></h1>
-          <p>Mais facilidade para se comunicar com seu fornecedor</p>
-        </div>
-      </div>
-    
-      <div class="item">
-        <img src="imagens/gps.jpg" alt="Flower">
-        <div class="carousel-caption" id="p3">
-          <h1><b>Agilidade</b></h1>
-          <p>Não perca tempo, saiba onde sua mercadoria está!</p>
-        </div>
-      </div>
-  
+    </header>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="#"> Outra funcionalide</a>
+      <a href="#"> Outra funcionalide</a>
+      <a href="#"> Outra funcionalide</a>
     </div>
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
-<br>
+    <span style="font-size:30px;cursor:pointer;float:right;color:#fff;position:absolute;top:5%;right: 10px;" onclick="openNav()">☰</span>
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-3">SSexpress</h1>
-    <p class="lead">O site que busca ajudar sua empresa a encontrar um fornecedor mais próximo de você!</p>
   </div>
-</div>
+  </div>
+  
+<script>
+/* Side slide menu */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+  </script>
 
 <?php
 include 'rodape.php';

@@ -27,7 +27,7 @@ include 'cabecalho.php';
             </form><!-- /form -->
 
                 Ainda não é cadastrado?<br>
-                Você é <a href="cadastroempresa.php" class="forgot-password"> Empresa </a> ou <a href="cadastrofornecedor.php" class="forgot-password"> Fornecedor </a>?
+                <a href="cadastro_usuario.php" class="forgot-password"> Cadastre-se! </a>
         </div><!-- /card-container -->
     </div><!-- /container -->
 </body>

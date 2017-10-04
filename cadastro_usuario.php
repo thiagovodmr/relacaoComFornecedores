@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>SSexpress - Cadastro de Empresas</title>
-    <link rel="stylesheet" type="text/css" href="css/cadastro.css">
+    <link rel="stylesheet" type="text/css" href="css/cadastro_usuario.css">
     <meta charset="utf-8">
 </head>
 <body>
@@ -24,7 +24,7 @@
                 <input type="number" id="inputEmail" class="form-control" name="telefone_da_empresa" placeholder="Telefone" required autofocus></p>
                 <input type="text" id="inputEmail" class="form-control" name="cnpj_da_empresa" placeholder="CNPJ" 
                 required autofocus>
-                <input type="text" id="inputEmail" class="form-control" name="endereco_da_empresa" placeholder="Endereço" 
+                <input type="text" id="inputEmail" class="form-control" name="logradouro_da_empresa" placeholder="Endereço" 
                 required autofocus>
                 <input type="text" id="inputEmail" class="form-control" name="email_da_empresa" placeholder="E-mail" 
                 required autofocus>

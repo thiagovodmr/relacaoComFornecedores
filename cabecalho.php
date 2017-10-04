@@ -1,36 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="recursos/bootstrap/css/bootstrap.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="recursos/font-awesome/css/font-awesome.min.css">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="recursos/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="recursos/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/cabecalho.css">
-  <script src="recursos/jquery/jquery-3.2.1.min.js"></script>
-  <script src="recursos/bootstrap/js/bootstrap.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
 </head>
 <body>
+    <header>
+      <div class="container header inner">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="index.php">SSexpress</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right masthead-nav">
+              <li> <a href="usuario.php">Serviços</a></li>
+              <li> <a href="contatos.php">Contatos</a></li>
+              <li><a href="quemsomos.php">Quem somos</a></li>
+               <li><a href="login.php">Login <i class="fa fa-sign-in fa-1x" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      </div>
+    </header>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="#"> Outra funcionalide</a>
+      <a href="#"> Outra funcionalide</a>
+      <a href="#"> Outra funcionalide</a>
+    </div>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                 
-      </button>
-      <a class="navbar-brand" href="index.php">SSexpress</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="index.php">Home</a></li>
-        <li><a href="usuario.php">Serviços</a></li>
-        <li><a href="contatos.php">Contatos</a></li>
-        <li><a href="quemsomos.php">Quem somos?</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
+    <span style="font-size:30px;cursor:pointer;float:right;color:#fff;position:absolute;top:5%;right: 10px;" onclick="openNav()">☰</span>
+
   </div>
-</nav>
+  </div>
+  
+<script>
+/* Side slide menu */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+  </script>
