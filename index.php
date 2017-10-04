@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Menu</title>
   <link rel="stylesheet" type="text/css" href="recursos/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="recursos/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/index.css">
@@ -45,16 +45,7 @@
   </div>
   </div>
   
-<script>
-/* Side slide menu */
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-  </script>
+<script src="javascript/index.js"></script>
 
 <?php
 include 'rodape.php';

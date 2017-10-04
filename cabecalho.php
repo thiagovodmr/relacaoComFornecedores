@@ -45,13 +45,7 @@
   </div>
   </div>
   
-<script>
-/* Side slide menu */
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-}
+<script src="javascript/cabecalho.js"></script>
 
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-  </script>
+</body>
+</html>
