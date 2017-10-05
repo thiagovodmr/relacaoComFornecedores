@@ -1,8 +1,8 @@
 <?php 
  
-	$dbname = "id3062730_relacaocomfornecedores";
-	$usuario="id3062730_root";
-	$senha = "estoque";
+	$dbname = "relacaocomfornecedores";
+	$usuario="root";
+	$senha = "";
 
 	try {
 	  	$conn = new PDO("mysql:host=localhost;dbname=$dbname", $usuario, $senha);
@@ -21,7 +21,7 @@
 	$senha = $_POST["senha_da_empresa"];
 
 
-	$sql = "INSERT INTO usuarios(USER_NOME,USER_CIDADE,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_EMAIL,USER_LOGIN,USER_SENHA) 
+	$sql = "INSERT INTO usuario(USER_NOME,USER_CIDADE,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_EMAIL,USER_LOGIN,USER_SENHA) 
 		VALUES(:nome, :cidade, :telefone, :cnpj, :logradouro, :email, :login, :senha)";
 
 	$stmt = $conn->prepare( $sql );
