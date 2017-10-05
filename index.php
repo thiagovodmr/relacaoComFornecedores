@@ -26,7 +26,18 @@
               <li> <a href="usuario.php">Serviços</a></li>
               <li> <a href="contatos.php">Contatos</a></li>
               <li><a href="quemsomos.php">Quem somos</a></li>
-              <li><a href="login.php">Login <i class="fa fa-sign-in fa-1x" aria-hidden="true"></i></a></li>
+              <?php
+                session_start();
+                if(!isset($_SESSION['logado'])){
+                  $_SESSION['logado'] = [];
+                }
+                if($_SESSION['logado'] == True){
+                    echo "<li><a href='logout.php'>Logout <i class='fa fa-sign-out fa-1x' aria-hidden='true'></i></a></li>";     
+                }
+                else{
+                    echo "<li><a href='login.php'>Login <i class='fa fa-sign-in fa-1x' aria-hidden='true'></i></a></li>"; 
+                }
+                ?>
             </ul>
           </div>
         </div>

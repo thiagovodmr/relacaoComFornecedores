@@ -1,7 +1,5 @@
 <?php
 	include 'cabecalho.php';
-	$prat = $_POST['pesquisa'];
-	echo "Pesquisando por ".$prat."...";
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,6 +11,8 @@
 			window.setTimeout("location.href='usuario.php'",1000*10);
 		</script>
 		<?php
+		$prat = $_POST['pesquisa'];
+		echo "<h1>Pesquisando por ".$prat."... </h1>";
 		include 'rodape.php';
 		?>
 	</body>

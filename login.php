@@ -1,3 +1,4 @@
+
 <?php
 include 'cabecalho.php';
 ?>
@@ -18,7 +19,7 @@ include 'cabecalho.php';
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img" class="profile-img-card" src="imagens/avatar_2x.png" />
             <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin" action="" method="POST">
+            <form class="form-signin" action="login_autenticacao.php" method="POST">
                 <span id="reauth-email" class="reauth-email"></span>
                 <input type="text" id="inputEmail" class="form-control" name="login" placeholder="Login" required autofocus>
                 <input type="password" id="inputPassword" class="form-control" name="senha" placeholder="Senha" required>

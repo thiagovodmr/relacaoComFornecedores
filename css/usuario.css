@@ -1,11 +1,3 @@
-#imagens{
-	margin: auto;
-	margin-right: 10%;
-	margin-top: 1.5%;
-	float: right;
-	width: 800px;
-	height: 500px;
-}
 #formu input[type=text] {
     width: 280px;
     box-sizing: border-box;
@@ -30,17 +22,6 @@
 	width: 25px;
 	height: 25px;
 }
-.carousel{
-	float: right;
-	margin-top: 5%;
-	width: 80%;
-}
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-	width: 100%;
-	height: 90%;
-	margin: auto;
-}
 .list-group{
 	text-align: center;
 	width: 20%;
@@ -50,4 +31,12 @@
 #formulario{
 	margin-top: 5%;
 	font-weight: bold;
+}
+.row{
+	float: right;
+	margin-top: 5%;
+	margin-right: 10%;
+}
+.col-md-4{
+	width: 50%;
 }
