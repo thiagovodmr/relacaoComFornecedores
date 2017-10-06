@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 <?php  
 	$dbname = "id2846308_projeto1";
 	$usuario="id2846308_pep1";
 	$senha = "@lunoifpe";
+=======
+<?php 
+ 
+	$dbname = "relacaocomfornecedores";
+	$usuario="root";
+	$senha = "";
+>>>>>>> 44468b563f0ad630ba8bb621040941b7ba98776a
 
 	try {
 	  	$conn = new PDO("mysql:host=localhost;dbname=$dbname", $usuario, $senha);
@@ -20,7 +28,7 @@
 	$senha = $_POST["senha_da_empresa"];
 
 
-	$sql = "INSERT INTO usuarios(USER_NOME,USER_CIDADE,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_EMAIL,USER_LOGIN,USER_SENHA) 
+	$sql = "INSERT INTO usuario(USER_NOME,USER_CIDADE,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_EMAIL,USER_LOGIN,USER_SENHA) 
 		VALUES(:nome, :cidade, :telefone, :cnpj, :logradouro, :email, :login, :senha)";
 
 	$stmt = $conn->prepare( $sql );
