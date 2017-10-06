@@ -1,9 +1,9 @@
 <?php
 session_start();
 $host = "localhost";
-$banco = "id3062730_relacaocomfornecedores";
-$user = "id3062730_root";
-$pass = "estoque";
+$banco = "id2846308_projeto1";
+$user = "id2846308_pep1";
+$pass = "@lunoifpe";
 $conexao = mysqli_connect($host, $user, $pass) or die(mysqli_error());
 mysqli_select_db($conexao, $banco) or die(mysqli_error());
 ?>

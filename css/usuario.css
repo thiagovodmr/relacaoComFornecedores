@@ -40,3 +40,9 @@
 .col-md-4{
 	width: 50%;
 }
+#espace{
+	margin-top: 10
+}
+.thumbnail img{
+	width: 100%;
+}

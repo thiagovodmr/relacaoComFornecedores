@@ -1,3 +1,9 @@
+<?php
+session_start();
+  if(!isset($_SESSION['logado'])){
+    $_SESSION['logado'] = [];
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="recursos/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="recursos/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/cabecalho.css">
-  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="recursos/bootstrap/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -23,14 +29,27 @@
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right masthead-nav">
+              <?php
+              if($_SESSION['logado'] == True){
+                    $llogin = $_SESSION['login'];
+                    $ssenha = $_SESSION['senha'];
+                    $host = "localhost";
+                    $usuario = "id2846308_pep1";
+                    $senha = "@lunoifpe";
+                    $bd = "id2846308_projeto1";
+                    $strcon = mysqli_connect("$host","$usuario","$senha","$bd") or die('Erro ao conectar ao banco!');
+                    $sql = "SELECT * FROM usuarios WHERE USER_LOGIN = '$llogin' and USER_SENHA = '$ssenha'";
+                    $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
+                    $name = mysqli_query($strcon, "SELECT USER_NOME FROM usuarios WHERE USER_LOGIN = '$llogin' and USER_SENHA = '$ssenha'") or die(mysqli_error($strcon));
+                    $re = mysqli_fetch_array($name);
+                    echo "<li><a href='#'>Olá, ".ucfirst($re['USER_NOME'])."</a></li>";
+              }
+              ?>
               <li> <a href="usuario.php">Serviços</a></li>
               <li> <a href="contatos.php">Contatos</a></li>
               <li><a href="quemsomos.php">Quem somos</a></li>
                 <?php
-                session_start();
-                if(!isset($_SESSION['logado'])){
-                  $_SESSION['logado'] = [];
-                }
+
                 if($_SESSION['logado'] == True){
                     echo "<li><a href='logout.php'>Logout <i class='fa fa-sign-out fa-1x' aria-hidden='true'></i></a></li>";     
                 }

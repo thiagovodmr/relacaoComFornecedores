@@ -52,9 +52,9 @@
     <div class="thumbnail">
       <img src="imagens/p1.jpg" alt="">
       <div class="caption">
-        <h3>Thumbnail label</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        <h3>Produto</h3>
+        <p>Descrição...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Link para o Fornecedor</a> <a href="#" class="btn btn-default" role="button">Link para o Produto</a></p>
       </div>
     </div>
   </div>
@@ -62,9 +62,9 @@
     <div class="thumbnail">
       <img src="imagens/p3.jpg" alt="">
       <div class="caption">
-        <h3>Thumbnail label</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        <h3>Produto</h3>
+        <p>Descrição...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Link para o Fornecedor</a> <a href="#" class="btn btn-default" role="button">Link para o Produto</a></p>
       </div>
     </div>
   </div>
@@ -75,9 +75,9 @@
     <div class="thumbnail">
       <img src="imagens/p1.jpg" alt="">
       <div class="caption">
-        <h3>Thumbnail label</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        <h3>Produto</h3>
+        <p>Descrição...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Link para o Fornecedor</a> <a href="#" class="btn btn-default" role="button">Link para o Produto</a></p>
       </div>
     </div>
   </div>
@@ -85,14 +85,17 @@
     <div class="thumbnail">
       <img src="imagens/p3.jpg" alt="">
       <div class="caption">
-        <h3>Thumbnail label</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        <h3>Produto</h3>
+        <p>Descrição...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Link para o Fornecedor</a> <a href="#" class="btn btn-default" role="button">Link para o Produto</a></p>
       </div>
     </div>
   </div>
 </div>
-<br>
+
+<div id="">
+  
+</div>
 
 <?php
 include 'rodape.php';

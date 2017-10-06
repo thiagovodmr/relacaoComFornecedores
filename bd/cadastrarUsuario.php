@@ -1,8 +1,7 @@
-<?php 
- 
-	$dbname = "id3062730_relacaocomfornecedores";
-	$usuario="id3062730_root";
-	$senha = "estoque";
+<?php  
+	$dbname = "id2846308_projeto1";
+	$usuario="id2846308_pep1";
+	$senha = "@lunoifpe";
 
 	try {
 	  	$conn = new PDO("mysql:host=localhost;dbname=$dbname", $usuario, $senha);
