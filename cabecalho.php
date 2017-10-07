@@ -42,7 +42,7 @@ session_start();
                     $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
                     $name = mysqli_query($strcon, "SELECT USER_NOME FROM usuarios WHERE USER_LOGIN = '$llogin' and USER_SENHA = '$ssenha'") or die(mysqli_error($strcon));
                     $re = mysqli_fetch_array($name);
-                    echo "<li><a href='#'>Olá, ".ucfirst($re['USER_NOME'])."</a></li>";
+                    echo "<li><a href='#'>Olá, ".ucfirst($re['USER_NOME'])." <i class='fa fa-user-circle' aria-hidden='true'></i></a></li>";
               }
               ?>
               <li> <a href="usuario.php">Serviços</a></li>
@@ -51,10 +51,10 @@ session_start();
                 <?php
 
                 if($_SESSION['logado'] == True){
-                    echo "<li><a href='logout.php'>Logout <i class='fa fa-sign-out fa-1x' aria-hidden='true'></i></a></li>";     
+                    echo "<li><a href='logout.php'>Sair <i class='fa fa-power-off' aria-hidden='true'></i></a></li>";     
                 }
                 else{
-                    echo "<li><a href='login.php'>Login <i class='fa fa-sign-in fa-1x' aria-hidden='true'></i></a></li>"; 
+                    echo "<li><a href='login.php'>Entrar <i class='fa fa-sign-in fa-1x' aria-hidden='true'></i></a></li>"; 
                 }
                 ?>
             </ul>

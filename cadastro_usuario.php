@@ -18,20 +18,20 @@
                 <span id="reauth-email" class="reauth-email"></span>
 
                 <input type="text" id="inputEmail" class="form-control" name="nome_da_empresa" placeholder="Nome" 
-                required autofocus>
+                required autofocus  maxlength="40">
                 <input type="text" id="inputEmail" class="form-control" name="cidade_da_empresa" placeholder="Cidade" 
-                required autofocus>
-                <input type="number" id="inputEmail" class="form-control" name="telefone_da_empresa" placeholder="Telefone" required autofocus></p>
+                required autofocus  maxlength="25">
+                <input type="number" id="inputEmail" class="form-control" name="telefone_da_empresa" placeholder="Telefone" required autofocus  maxlength="15"></p>
                 <input type="text" id="inputEmail" class="form-control" name="cnpj_da_empresa" placeholder="CNPJ" 
-                required autofocus>
+                required autofocus  maxlength="20">
                 <input type="text" id="inputEmail" class="form-control" name="logradouro_da_empresa" placeholder="Endereço" 
-                required autofocus>
+                required autofocus  maxlength="45">
                 <input type="text" id="inputEmail" class="form-control" name="email_da_empresa" placeholder="E-mail" 
-                required autofocus>
+                required autofocus  maxlength="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                 <input type="text" id="inputEmail" class="form-control" name="login_da_empresa" placeholder="Login" 
-                required autofocus>
+                required autofocus  maxlength="20">
                 <input type="password" id="inputPassword" class="form-control" name="senha_da_empresa" placeholder="Senha" 
-                required>
+                required  maxlength="10">
 
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Cadastrar</button>
             </form><!-- /form -->
