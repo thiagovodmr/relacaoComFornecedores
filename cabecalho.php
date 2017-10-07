@@ -29,6 +29,12 @@ session_start();
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right masthead-nav">
+              <?php if ($_SESSION['logado']==True): ?>
+                <li> <a href="cadastro_Produtos.php">Inserir Produtos</a></li>  
+              <?php endif ?>
+              <li> <a href="usuario.php">Serviços</a></li>
+              <li> <a href="contatos.php">Contatos</a></li>
+              <li><a href="quemsomos.php">Quem somos</a></li>
               <?php
               if($_SESSION['logado'] == True){
                     $llogin = $_SESSION['login'];
@@ -45,18 +51,11 @@ session_start();
                     echo "<li><a href='#'>Olá, ".ucfirst($re['USER_NOME'])." <i class='fa fa-user-circle' aria-hidden='true'></i></a></li>";
               }
               ?>
-              <li> <a href="usuario.php">Serviços</a></li>
-              <li> <a href="contatos.php">Contatos</a></li>
-              <li><a href="quemsomos.php">Quem somos</a></li>
-                <?php
-
-                if($_SESSION['logado'] == True){
-                    echo "<li><a href='logout.php'>Sair <i class='fa fa-power-off' aria-hidden='true'></i></a></li>";     
-                }
-                else{
+              <?php
+              if($_SESSION['logado'] == False){
                     echo "<li><a href='login.php'>Entrar <i class='fa fa-sign-in fa-1x' aria-hidden='true'></i></a></li>"; 
                 }
-                ?>
+              ?>
             </ul>
           </div>
         </div>
@@ -67,7 +66,11 @@ session_start();
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
       <a href="#"> Outra funcionalide</a>
       <a href="#"> Outra funcionalide</a>
-      <a href="#"> Outra funcionalide</a>
+      <?php
+        if($_SESSION['logado'] == True){
+          echo "<a href='logout.php'>Sair <i class='fa fa-power-off' aria-hidden='true'></i></a>";     
+        }
+        ?>
     </div>
 
     <span style="font-size:30px;cursor:pointer;float:right;color:#fff;position:absolute;top:5%;right: 10px;" onclick="openNav()">☰</span>

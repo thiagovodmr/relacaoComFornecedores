@@ -1,16 +1,7 @@
-<<<<<<< HEAD
 <?php  
 	$dbname = "id2846308_projeto1";
 	$usuario="id2846308_pep1";
 	$senha = "@lunoifpe";
-=======
-<?php 
- 
-	$dbname = "relacaocomfornecedores";
-	$usuario="root";
-	$senha = "";
->>>>>>> 44468b563f0ad630ba8bb621040941b7ba98776a
-
 	try {
 	  	$conn = new PDO("mysql:host=localhost;dbname=$dbname", $usuario, $senha);
 	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

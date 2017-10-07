@@ -9,6 +9,12 @@ include 'cabecalho.php';
     <title>Login</title>
 </head>
 <body>
+    <?php
+    session_start();
+        if($_SESSION['logado']){
+            header('location: usuario.php');
+        }
+    ?>
 <!--
     you can substitue the span of reauth email for a input with the email and
     include the remember me checkbox

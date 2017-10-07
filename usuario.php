@@ -46,57 +46,40 @@
 	<input type="image" class="fa fa-search fa-3x" aria-hidden="true" value=" ">
 </form>
 </div>
+<?php
+session_start();
+$llogin = $_SESSION['login'];
+$ssenha = $_SESSION['senha'];
+$host = "localhost";
+$usuario = "id2846308_pep1";
+$senha = "@lunoifpe";
+$bd = "id2846308_projeto1";
+$strcon = mysqli_connect("$host","$usuario","$senha","$bd") or die('Erro ao conectar ao banco!');
+$sql = "SELECT * FROM produtos";
+$resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
 
-<div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img src="imagens/p1.jpg" alt="">
-      <div class="caption">
-        <h3>Produto</h3>
-        <p>Descrição...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Link para o Fornecedor</a> <a href="#" class="btn btn-default" role="button">Link para o Produto</a></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img src="imagens/p3.jpg" alt="">
-      <div class="caption">
-        <h3>Produto</h3>
-        <p>Descrição...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Link para o Fornecedor</a> <a href="#" class="btn btn-default" role="button">Link para o Produto</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-<br>
-<div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img src="imagens/p1.jpg" alt="">
-      <div class="caption">
-        <h3>Produto</h3>
-        <p>Descrição...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Link para o Fornecedor</a> <a href="#" class="btn btn-default" role="button">Link para o Produto</a></p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img src="imagens/p3.jpg" alt="">
-      <div class="caption">
-        <h3>Produto</h3>
-        <p>Descrição...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Link para o Fornecedor</a> <a href="#" class="btn btn-default" role="button">Link para o Produto</a></p>
-      </div>
-    </div>
-  </div>
-</div>
+$name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO FROM produtos") or die(mysqli_error($strcon));
+$re = mysqli_fetch_array($name);
 
-<div id="">
-  
-</div>
-
+while($registro = mysqli_fetch_array($resultado)){
+  $titulo = $registro['PRO_TITULO'];
+  $preco = $registro['PRO_PRECO'];
+  $descricao = $registro['PRO_DESCRICAO'];
+echo "<div class='row'>";
+  echo "<div class='col-sm-6 col-md-4'>";
+    echo "<div class='thumbnail'>";
+      echo "<img src='imagens/p1.jpg' alt=''>";
+        echo "<div class='caption'>";
+          echo "<h3>$titulo</h3>";
+          echo" <p>$descricao</p>";
+          echo "<p><a class='btn btn-primary' role='button'>$preco,00</a> <a href='#' class='btn btn-default' role='button'>Link para o Produto</a></p>";
+      echo"</div>
+        </div>
+      </div>
+    </div>";
+mysqli_close($strcon);
+}
+?>
 <?php
 include 'rodape.php';
 ?>

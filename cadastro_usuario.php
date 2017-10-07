@@ -9,6 +9,12 @@
     <meta charset="utf-8">
 </head>
 <body>
+    <?php
+    session_start();
+    if($_SESSION['logado']==True){
+        echo "<script> window.location='usuario.php'</script>'";
+    }
+    ?>
 <div class="container">
         <div class="card card-container">
             <h1>Cadastre-se</h1>

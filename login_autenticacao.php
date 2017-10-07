@@ -14,10 +14,10 @@ mysqli_select_db($conexao, $banco) or die(mysqli_error());
 	<title>Autenticação</title>
 	<script type="text/javascript">
 		function loginsucess(){
-			setTimeout("window.location='usuario.php'",1000*3);
+			window.location='usuario.php';
 		}
 		function loginfailed(){
-			setTimeout("window.location='login.php'",1000*3);
+			window.location='login.php';
 		}
 	</script>
 </head>
@@ -32,12 +32,10 @@ if($row > 0){
 	$_SESSION['login'] = $login;
 	$_SESSION['senha'] = $senha;
 	$_SESSION['logado'] = True;
-	echo "Você foi autenticado com sucesso! Aguarde um instante!";
 	echo "<script>loginsucess()</script>";
 
 }
 else{
-	echo "Nome do usuário ou senha inválido, tente novamente em instantes!";
 	echo "<script>loginfailed()</script>";
 }
 ?>
