@@ -19,7 +19,7 @@
 	$senha = $_POST["senha_da_empresa"];
 
 
-	$sql = "INSERT INTO usuario(USER_NOME,USER_CIDADE,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_EMAIL,USER_LOGIN,USER_SENHA) 
+	$sql = "INSERT INTO usuarios(USER_NOME,USER_CIDADE,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_EMAIL,USER_LOGIN,USER_SENHA) 
 		VALUES(:nome, :cidade, :telefone, :cnpj, :logradouro, :email, :login, :senha)";
 
 	$stmt = $conn->prepare( $sql );
@@ -40,5 +40,5 @@
 	}
 	  
 	// echo $stmt->rowCount() . "linhas inseridas";
-	header("location: ../login.php")
+	header("location: ../login.php");
 ?>
