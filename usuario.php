@@ -47,7 +47,7 @@
 </form>
 </div>
 <?php
-session_start();
+// session_start();
 $llogin = $_SESSION['login'];
 $ssenha = $_SESSION['senha'];
 $host = "localhost";

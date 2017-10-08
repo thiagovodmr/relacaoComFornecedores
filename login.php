@@ -10,7 +10,7 @@ include 'cabecalho.php';
 </head>
 <body>
     <?php
-    session_start();
+    // session_start();
         if($_SESSION['logado']){
             header('location: usuario.php');
         }

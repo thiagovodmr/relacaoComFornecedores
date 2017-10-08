@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php
-    session_start();
+    // session_start();
     if($_SESSION['logado']==True){
         echo "<script> window.location='usuario.php'</script>'";
     }
