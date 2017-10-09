@@ -12,7 +12,6 @@ session_start();
   <link rel="stylesheet" type="text/css" href="recursos/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/cabecalho.css">
   <script src="recursos/bootstrap/js/bootstrap.min.js"></script>
-
 </head>
 <body>
     <header>
@@ -30,7 +29,8 @@ session_start();
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right masthead-nav">
               <?php if ($_SESSION['logado']==True): ?>
-                <li> <a href="cadastro_Produtos.php">Inserir Produtos</a></li>  
+                <li> <a href="cadastro_Produtos.php">Inserir Produtos</a></li>
+                <li> <a href="meus_Produtos.php">Meus Produtos</a></li>  
               <?php endif ?>
               <li> <a href="usuario.php">Serviços</a></li>
               <li> <a href="contatos.php">Contatos</a></li>
@@ -48,7 +48,15 @@ session_start();
                     $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
                     $name = mysqli_query($strcon, "SELECT USER_NOME FROM usuarios WHERE USER_LOGIN = '$llogin' and USER_SENHA = '$ssenha'") or die(mysqli_error($strcon));
                     $re = mysqli_fetch_array($name);
-                    echo "<li><a href='#'>Olá, ".ucfirst($re['USER_NOME'])." <i class='fa fa-user-circle' aria-hidden='true'></i></a></li>";
+
+                    echo "<li><div class='dropdown'>
+                    <button class='dropbtn'><a href='#'>Olá, ".ucfirst($re['USER_NOME'])." <i class='fa fa-user-circle' aria-hidden='true'></i></a></button>
+                    <div class='dropdown-content'>
+                      <a href='logout.php'>Sair <i class='fa fa-power-off' aria-hidden='true'></i></a>
+                    </div>
+                  </div></li>";
+
+
               }
               ?>
               <?php

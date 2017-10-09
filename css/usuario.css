@@ -28,21 +28,31 @@
 	margin: auto;
 	float: left;
 }
+.list-group-item{
+	height: 65px;
+	font-size: 20px;
+}
 #formulario{
 	margin-top: 5%;
 	font-weight: bold;
 }
 .row{
+	width: 400px;
+	margin-top: 3%;
+	margin-right: 1%;
 	float: right;
-	margin-top: 5%;
-	margin-right: 10%;
 }
 .col-md-4{
-	width: 50%;
-}
-#espace{
-	margin-top: 10
+	width: 100%;
 }
 .thumbnail img{
 	width: 100%;
+}
+.caption{
+	width: 100%;
+}
+h1{
+	color: blue;
+	font-weight: bold;
+	font-size: 50px;
 }
