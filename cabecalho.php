@@ -12,7 +12,7 @@ session_start();
   <link rel="stylesheet" type="text/css" href="recursos/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/cabecalho.css">
   <script src="recursos/bootstrap/js/bootstrap.min.js"></script>
-
+  <link rel="stylesheet" type="text/css" href="css/cabecalho_login.css">
 </head>
 <body>
     <header>
@@ -30,7 +30,8 @@ session_start();
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right masthead-nav">
               <?php if ($_SESSION['logado']==True): ?>
-                <li> <a href="cadastro_Produtos.php">Inserir Produtos</a></li>  
+                <li> <a href="cadastro_Produtos.php">Inserir Produtos</a></li>
+                <li> <a href="meus_Produtos.php">Meus Produtos</a></li>  
               <?php endif ?>
               <li> <a href="usuario.php">Serviços</a></li>
               <li> <a href="contatos.php">Contatos</a></li>
@@ -48,7 +49,16 @@ session_start();
                     $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
                     $name = mysqli_query($strcon, "SELECT USER_NOME FROM usuarios WHERE USER_LOGIN = '$llogin' and USER_SENHA = '$ssenha'") or die(mysqli_error($strcon));
                     $re = mysqli_fetch_array($name);
-                    echo "<li><a href='#'>Olá, ".ucfirst($re['USER_NOME'])." <i class='fa fa-user-circle' aria-hidden='true'></i></a></li>";
+
+                    echo "<li><div class='dropdown'>
+                    <button class='dropbtn'><a href='#'><b class='branco'>Olá, ".ucfirst($re['USER_NOME'])." <i class='fa fa-user-circle' aria-hidden='true'></i></b></a></button>
+                    <div class='dropdown-content'>
+                      <a href='#'>Meu Perfil <i class='fa fa-user-o' aria-hidden='true'></i></a>
+                      <a href='logout.php'>Sair <i class='fa fa-power-off' aria-hidden='true'></i></a>
+                    </div>
+                  </div></li>";
+
+
               }
               ?>
               <?php
@@ -64,13 +74,9 @@ session_start();
     </header>
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-      <a href="#"> Outra funcionalide</a>
-      <a href="#"> Outra funcionalide</a>
-      <?php
-        if($_SESSION['logado'] == True){
-          echo "<a href='logout.php'>Sair <i class='fa fa-power-off' aria-hidden='true'></i></a>";     
-        }
-        ?>
+      <a href="#">Outra funcionalide</a>
+      <a href="#">Outra funcionalide</a>
+      <a href='#'>Outra funcionalide</a>     
     </div>
 
     <span style="font-size:30px;cursor:pointer;float:right;color:#fff;position:absolute;top:5%;right: 10px;" onclick="openNav()">☰</span>
