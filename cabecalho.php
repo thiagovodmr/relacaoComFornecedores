@@ -12,7 +12,10 @@ session_start();
   <link rel="stylesheet" type="text/css" href="recursos/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/cabecalho.css">
   <script src="recursos/bootstrap/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
   <link rel="stylesheet" type="text/css" href="css/cabecalho_login.css">
+=======
+>>>>>>> 8dfd6ef0b564aca8b63ac601a8af4b0c1c7056c8
 </head>
 <body>
     <header>
@@ -51,9 +54,14 @@ session_start();
                     $re = mysqli_fetch_array($name);
 
                     echo "<li><div class='dropdown'>
+<<<<<<< HEAD
                     <button class='dropbtn'><a href='#'><b class='branco'>Olá, ".ucfirst($re['USER_NOME'])." <i class='fa fa-user-circle' aria-hidden='true'></i></b></a></button>
                     <div class='dropdown-content'>
                       <a href='#'>Meu Perfil <i class='fa fa-user-o' aria-hidden='true'></i></a>
+=======
+                    <button class='dropbtn'><a href='#'>Olá, ".ucfirst($re['USER_NOME'])." <i class='fa fa-user-circle' aria-hidden='true'></i></a></button>
+                    <div class='dropdown-content'>
+>>>>>>> 8dfd6ef0b564aca8b63ac601a8af4b0c1c7056c8
                       <a href='logout.php'>Sair <i class='fa fa-power-off' aria-hidden='true'></i></a>
                     </div>
                   </div></li>";

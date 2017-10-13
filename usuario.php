@@ -88,11 +88,20 @@ $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_
     echo "<div class='row'>";
       echo "<div class='col-sm-6 col-md-4'>";
         echo "<div class='thumbnail'>";
+<<<<<<< HEAD
         echo "<img src='".$imagem."' height='10' width='50'>";
           echo "<div class='caption'>";
             echo "<h3><b class='preto'>$titulo</b></h3>";
             echo "<p>$descricao1</p>";
             echo "<p><a class='btn btn-primary' role='button'>Link para o Produto</a> <a href='#' class='btn btn-default' role='button'>Preço: $preco,00</a></p>";
+=======
+        echo "<img src='imagens/p1.jpg' height='10' width='50'>";
+          echo "<div class='caption'>";
+            echo $imagem;
+            echo "<h3>$titulo</h3>";
+            echo "<p>$descricao1</p>";
+            echo "<p><a class='btn btn-primary' role='button'>Link para o Produto</a> <a href='#' class='btn btn-default' role='button'>$preco,00</a></p>";
+>>>>>>> 8dfd6ef0b564aca8b63ac601a8af4b0c1c7056c8
          echo"</div>
             </div>
           </div>
@@ -112,11 +121,20 @@ $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar regist
     echo "<div class='row'>";
       echo "<div class='col-sm-6 col-md-4'>";
         echo "<div class='thumbnail'>";
+<<<<<<< HEAD
         echo "<img src='".$imagem."' height='10' width='50'>";  
           echo "<div class='caption'>";
             echo "<h3><b class='preto'>$titulo</b></h3>";
             echo" <p>$descricao</p>";
             echo "<p><a class='btn btn-primary' role='button'>Preço: $preco,00</a> <a href='#' class='btn btn-default' role='button'>Link para o Produto</a></p>";
+=======
+        echo "<img src='imagens/p1.jpg' height='10' width='50'>";
+          echo "<div class='caption'>";
+            echo $imagem;
+            echo "<h3>$titulo</h3>";
+            echo" <p>$descricao</p>";
+            echo "<p><a class='btn btn-primary' role='button'>$preco,00</a> <a href='#' class='btn btn-default' role='button'>Link para o Produto</a></p>";
+>>>>>>> 8dfd6ef0b564aca8b63ac601a8af4b0c1c7056c8
          echo"</div>
             </div>
           </div>

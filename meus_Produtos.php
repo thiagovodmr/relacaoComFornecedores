@@ -35,9 +35,15 @@ echo "<div class='list-group'>";
 echo "<a href='bd/excluir_Produto.php?id="."$id"."'><i class='fa fa-window-close-o fa-3x' aria-hidden='true'></i></a>";
 echo "<a href='#' class='list-group-item'>";
     echo "<div class='media col-md-3'>
+<<<<<<< HEAD
         <figure class='pull-left'>";
             echo "<img class='media-object img-rounded img-responsive' <img src='".$imagem."'";
         echo "</figure>
+=======
+        <figure class='pull-left'>
+            <img class='media-object img-rounded img-responsive'  src='imagens/p1.jpg' alt='250'>
+        </figure>
+>>>>>>> 8dfd6ef0b564aca8b63ac601a8af4b0c1c7056c8
     </div>
     <div class='col-md-6'>";
         echo "<h4 class='list-group-item-heading'>"."$titulo"."</h4>";
