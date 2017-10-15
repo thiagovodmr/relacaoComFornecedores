@@ -1,6 +1,16 @@
 <?php
-include 'cabecalho.php';
-?>
+	include 'cabecalho.php';
+	$llogin = $_SESSION['login'];
+	$host = "localhost";
+	$usuario = "id2846308_pep1";
+	$senha = "@lunoifpe";
+	$bd = "id2846308_projeto1";
+	$strcon = mysqli_connect("$host","$usuario","$senha","$bd") or die('Erro ao conectar ao banco!');
+	$sql = "SELECT * FROM categorias";
+    $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
+    $name = mysqli_query($strcon, "SELECT CAT_NOME,CAT_ID FROM categorias") or die(mysqli_error($strcon));
+    $re = mysqli_fetch_array($name);
+	?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,37 +25,19 @@ include 'cabecalho.php';
     	<p id="profile-name" class="profile-name-card"></p>
 	<form action="bd/cadastrar_Produtos.php" method="POST" enctype="multipart/form-data">
 		Selecione a categoria:<select name="categoria" class="selectpicker">
-			<option value="adesivos">ADESIVOS</option>
-			<option value="apontador">APONTADOR</option>
-			<option value="bamp">BLOCOS AUTOADESIVOS E MARCADORES DE PÁGINAS</option>
-			<option value="cadernos">CADERNOS, BLOCOS E AGENDAS</option>
-			<option value="clips">CLIPS, ALFINETES E ELÁSTICOS</option>
-			<option value="colas">COLAS</option>
-			<option value="crachas">CRACHÁS</option>
-			<option value="embalagens">EMBALAGENS</option>
-			<option value="encadernacao">ENCADERNAÇÃO</option>
-			<option value="envelopes">ENVELOPES</option>
-			<option value="escrita">ESCRITA E CORRETIVO</option>
-			<option value="etiquetas">ETIQUETAS</option>
-			<option value="ficharios">FICHÁRIOS E ACESSÓRIOS</option>
-			<option value="fa">FITAS ADESIVAS</option>
-			<option value="formularios">FORMULÁRIOS E IMPRESSOS</option>
-			<option value="grampeadores">GRAMPEADORES E GRAMPOS</option>
-			<option value="maescolar">MATERIAL ESCOLAR</option>			
-			<option value="mde">MATERIAL DE ESCRITÓRIO</option>
-			<option value="meel">MOCHILAS ESCOLARES, ESTOJOS E LANCHEIRAS</option>
-			<option value="pastas">PASTAS</option>
-			<option value="reguas">RÉGUAS E COMPASSO</option>
-			<option value="sp">SACOS PLÁSTICOS</option>
-			<option value="te">TESOURAS E ESTILETES</option>
-			<option value="lc">LIVROS PARA COLORIR</option>
-			<option value="tintas">TINTAS</option>
+			<?php
+			while($registro = mysqli_fetch_array($resultado)){
+   				$nome = $registro['CAT_NOME'];
+   	   			$id = $registro['CAT_ID'];
+				echo "<option value='".$id."'>".strtoupper($nome)."</option>";
+    		}	
+			?>
 		</select>
 		<br>
 
-		Titulo : <input id="inputEmail" class="form-control" type="text" name="titulo" maxlength="50"><br>
-		Preço : <input id="inputEmail" class="form-control" type="text" name="preco" maxlength="11"><br>
-		Descrição : <input id="inputEmail" class="form-control" type="text" name="descricao" maxlength="250"><br>
+		Titulo : <input id="inputEmail" class="form-control" type="text" name="titulo" maxlength="50" required><br>
+		Preço : <input id="inputEmail" class="form-control" type="text" name="preco" maxlength="11" required><br>
+		Descrição : <input id="inputEmail" class="form-control" type="text" name="descricao" maxlength="250" required><br>
 		Imagem : <input type="file" name="imagem"><br>
 		<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Cadastrar</button>
 

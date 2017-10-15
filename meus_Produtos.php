@@ -15,7 +15,6 @@ include 'cabecalho.php';
         <h1 class="text-center">Meus Produtos</h1>
 <?php
 $llogin = $_SESSION['login'];
-$ssenha = $_SESSION['senha'];
 $host = "localhost";
 $usuario = "id2846308_pep1";
 $senha = "@lunoifpe";
