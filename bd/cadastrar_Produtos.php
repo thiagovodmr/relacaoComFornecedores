@@ -30,7 +30,7 @@
 		// Faz o upload da imagem
 		move_uploaded_file($arquivo["tmp_name"], $arquivo_nome);
 	}
- 	
+ 	$nome = $_SESSION['nome'];
 	$login = $_SESSION['login'];
 	$titulo = $_POST["titulo"];
 	$preco = $_POST["preco"];
@@ -38,8 +38,8 @@
 	$imagem = $arquivo_nome;
 	$categoria = $_POST["categoria"];
 
-	$sql = "INSERT INTO produtos(PRO_TITULO,PRO_PRECO,PRO_DESCRICAO,PRO_CATEGORIA,PRO_ARQUIVO,PRO_LOGIN) 
-		VALUES(:titulo, :preco, :descricao, :categoria, :imagem, :login)";	
+	$sql = "INSERT INTO produtos(PRO_TITULO,PRO_PRECO,PRO_DESCRICAO,PRO_CATEGORIA,PRO_ARQUIVO,PRO_LOGIN,PRO_NOME) 
+		VALUES(:titulo, :preco, :descricao, :categoria, :imagem, :login, :nome)";	
 	$stmt = $conn->prepare( $sql );
 	$stmt->bindParam( ':titulo', $titulo );
 	$stmt->bindParam( ':preco', $preco );
@@ -47,7 +47,7 @@
 	$stmt->bindParam( ':categoria', $categoria );
 	$stmt->bindParam( ':imagem', $imagem );
 	$stmt->bindParam( ':login', $login );
-
+	$stmt->bindParam( ':nome', $nome );
 	$result = $stmt->execute();
 
 	if ( ! $result ){
