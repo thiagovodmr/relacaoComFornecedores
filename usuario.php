@@ -32,11 +32,12 @@
 <div class="list-group" id="formulario">
 	<h1>Categorias</h1>
   <?php 
-    $sql = "SELECT * FROM categorias";
+    $sql = "SELECT * FROM categorias ORDER BY CAT_NOME";
     $kk = "SELECT * FROM produtos";
     $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
     $rr = mysqli_query($strcon, $kk) or die('Erro ao tentar cadastrar registro');
     $name = mysqli_query($strcon, "SELECT CAT_NOME,CAT_ID FROM categorias") or die(mysqli_error($strcon));
+    
     while($registro = mysqli_fetch_array($resultado)){
       $nome = $registro['CAT_NOME'];
       $id = $registro['CAT_ID'];

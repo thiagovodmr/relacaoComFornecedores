@@ -48,6 +48,7 @@ session_start();
                     $name = mysqli_query($strcon, "SELECT USER_NOME FROM usuarios WHERE USER_LOGIN = '$llogin' and USER_SENHA = '$ssenha'") or die(mysqli_error($strcon));
                     $re = mysqli_fetch_array($name);
                     $_SESSION['nome'] = $re['USER_NOME'];
+                    
                     echo "<li><div class='dropdown'>
                     <button class='dropbtn'><a href='#'><b class='branco'>Olá, ".ucfirst($re['USER_NOME'])." <i class='fa fa-user-circle fa-1x' aria-hidden='true'></i></b></a></button>
                     <div class='dropdown-content'>
