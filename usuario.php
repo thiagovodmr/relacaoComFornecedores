@@ -76,8 +76,6 @@
 </form>
 </div>
 
-<!-- session_start(); -->
-
 <?php if (isset($_POST["pesquisa"])): 
   
     $pesquisa = $_POST["pesquisa"];
