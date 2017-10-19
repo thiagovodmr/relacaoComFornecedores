@@ -20,7 +20,7 @@ mysqli_select_db($conexao, $banco) or die(mysqli_error());
 			window.location='login.php';
 		}
 	</script>
-</head>o
+</head>
 <body>
 
 <?php  
