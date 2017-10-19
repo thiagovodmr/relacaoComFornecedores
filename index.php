@@ -17,17 +17,13 @@ include 'cabecalho.php';
   
 <script src="javascript/index.js"></script>
 <div class="container" id="cont">
-  <div class="row">
-    <div class="col-md-6">
-      <h2>Está começando seu próprio negócio agora?</h2>
-    </div>
-  </div>
   
-  <div class="row">
-    <div class="col-md-3">
+      <h2>Está começando seu próprio negócio agora?</h2>
+    
+  
+  
       <h3>Aqui é o lugar certo!</h3>
-    </div>
-  </div>
+
   <div class="row">
     <div class="col-md-12">
   
@@ -96,12 +92,8 @@ include 'cabecalho.php';
   <div class="row">
     <div class="col-md-12">
       <div class="jumbotron">
-        <div class="row">
           <h1>SSexpress</h1>
-        </div>      
-        <div class="row">
           <p>A Stationery Store Express é um portal que possibilidade a interatividade de uma empresa com seu fornecedor</p>
-        </div>
       </div>
     </div>
   </div>
