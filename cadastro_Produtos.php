@@ -6,7 +6,7 @@
 	$senha = "@lunoifpe";
 	$bd = "id2846308_projeto1";
 	$strcon = mysqli_connect("$host","$usuario","$senha","$bd") or die('Erro ao conectar ao banco!');
-	$sql = "SELECT * FROM categorias";
+	$sql = "SELECT * FROM categorias ORDER BY CAT_NOME";
     $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
     $name = mysqli_query($strcon, "SELECT CAT_NOME,CAT_ID FROM categorias") or die(mysqli_error($strcon));
     $re = mysqli_fetch_array($name);

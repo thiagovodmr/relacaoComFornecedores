@@ -13,20 +13,20 @@
     transition: width 0.4s ease-in-out;
 	font-size: 20px;
 	margin-top: 2%;
-	margin-left:25%;
+	/*margin-left:25%;*/
 }
-#formu input[type=text]:focus {
+/*#formu input[type=text]:focus {
     width: 30%;
-}
+}*/
 #formu input[type=image]{
-	width: 25px;
+	/*width: 25px;*/
 	height: 25px;
 }
 .list-group{
 	text-align: center;
-	width: 20%;
-	margin: auto;
-	float: left;
+	/*width: 20%;*/
+	/*margin: auto;*/
+	/*float: left;*/
 }
 .list-group-item{
 	height: 80px;
@@ -37,14 +37,14 @@
 	font-weight: bold;
 }
 .row{
-	width: 400px;
+	/*width: 400px;*/
 	margin-top: 3%;
-	margin-right: 1%;
-	float: right;
+	/*margin-right: 1%;*/
+	/*float: right;*/
 }
-.col-md-4{
+/*.col-md-4{
 	width: 100%;
-}
+}*/
 .thumbnail img{
 	width: 100%;
 }
@@ -52,6 +52,7 @@
 	width: 100%;
 }
 h1{
+	margin-left: 65px;
 	color: blue;
 	font-weight: bold;
 	font-size: 50px;
