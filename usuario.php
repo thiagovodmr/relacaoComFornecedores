@@ -30,7 +30,7 @@
 <body>
 
 <div class="row">
-  <div class="col-md-3 col-sm-3">
+  <div class="col-md-3 col-sm-3 text-center">
     <h1>Categorias</h1>
   </div>
 
@@ -62,20 +62,20 @@
             $resul = mysqli_fetch_array($nnn);
             $tamanho = sizeof($resul['PRO_CATEGORIA']);
             
-             if ($_SESSION['logado']): 
+            if ($_SESSION['logado']): 
         
-             if ($ssenha == "admin" && $llogin == "admin"): ?>
+              if ($ssenha == "pep1" && $llogin == "admin"): ?>
                 <a href='bd/excluir_Categoria.php?id=<?= $id ?>'>
                   <i class='fa fa-window-close-o fa-2x' aria-hidden='true' id='icone'></i>
                 </a>
-                <a href="usuario.php?i=<?=$id?>" class='list-group-item'><?= strtoupper($nome)."($tamanho)"?></a>
+                <a href="usuario.php?i=<?=$id?>" class='list-group-item justify-content-between'><?= strtoupper($nome)?><span class="badge badge-default badge-pill"><?= $tamanho?></span></a>
             
-            <?php else: ?>
-               <a href="usuario.php?i=<?=$id?>" class='list-group-item'><?= strtoupper($nome)."($tamanho)"?></a>
-            <?php endif ?>
-
         <?php else: ?>
-          <a href="usuario.php?i=<?=$id?>" class='list-group-item'><?= strtoupper($nome)."($tamanho)"?></a>
+               <a href="usuario.php?i=<?=$id?>" class='list-group-item justify-content-between'><?= strtoupper($nome)?><span class="badge badge-default badge-pill"><?= $tamanho?></span></a>
+        <?php endif ?>
+
+      <?php else: ?>
+          <a href="usuario.php?i=<?=$id?>" class='list-group-item justify-content-between'><?= strtoupper($nome)?><span class="badge badge-default badge-pill"><?= $tamanho?></span></a>
 
     <?php 
         endif; 

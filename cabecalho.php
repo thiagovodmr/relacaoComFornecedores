@@ -8,11 +8,11 @@ session_start();
 <html>
 <head>
   <title></title>
-  <script src="recursos/jquery/jquery-3.2.1.min.js"></script>
   <link rel="stylesheet" type="text/css" href="recursos/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="recursos/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/cabecalho.css">
   <script src="recursos/bootstrap/js/bootstrap.min.js"></script>
+  <script src="recursos/jquery/jquery-3.2.1.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/cabecalho_login.css">
 </head>
 <body>
