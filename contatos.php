@@ -46,7 +46,7 @@
 
 </div>	
 <br>
-<div id="espaco">
+<div id="espace">
 	
 </div>
 <?php

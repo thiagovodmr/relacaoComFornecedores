@@ -3,8 +3,6 @@ session_start();
   if(!isset($_SESSION['logado'])){
     $_SESSION['logado'] = [];
   }
-  $llogin = $_SESSION['login']; 
-  $ssenha = $_SESSION['senha'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +17,7 @@ session_start();
 
 <body>
 <div id="espaco"></div>
-
+<header>
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -28,15 +26,17 @@ session_start();
     
     <ul class="nav navbar-nav navbar-right">
       <?php if($_SESSION['logado'] == True): ?>
-        <?php if($llogin == "admin" && $ssenha=="pep1"): ?>
-          <li><a href="cadastro_Categoria.php">Inserir Categoria <i class="fa fa-cloud-upload" aria-hidden="true"></i></a></li>
+        <?php if($llogin == "admin" && $ssenha=="admin"): ?>
+          <li><a href="cadastro_Categoria.php">Inserir Categoria</a></li>
         <?php endif ?>
       <?php endif ?>
-      <li><a href="usuario.php">Serviços <i class="fa fa-truck" aria-hidden="true"></i></a></li>
-      <li><a href="contatos.php">Contatos <i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
-      <li><a href="quemsomos.php">Quem somos <i class="fa fa-users" aria-hidden="true"></i></a></li>
+      <li><a href="usuario.php">Serviços</a></li>
+      <li><a href="contatos.php">Contatos</a></li>
+      <li><a href="quemsomos.php">Quem somos</a></li>
       <?php
         if($_SESSION['logado'] == True){
+          $llogin = $_SESSION['login']; 
+          $ssenha = $_SESSION['senha'];
           $host = "localhost";
           $usuario = "id2846308_pep1";
           $senha = "@lunoifpe";
@@ -49,19 +49,19 @@ session_start();
           $_SESSION['nome'] = $re['USER_NOME'];
 
           echo "<ul class='nav navbar-nav'>";
-            echo "<li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Produtos <i class='fa fa-chevron-down' aria-hidden='true'></i></a>
+            echo "<li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Produtos<span class='caret'></span></a>
               <ul class='dropdown-menu'>
-               <li><a href='meus_Produtos.php'>Meus Produtos <i class='fa fa-shopping-bag' aria-hidden='true'></i></a></li>
-               <li><a href='cadastro_Produtos.php'>Inserir Produtos <i class='fa fa-upload' aria-hidden='true'></i></a></li>
+               <li><a href='meus_Produtos.php'>Meus Produtos</a></li>
+               <li><a href='cadastro_Produtos.php'>Inserir Produtos</a></li>
               </ul>
            </li>
          </ul>";
 
           echo "<ul class='nav navbar-nav'>";
-            echo "<li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Olá, ".ucwords($re['USER_NOME'])." <i class='fa fa-user-circle' aria-hidden='true'></i></a>
+            echo "<li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Olá, ".ucwords($re['USER_NOME'])."<span class='caret'></span></a>
               <ul class='dropdown-menu'>
-               <li><a href='#meuPerfil'>Meu Perfil <i class='fa fa-user-circle fa-1x' aria-hidden='true'></i></a></li>
-               <li><a href='logout.php'>Sair <i class='fa fa-sign-out' aria-hidden='true'></i></a></li>
+               <li><a href='#meuPerfil'>Meu Perfil</a></li>
+               <li><a href='logout.php'>Sair <i class='fa fa-user-circle fa-1x' aria-hidden='true'></i></a></li>
               </ul>
            </li>
          </ul>";
@@ -76,6 +76,7 @@ session_start();
     </ul>
   </div>
 </nav>
+</header>
 
 </body>
 </html>

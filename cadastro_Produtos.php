@@ -39,7 +39,7 @@
 		Preço : <input id="inputEmail" class="form-control" type="text" name="preco" maxlength="11" required><br>
 		Descrição : <input id="inputEmail" class="form-control" type="text" name="descricao" maxlength="250" required><br>
 		Imagem : <input type="file" name="imagem"><br>
-		<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Cadastrar</button>
+		<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Cadastrar <i class="fa fa-upload" aria-hidden="true"></i></button>
 
 	</form>
 

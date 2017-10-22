@@ -6,23 +6,17 @@ include 'cabecalho.php';
 <head>
   <title>Menu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="recursos/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="recursos/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/index.css">
-  <script src="recursos/jquery/jquery-3.2.1.min.js"></script>
-  <script src="recursos/bootstrap/js/bootstrap.min.js"></script>
-
+  <link rel="stylesheet" type="text/css" href="css/index1.css">
 </head>
 <body>
-  
-<script src="javascript/index.js"></script>
+<div class="parallax"></div>
 <div class="container" id="cont">
   
-      <h2>Está começando seu próprio negócio agora?</h2>
+      <h2 class="branco">Está começando seu próprio negócio agora?</h2>
     
   
   
-      <h3>Aqui é o lugar certo!</h3>
+      <h3 class="branco">Aqui é o lugar certo!</h3>
 
   <div class="row">
     <div class="col-md-12">
@@ -102,7 +96,7 @@ include 'cabecalho.php';
 <div class="container">
   <div class="row">
     <div class="col-md-10">
-      <p style="font-size: 21px;">Aqui você poderá encontrar uma empresa para contratar seus serviços</p>      
+      <p style="font-size: 21px;" class="branco">Aqui você poderá encontrar uma empresa para contratar seus serviços</p>      
     </div>
   </div>
 </div>

@@ -9,3 +9,26 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.navbar-brand{
+  font-size: 40px;
+}
+#cont{
+  width: 100%;
+}
+.carousel-caption{
+  color:  #E0FFFF;
+  font-size: 30px;
+  text-shadow: 3px 3px black;
+}
+.carousel-caption h3{
+  font-weight: bold;
+  font-size: 40px;
+}
+.btn{
+  font-size: 30px;
+  width: 30%;
+  height: 60px;
+}
+.branco{
+  color: white;
+}

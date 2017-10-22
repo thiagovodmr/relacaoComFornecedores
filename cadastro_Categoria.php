@@ -16,7 +16,7 @@ include 'cabecalho.php';
 	<form action="bd/cadastrar_Categoria.php" method="POST">
 		Nome : <input id="inputEmail" class="form-control" type="text" name="nome_categoria" maxlength="50" required><br>
 		Descrição : <input id="inputEmail" class="form-control" type="text" name="descricao" maxlength="200" required><br>
-		<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Cadastrar</button>
+		<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Cadastrar <i class="fa fa-upload" aria-hidden="true"></i></button>
 
 	</form>
 
