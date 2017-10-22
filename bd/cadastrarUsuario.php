@@ -17,9 +17,10 @@
 	$email = $_POST["email_da_empresa"];
 	$login = $_POST["login_da_empresa"];
 	$senha = $_POST["senha_da_empresa"];
+	$perfil = md5($nome);
 
-	$sql = "INSERT INTO usuarios(USER_NOME,USER_CIDADE,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_EMAIL,USER_LOGIN,USER_SENHA) 
-		VALUES(:nome, :cidade, :telefone, :cnpj, :logradouro, :email, :login, :senha)";
+	$sql = "INSERT INTO usuarios(USER_NOME,USER_CIDADE,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_EMAIL,USER_LOGIN,USER_SENHA,USER_PERFIL) 
+		VALUES(:nome, :cidade, :telefone, :cnpj, :logradouro, :email, :login, :senha, :perfil)";
 	$stmt = $conn->prepare( $sql );
 	$stmt->bindParam( ':nome', $nome );
 	$stmt->bindParam( ':cidade', $cidade );
@@ -29,6 +30,7 @@
 	$stmt->bindParam( ':email', $email);
 	$stmt->bindParam( ':login', $login);
 	$stmt->bindParam( ':senha', $senha);
+	$stmt->bindParam( ':perfil', $perfil);
 
 	$result = $stmt->execute();
 

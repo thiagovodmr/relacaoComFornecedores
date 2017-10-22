@@ -1,170 +1,39 @@
+<?php
+include 'cabecalho.php';
+$llogin = $_SESSION['login'];
+$host = "localhost";
+$usuario = "id2846308_pep1";
+$senha = "@lunoifpe";
+$bd = "id2846308_projeto1";
+$strcon = mysqli_connect("$host","$usuario","$senha","$bd") or die('Erro ao conectar ao banco!');
+?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Teste</title>
   <link rel="stylesheet" type="text/css" href="recursos/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="recursos/font-awesome/css/font-awesome.min.css">
-  <style type="text/css">    
-.page-header{
-  text-align: center;    
-}
-
-/*social buttons*/
-.btn-social{
-  color: white;
-  opacity:0.9;
-}
-.btn-social:hover {
-  color: white;
-    opacity:1;
-}
-.btn-facebook {
-background-color: #3b5998;
-opacity:0.9;
-}
-.btn-twitter {
-background-color: #00aced;
-opacity:0.9;
-}
-.btn-linkedin {
-background-color:#0e76a8;
-opacity:0.9;
-}
-.btn-github{
-  background-color:#000000;
-  opacity:0.9;
-}
-.btn-google {
-  background-color: #c32f10;
-  opacity: 0.9;
-}
-.btn-stackoverflow{
-  background-color: #D38B28;
-  opacity: 0.9;
-}
-
-/* resume stuff */
-
-.bs-callout {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    border-color: #eee;
-    border-image: none;
-    border-radius: 3px;
-    border-style: solid;
-    border-width: 1px 1px 1px 5px;
-    margin-bottom: 5px;
-    padding: 20px;
-}
-.bs-callout:last-child {
-    margin-bottom: 0px;
-}
-.bs-callout h4 {
-    margin-bottom: 10px;
-    margin-top: 0;
-}
-
-.bs-callout-danger {
-    border-left-color: #d9534f;
-}
-
-.bs-callout-danger h4{
-    color: #d9534f;
-}
-
-.resume .list-group-item:first-child, .resume .list-group-item:last-child{
-  border-radius:0;
-}
-
-/*makes an anchor inactive(not clickable)*/
-.inactive-link {
-   pointer-events: none;
-   cursor: default;
-}
-
-.resume-heading .social-btns{
-  margin-top:15px;
-}
-.resume-heading .social-btns i.fa{
-  margin-left:-5px;
-}
-
-
-
-@media (max-width: 992px) {
-  .resume-heading .social-btn-holder{
-    padding:5px;
-  }
-}
-
-
-/* skill meter in resume. copy pasted from http://bootsnipp.com/snippets/featured/progress-bar-meter */
-
-.progress-bar {
-    text-align: left;
-  white-space: nowrap;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  cursor: pointer;
-}
-
-.progress-bar > .progress-type {
-  padding-left: 10px;
-}
-
-.progress-meter {
-  min-height: 15px;
-  border-bottom: 2px solid rgb(160, 160, 160);
-  margin-bottom: 15px;
-}
-
-.progress-meter > .meter {
-  position: relative;
-  float: left;
-  min-height: 15px;
-  border-width: 0px;
-  border-style: solid;
-  border-color: rgb(160, 160, 160);
-}
-
-.progress-meter > .meter-left {
-  border-left-width: 2px;
-}
-
-.progress-meter > .meter-right {
-  float: right;
-  border-right-width: 2px;
-}
-
-.progress-meter > .meter-right:last-child {
-  border-left-width: 2px;
-}
-
-.progress-meter > .meter > .meter-text {
-  position: absolute;
-  display: inline-block;
-  bottom: -20px;
-  width: 100%;
-  font-weight: 700;
-  font-size: 0.85em;
-  color: rgb(160, 160, 160);
-  text-align: left;
-}
-.progress-meter > .meter.meter-right > .meter-text {
-  text-align: right;
-}
-  </style>
+  <link rel="stylesheet" type="text/css" href="css/perfil.css">
 </head>
 <body>
+<?php
 
-<div class="container">
+$sql = "SELECT * FROM produtos WHERE PRO_LOGIN = '$llogin'";
+$resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
+$name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO, PRO_ID FROM produtos") or die(mysqli_error($strcon));
+$re = mysqli_fetch_array($name);
+while($registro = mysqli_fetch_array($resultado)){
+$titulo = $registro['PRO_TITULO'];
+$preco = $registro['PRO_PRECO'];
+$descricao = $registro['PRO_DESCRICAO'];
+$imagem = $registro['PRO_ARQUIVO'];
+$id = $registro['PRO_ID'];
+?>
+<div class="container" id="contai">
 
 <div class="resume">
     <header class="page-header">
-    <h1 class="page-title">Resume of John Doe</h1>
+    <h1 class="page-title">Resume</h1>
   </header>
 <div class="row">
   <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
@@ -247,5 +116,8 @@ opacity:0.9;
 </div>
 
 </div>
+<?php
+include 'rodape.php';
+?>
 </body>
 </html>

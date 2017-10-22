@@ -60,7 +60,7 @@ session_start();
           echo "<ul class='nav navbar-nav'>";
             echo "<li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Olá, ".ucwords($re['USER_NOME'])." <i class='fa fa-user-circle' aria-hidden='true'></i></a>
               <ul class='dropdown-menu'>
-               <li><a href='#meuPerfil'>Meu Perfil <i class='fa fa-user-circle fa-1x' aria-hidden='true'></i></a></li>
+               <li><a href='perfil.php'>Meu Perfil <i class='fa fa-user-circle fa-1x' aria-hidden='true'></i></a></li>
                <li><a href='logout.php'>Sair <i class='fa fa-sign-out' aria-hidden='true'></i></a></li>
               </ul>
            </li>
