@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/cadastro_produtos.css">
+	<link rel="stylesheet" type="text/css" href="css/cadastro_produtos1.css">
 	<title>
 		Cadastrar Produtos
 	</title>

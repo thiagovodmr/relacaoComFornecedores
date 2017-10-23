@@ -20,7 +20,7 @@ $login = $_SESSION['login'];
 
 $sql = "SELECT * FROM usuarios WHERE USER_LOGIN = '$login'";
 $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
-$name = mysqli_query($strcon, "SELECT USER_NOME,USER_EMPRESA,USER_CIDADE,USER_LOGRADOURO,USER_TELEFONE,USER_CNPJ,USER_EMAIL,USER_DESCRICAO FROM usuarios") or die(mysqli_error($strcon));
+$name = mysqli_query($strcon, "SELECT * FROM usuarios") or die(mysqli_error($strcon));
 while($registro = mysqli_fetch_array($resultado)){
   $nome = $registro['USER_NOME'];
   $empresa = $registro['USER_EMPRESA'];
@@ -30,6 +30,14 @@ while($registro = mysqli_fetch_array($resultado)){
   $cnpj = $registro['USER_CNPJ'];
   $email = $registro['USER_EMAIL'];
   $descricao = $registro['USER_DESCRICAO'];
+
+  $google_plus = $registro['USER_GOOGLE_PLUS'];
+  $facebook = $registro['USER_FACEBOOK'];
+  $twitter = $registro['USER_TWITTER'];
+  $linkedln = $registro['USER_LINKEDLN'];
+  $github = $registro['USER_GITHUB'];
+
+
 echo "<div class='container' id='contai'>
 
 <div class='resume'>
@@ -51,27 +59,27 @@ echo "<div class='container' id='contai'>
                 <div class='col-xs-12 social-btns'>
                   
                     <div class='col-xs-3 col-md-1 col-lg-1 social-btn-holder'>
-                      <a href='#' class='btn btn-social btn-block btn-google'>
+                      <a href='".$google_plus."' class='btn btn-social btn-block btn-google' target='_blank'>
                         <i class='fa fa-google'></i> </a>
                     </div>
                   
                     <div class='col-xs-3 col-md-1 col-lg-1 social-btn-holder'>
-                      <a href='#' class='btn btn-social btn-block btn-facebook'>
+                      <a href='".$facebook."' class='btn btn-social btn-block btn-facebook' target='_blank'>
                         <i class='fa fa-facebook'></i> </a>
                     </div>
                   
                     <div class='col-xs-3 col-md-1 col-lg-1 social-btn-holder'>
-                      <a href='#' class='btn btn-social btn-block btn-twitter'>
+                      <a href='".$twitter."' class='btn btn-social btn-block btn-twitter' target='_blank'>
                         <i class='fa fa-twitter'></i> </a>
                     </div>
                   
                     <div class='col-xs-3 col-md-1 col-lg-1 social-btn-holder'>
-                      <a href='#' class='btn btn-social btn-block btn-linkedin'>
+                      <a href='".$linkedln."' class='btn btn-social btn-block btn-linkedin' target='_blank'>
                         <i class='fa fa-linkedin'></i> </a>
                     </div>
                   
                     <div class='col-xs-3 col-md-1 col-lg-1 social-btn-holder'>
-                      <a href='#' class='btn btn-social btn-block btn-github'>
+                      <a href='".$github."' class='btn btn-social btn-block btn-github' target='_blank'>
                         <i class='fa fa-github'></i> </a>
                     </div>
                 </div>
@@ -86,8 +94,8 @@ echo "<div class='container' id='contai'>
           echo "<li class='list-group-item'><b>Cidade: </b>".$cidade."</li>";
           echo "<li class='list-group-item'><b>Logradouro: </b>".$logradouro."</li>";
           echo "<li class='list-group-item'><b>CNPJ: </b>".$cnpj."</li>";
-          echo "<li class='list-group-item'><b>Telefone <i class='fa fa-phone'></b></i> :".$telefone."</li>";
-          echo "<li class='list-group-item'><b>E-mail <i class='fa fa-envelope'></b></i> :".$email."</li>";
+          echo "<li class='list-group-item'><b>Telefone <i class='fa fa-phone'></i> :</b>".$telefone."</li>";
+          echo "<li class='list-group-item'><b>E-mail <i class='fa fa-envelope'></i> :</b>".$email."</li>";
         echo "</ul>
             </div>
           </div>

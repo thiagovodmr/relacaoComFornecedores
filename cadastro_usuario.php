@@ -42,7 +42,12 @@
                 required autofocus  maxlength="20">
                 <input type="password" id="inputPassword" class="form-control" name="senha_da_empresa" placeholder="Senha" 
                 required  maxlength="10">
-
+                <h3>Opcional</h3>
+                <input type="text" id="inputEmail" class="form-control" name="google_plus" pattern="https?://.+" title="Inclua o http://" placeholder="Google Plus">
+                <input type="text" id="inputEmail" class="form-control" name="facebook" pattern="https?://.+" title="Inclua o http://" placeholder="Facebook">
+                <input type="text" id="inputEmail" class="form-control" name="twitter" pattern="https?://.+" title="Inclua o http://" placeholder="Twitter">
+                <input type="text" id="inputEmail" class="form-control" name="linkedln" pattern="https?://.+" title="Inclua o http://" placeholder="Linkedln">
+                <input type="text" id="inputEmail" class="form-control" name="github" pattern="https?://.+" title="Inclua o http://" placeholder="Github">
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Cadastrar</button>
             </form><!-- /form -->
 

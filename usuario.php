@@ -113,14 +113,14 @@
                       <h3><b class='preto'><?= $titulo ?></b></h3> 
                       <p><?= $descricao ?></p>
                       <p>
-                        <a class='btn btn-primary' role='button'>Preço:<?= $preco."00" ?> </a> 
-                        <a href='#linkParaoProduto' class='btn btn-default' role='button'>
-                        Link para o Produto</a>
-                      </p>
-                      <p>
-                        <a href=perfil.php?id=<?= $perfil ?> class='btn btn-default' role='button'>
+                        <a href=perfil.php?id=<?= $perfil ?> class='btn btn-primary' role='button'>
                         Fornecedor:<?= $nome_fornecedor ?> 
                         </a>
+                      </p>
+                      <p>
+                        <a class='btn btn-default' role='button'>Preço:<?= $preco."00" ?> </a> 
+                        <a href='#linkParaoProduto' class='btn btn-default' role='button'>
+                        Link para o Produto</a>
                       </p>
                   </div>
                 </div>
@@ -154,13 +154,13 @@
                       <h3><b class='preto'><?= $titulo ?></b></h3>
                       <p><?= $descricao1 ?></p>
                       <p>
-                        <a class='btn btn-primary' role='button'>Preço:<?= $preco,00 ?> </a> 
-                        <a href='#linkParaoProduto' class='btn btn-default' role='button'>Link para o Produto</a>
-                      </p>
-                      <p>
-                        <a href=perfil.php?id=<?= $perfil ?> class='btn btn-default' role='button'>
+                        <a href=perfil.php?id=<?= $perfil ?> class='btn btn-primary' role='button'>
                         Fornecedor:<?= $nome_fornecedor ?> 
                         </a>
+                      </p>
+                      <p>
+                        <a class='btn btn-default' role='button'>Preço:<?= $preco,00 ?> </a> 
+                        <a href='#linkParaoProduto' class='btn btn-default' role='button'>Link para o Produto</a>
                       </p>
                   </div>
                 </div>
@@ -190,12 +190,13 @@
                         <h3><b class='preto'><?= $titulo ?></b></h3>
                         <p><?= $descricao ?></p>
                         <p>
-                          <a class='btn btn-primary' role='button'>Preço:<?= $preco,00 ?></a> <a href='#linkParaoProduto' class='btn btn-default' role='button'>Link para o Produto</a>
-                        </p>
-                        <p>
-                          <a href=perfil.php?id=<?= $perfil ?> class='btn btn-default' role='button'>
+                          <a href=perfil.php?id=<?= $perfil ?> class='btn btn-primary' role='button'>
                           Fornecedor: <?= $nome_fornecedor ?>
                           </a>
+                        </p>
+                        <p>
+                          <a class='btn btn-default' role='button'>Preço:<?= $preco,00 ?></a> 
+                          <a href='#linkParaoProduto' class='btn btn-default' role='button'>Link para o Produto</a>
                         </p>
                     </div>
                     </div>

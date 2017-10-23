@@ -4,7 +4,7 @@ include 'cabecalho.php';
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/cadastro_produtos.css">
+	<link rel="stylesheet" type="text/css" href="css/cadastro_categoria.css">
 	<title>
 		Cadastrar Categoria
 	</title>
