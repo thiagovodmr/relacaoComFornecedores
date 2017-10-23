@@ -9,7 +9,8 @@
 	    echo 'ERROR: ' . $e->getMessage();
 	}
 
-	$nome = $_POST["nome_da_empresa"];
+	$nome = $_POST["nome_do_usuario"];
+	$nome_empresa = $_POST["nome_da_empresa"];
 	$cidade = $_POST["cidade_da_empresa"];
 	$telefone = $_POST["telefone_da_empresa"];
 	$cnpj = $_POST["cnpj_da_empresa"];
@@ -17,12 +18,14 @@
 	$email = $_POST["email_da_empresa"];
 	$login = $_POST["login_da_empresa"];
 	$senha = $_POST["senha_da_empresa"];
+	$descricao = $_POST["descricao"];
 	$perfil = md5($nome);
 
-	$sql = "INSERT INTO usuarios(USER_NOME,USER_CIDADE,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_EMAIL,USER_LOGIN,USER_SENHA,USER_PERFIL) 
-		VALUES(:nome, :cidade, :telefone, :cnpj, :logradouro, :email, :login, :senha, :perfil)";
+	$sql = "INSERT INTO usuarios(USER_NOME,USER_EMPRESA,USER_CIDADE,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_EMAIL,USER_LOGIN,USER_SENHA,USER_PERFIL,USER_DESCRICAO) 
+		VALUES(:nome, :nome_empresa, :cidade, :telefone, :cnpj, :logradouro, :email, :login, :senha, :perfil,:descricao)";
 	$stmt = $conn->prepare( $sql );
 	$stmt->bindParam( ':nome', $nome );
+	$stmt->bindParam( ':nome_empresa', $nome_empresa);
 	$stmt->bindParam( ':cidade', $cidade );
 	$stmt->bindParam( ':telefone',$telefone );
 	$stmt->bindParam( ':cnpj', $cnpj);
@@ -31,6 +34,7 @@
 	$stmt->bindParam( ':login', $login);
 	$stmt->bindParam( ':senha', $senha);
 	$stmt->bindParam( ':perfil', $perfil);
+	$stmt->bindParam( ':descricao', $descricao);
 
 	$result = $stmt->execute();
 

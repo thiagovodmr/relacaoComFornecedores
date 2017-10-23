@@ -96,11 +96,9 @@
         $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO FROM produtos") or die(mysqli_error($strcon));
         $re = mysqli_fetch_array($name); 
         ?>
-
-
         <?php  
          while($registro = mysqli_fetch_array($resultado)): 
-          
+            $perfil = $registro['PRO_PERFIL'];
             $titulo = $registro['PRO_TITULO'];
             $preco = $registro['PRO_PRECO'];
             $descricao = $registro['PRO_DESCRICAO'];
@@ -115,12 +113,12 @@
                       <h3><b class='preto'><?= $titulo ?></b></h3> 
                       <p><?= $descricao ?></p>
                       <p>
-                        <a class='btn btn-primary' role='button'>Preço:<?= $preco,00 ?> </a> 
+                        <a class='btn btn-primary' role='button'>Preço:<?= $preco."00" ?> </a> 
                         <a href='#linkParaoProduto' class='btn btn-default' role='button'>
                         Link para o Produto</a>
                       </p>
                       <p>
-                        <a href='#linkParaoFornecedor' class='btn btn-default' role='button'>
+                        <a href=perfil.php?id=<?= $perfil ?> class='btn btn-default' role='button'>
                         Fornecedor:<?= $nome_fornecedor ?> 
                         </a>
                       </p>
@@ -134,19 +132,19 @@
 
         $sql = "SELECT * FROM produtos";
         $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
-        $nnome = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO FROM produtos") or die(mysqli_error($strcon));
+        $nnome = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO, PRO_NOME, PRO_PERFIL FROM produtos") or die(mysqli_error($strcon));
 
-        $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO FROM produtos") or die(mysqli_error($strcon));
+        $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO, PRO_NOME, PRO_PERFIL FROM produtos") or die(mysqli_error($strcon));
         $re = mysqli_fetch_array($name);
       
        while($registro = mysqli_fetch_array($resultado)): 
-        
+          $perfil = $registro['PRO_PERFIL'];      
           $titulo = $registro['PRO_TITULO'];
-            $preco = $registro['PRO_PRECO'];
-            $descricao = $registro['PRO_DESCRICAO'];
-            $descricao1 = wordwrap($descricao, 25, "\n", false);
-            $imagem = $registro['PRO_ARQUIVO'];
-            $nome_fornecedor = $registro['PRO_NOME'];
+          $preco = $registro['PRO_PRECO'];
+          $descricao = $registro['PRO_DESCRICAO'];
+          $descricao1 = wordwrap($descricao, 25, "\n", false);
+          $imagem = $registro['PRO_ARQUIVO'];
+          $nome_fornecedor = $registro['PRO_NOME'];
          ?>
 
           <div class='col-sm-8 col-md-4'>
@@ -160,7 +158,7 @@
                         <a href='#linkParaoProduto' class='btn btn-default' role='button'>Link para o Produto</a>
                       </p>
                       <p>
-                        <a href='#linkParaoFornecedor' class='btn btn-default' role='button'>
+                        <a href=perfil.php?id=<?= $perfil ?> class='btn btn-default' role='button'>
                         Fornecedor:<?= $nome_fornecedor ?> 
                         </a>
                       </p>
@@ -173,16 +171,16 @@
       
         $sql = "SELECT * FROM produtos WHERE PRO_CATEGORIA = '$i'";
         $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
-          $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO FROM produtos") or die(mysqli_error($strcon));
+          $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO, PRO_NOME, PRO_PERFIL FROM produtos") or die(mysqli_error($strcon));
           $re = mysqli_fetch_array($name);
        
         while($registro = mysqli_fetch_array($resultado)): 
-          
+            $perfil = $registro['PRO_PERFIL'];
             $titulo = $registro['PRO_TITULO'];
-              $preco = $registro['PRO_PRECO'];
-              $descricao = $registro['PRO_DESCRICAO'];
-              $imagem = $registro['PRO_ARQUIVO'];
-              $nome_fornecedor = $registro['PRO_NOME']; 
+            $preco = $registro['PRO_PRECO'];
+            $descricao = $registro['PRO_DESCRICAO'];
+            $imagem = $registro['PRO_ARQUIVO'];
+            $nome_fornecedor = $registro['PRO_NOME']; 
             ?>
             
               <div class='col-sm-8 col-md-4'>
@@ -195,7 +193,7 @@
                           <a class='btn btn-primary' role='button'>Preço:<?= $preco,00 ?></a> <a href='#linkParaoProduto' class='btn btn-default' role='button'>Link para o Produto</a>
                         </p>
                         <p>
-                          <a href='#linkParaoFornecedor' class='btn btn-default' role='button'>
+                          <a href=perfil.php?id=<?= $perfil ?> class='btn btn-default' role='button'>
                           Fornecedor: <?= $nome_fornecedor ?>
                           </a>
                         </p>
@@ -212,7 +210,6 @@
 <?php  
 mysqli_close($strcon);
 include 'rodape.php';
-
 ?>
 
 </body>

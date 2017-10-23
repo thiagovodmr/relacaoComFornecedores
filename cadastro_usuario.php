@@ -23,14 +23,18 @@
             <form class="form-signin" action="bd/cadastrarUsuario.php" method="POST">
                 <span id="reauth-email" class="reauth-email"></span>
 
-                <input type="text" id="inputEmail" class="form-control" name="nome_da_empresa" placeholder="Nome" 
+                <input type="text" id="inputEmail" class="form-control" name="nome_do_usuario" placeholder="Nome" 
                 required autofocus  maxlength="40">
+                <input type="text" id="inputEmail" class="form-control" name="nome_da_empresa" placeholder="Nome da Empresa" 
+                required autofocus  maxlength="40">
+                <input type="text" id="inputEmail" class="form-control" name="descricao" placeholder="Descrição da Empresa" 
+                required autofocus  maxlength="5000">
                 <input type="text" id="inputEmail" class="form-control" name="cidade_da_empresa" placeholder="Cidade" 
                 required autofocus  maxlength="25">
                 <input type="number" id="inputEmail" class="form-control" name="telefone_da_empresa" placeholder="Telefone" required autofocus  maxlength="15"></p>
                 <input type="text" id="inputEmail" class="form-control" name="cnpj_da_empresa" placeholder="CNPJ" 
                 required autofocus  maxlength="20">
-                <input type="text" id="inputEmail" class="form-control" name="logradouro_da_empresa" placeholder="Endereço" 
+                <input type="text" id="inputEmail" class="form-control" name="logradouro_da_empresa" placeholder="Logradouro" 
                 required autofocus  maxlength="45">
                 <input type="text" id="inputEmail" class="form-control" name="email_da_empresa" placeholder="E-mail" 
                 required autofocus  maxlength="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">

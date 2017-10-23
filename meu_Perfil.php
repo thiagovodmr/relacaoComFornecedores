@@ -16,10 +16,9 @@ $strcon = mysqli_connect("$host","$usuario","$senha","$bd") or die('Erro ao cone
 </head>
 <body>
 <?php
-$id = $_GET['id'];
 $login = $_SESSION['login'];
 
-$sql = "SELECT * FROM usuarios WHERE USER_PERFIL = '$id'";
+$sql = "SELECT * FROM usuarios WHERE USER_LOGIN = '$login'";
 $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
 $name = mysqli_query($strcon, "SELECT USER_NOME,USER_EMPRESA,USER_CIDADE,USER_LOGRADOURO,USER_TELEFONE,USER_CNPJ,USER_EMAIL,USER_DESCRICAO FROM usuarios") or die(mysqli_error($strcon));
 while($registro = mysqli_fetch_array($resultado)){

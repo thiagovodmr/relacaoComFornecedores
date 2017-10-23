@@ -38,8 +38,8 @@
 			$ext = substr($imagem["name"], -4);
 			$dir = "../uploads/".$nome.$ext;
 
-
-			$nome = $_SESSION['nome'];
+			$nnome = $_SESSION['empresa'];
+			$perfill = $_SESSION['perfil'];
 			$login = $_SESSION['login'];
 			$titulo = $_POST["titulo"];
 			$preco = $_POST["preco"];
@@ -47,8 +47,8 @@
 			$image = $dir;
 			$categoria = $_POST["categoria"];
 
-			$sql = "INSERT INTO produtos(PRO_TITULO,PRO_PRECO,PRO_DESCRICAO,PRO_CATEGORIA,PRO_ARQUIVO,PRO_LOGIN,PRO_NOME) 
-				VALUES(:titulo, :preco, :descricao, :categoria, :imagem, :login, :nome)";	
+			$sql = "INSERT INTO produtos(PRO_TITULO,PRO_PRECO,PRO_DESCRICAO,PRO_CATEGORIA,PRO_ARQUIVO,PRO_LOGIN,PRO_NOME,PRO_PERFIL) 
+				VALUES(:titulo, :preco, :descricao, :categoria, :imagem, :login, :nome, :perfil)";	
 			$stmt = $conn->prepare( $sql );
 			$stmt->bindParam( ':titulo', $titulo );
 			$stmt->bindParam( ':preco', $preco );
@@ -56,17 +56,14 @@
 			$stmt->bindParam( ':categoria', $categoria );
 			$stmt->bindParam( ':imagem', $image );
 			$stmt->bindParam( ':login', $login );
-			$stmt->bindParam( ':nome', $nome );
+			$stmt->bindParam( ':nome', $nnome );
+			$stmt->bindParam( ':perfil', $perfill );
 			$result = $stmt->execute();
 
 			if ( ! $result ){
 			    var_dump( $stmt->errorInfo() );
 			    exit;
 			}
-
-
-
-
 
 			// valida a imagem enviada
 			if( $imagem['tmp_name'] )
@@ -123,8 +120,8 @@
 					$('#jcrop').Jcrop({
 						onChange: exibePreview,
 						onSelect: exibePreview,
-						minSize		: [ 300, 200 ],
-						maxSize		: [ 300, 200 ],
+						minSize		: [ 500, 350 ],
+						maxSize		: [ 500, 350 ],
 						allowResize	: false,
 						addClass	: 'custom'
 					});

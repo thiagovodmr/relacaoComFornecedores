@@ -44,9 +44,11 @@ session_start();
           $strcon = mysqli_connect("$host","$usuario","$senha","$bd") or die('Erro ao conectar ao banco!');
           $sql = "SELECT * FROM usuarios WHERE USER_LOGIN = '$llogin' and USER_SENHA = '$ssenha'";
           $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
-          $name = mysqli_query($strcon, "SELECT USER_NOME FROM usuarios WHERE USER_LOGIN = '$llogin' and USER_SENHA = '$ssenha'") or die(mysqli_error($strcon));
+          $name = mysqli_query($strcon, "SELECT USER_EMPRESA,USER_NOME,USER_PERFIL FROM usuarios WHERE USER_LOGIN = '$llogin' and USER_SENHA = '$ssenha'") or die(mysqli_error($strcon));
           $re = mysqli_fetch_array($name);
           $_SESSION['nome'] = $re['USER_NOME'];
+          $_SESSION['empresa'] = $re['USER_EMPRESA'];
+          $_SESSION['perfil'] = $re['USER_PERFIL'];
 
           echo "<ul class='nav navbar-nav'>";
             echo "<li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Produtos <i class='fa fa-chevron-down' aria-hidden='true'></i></a>
@@ -58,9 +60,9 @@ session_start();
          </ul>";
 
           echo "<ul class='nav navbar-nav'>";
-            echo "<li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Olá, ".ucwords($re['USER_NOME'])." <i class='fa fa-user-circle' aria-hidden='true'></i></a>
+            echo "<li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Olá, ".ucwords($re['USER_EMPRESA'])." <i class='fa fa-user-circle' aria-hidden='true'></i></a>
               <ul class='dropdown-menu'>
-               <li><a href='perfil.php'>Meu Perfil <i class='fa fa-user-circle fa-1x' aria-hidden='true'></i></a></li>
+               <li><a href='meu_Perfil.php'>Meu Perfil <i class='fa fa-user-circle fa-1x' aria-hidden='true'></i></a></li>
                <li><a href='logout.php'>Sair <i class='fa fa-sign-out' aria-hidden='true'></i></a></li>
               </ul>
            </li>
