@@ -14,18 +14,7 @@
 		<?php
 
 		session_start();
-		$dbname = "id2846308_projeto1";
-		$usuario="id2846308_pep1";
-		$senha = "@lunoifpe";
-		try {
-		  	$conn = new PDO("mysql:host=localhost;dbname=$dbname", $usuario, $senha);
-		    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		} catch(PDOException $e) {
-		    echo 'ERROR: ' . $e->getMessage();
-		}
-
-
-
+		
 			// memory limit (nem todo server aceita)
 			ini_set("memory_limit","50M");
 			set_time_limit(0);
@@ -37,33 +26,7 @@
 			$nome = sha1(microtime());
 			$ext = substr($imagem["name"], -4);
 			$dir = "../uploads/".$nome.$ext;
-
-			$nnome = $_SESSION['empresa'];
-			$perfill = $_SESSION['perfil'];
-			$login = $_SESSION['login'];
-			$titulo = $_POST["titulo"];
-			$preco = $_POST["preco"];
-			$descricao = $_POST["descricao"];
-			$image = $dir;
-			$categoria = $_POST["categoria"];
-
-			$sql = "INSERT INTO produtos(PRO_TITULO,PRO_PRECO,PRO_DESCRICAO,PRO_CATEGORIA,PRO_ARQUIVO,PRO_LOGIN,PRO_NOME,PRO_PERFIL) 
-				VALUES(:titulo, :preco, :descricao, :categoria, :imagem, :login, :nome, :perfil)";	
-			$stmt = $conn->prepare( $sql );
-			$stmt->bindParam( ':titulo', $titulo );
-			$stmt->bindParam( ':preco', $preco );
-			$stmt->bindParam( ':descricao',$descricao );
-			$stmt->bindParam( ':categoria', $categoria );
-			$stmt->bindParam( ':imagem', $image );
-			$stmt->bindParam( ':login', $login );
-			$stmt->bindParam( ':nome', $nnome );
-			$stmt->bindParam( ':perfil', $perfill );
-			$result = $stmt->execute();
-
-			if ( ! $result ){
-			    var_dump( $stmt->errorInfo() );
-			    exit;
-			}
+			$dirTemp = "tmp_upload/".$nome.$ext;
 
 			// valida a imagem enviada
 			if( $imagem['tmp_name'] )
@@ -74,21 +37,22 @@
 				if( $imagesize !== false )
 				{
 					// move a imagem para o servidor
-					if( move_uploaded_file( $imagem['tmp_name'], $dir ) )
+					if( move_uploaded_file( $imagem['tmp_name'], $dirTemp ) )
 					{
 						include( 'm2brimagem.class.php' );
-						$oImg = new m2brimagem( $dir );
+						
+						$oImg = new m2brimagem( $dirTemp );
 						// valida via m2brimagem
 						if( $oImg->valida() == 'OK' )
 						{
 							// redimensiona (opcional, só pra evitar imagens muito grandes)
-							$oImg->redimensiona( '500',"", '' );
+							$oImg->redimensiona( '510',"", '' );
 							// grava nova imagem
-							$oImg->grava( $dir );
+							$oImg->grava( $dirTemp );
 							// novas dimensões da imagem
-							$imagesize 	= getimagesize( $dir );
-							$img		= '<img src="'.$dir.'" id="jcrop" '.$imagesize[3].' />';
-							$preview	= '<img src="'.$dir.'" id="preview" '.$imagesize[3].' />';
+							$imagesize 	= getimagesize( $dirTemp );
+							$img		= '<img src="'.$dirTemp.'" id="jcrop" '.$imagesize[3].' />';
+							$preview	= '<img src="'.$dirTemp.'" id="preview" '.$imagesize[3].' />';
 							$tem_crop 	= true;	
 						}
 					}
@@ -114,7 +78,8 @@
 				<p><strong>Dimensões</strong> <input type="text" id="h" size="5" disabled /> x <input type="text" id="w" size="5" disabled /></p>
 			</div>
 			<script type="text/javascript">
-				var img = '<?php echo $dir; ?>';
+				var img = '<?php echo $dirTemp; ?>';
+				dir = '<?= $dir  ?>';
 			
 				$(function(){
 					$('#jcrop').Jcrop({
@@ -131,9 +96,16 @@
 							x: $('#x').val(), 
 							y: $('#y').val(), 
 							w: $('#w').val(), 
-							h: $('#h').val()
+							h: $('#h').val(),
+							titulo: '<?= $_POST["titulo"]; ?>',
+							preco: '<?= $_POST["preco"]; ?>',
+							descricao: '<?= $_POST["descricao"]; ?>',
+							destino: dir,
+							categoria: '<?= $_POST["categoria"]; ?>'
+
+
 						}, function(){
-							$('#div-jcrop').html( '<img src="' + img + '?' + Math.random() + '" width="'+$('#w').val()+'" height="'+$('#h').val()+'" />' );
+							$('#div-jcrop').html( '<img src="' + dir + '?' + Math.random() + '" width="'+$('#w').val()+'" height="'+$('#h').val()+'" />' );
 							$('#debug').hide();
 							$('#tit-jcrop').html(
 								'Feito!<br /><a href="../usuario.php"><button>volte para serviços</button</a>');
