@@ -115,7 +115,13 @@ echo "<div class='container' id='contai'>
 </div>
 
 </div>";
-}
+echo "<div class='container' id='contai'>
+
+<div class='resume'>
+    <header class='page-header'>
+    <h1 class='page-title'>Perfil</h1>
+  </header>
+}";
 ?>
 <?php
 include 'rodape.php';
