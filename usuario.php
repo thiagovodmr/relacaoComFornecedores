@@ -106,25 +106,22 @@
             $nome_fornecedor = $registro['PRO_NOME'];
            ?>
            
-            <div class='col-sm-8 col-md-4'>
-                <div class='thumbnail'>
-                  <img src=<?= $imagem ?> height='10' width='50'>  
-                    <div class='caption'>
-                      <h3><b class='preto'><?= $titulo ?></b></h3> 
-                      <p><?= $descricao ?></p>
-                      <p>
-                        <a href=perfil.php?id=<?= $perfil ?> class='btn btn-primary' role='button'>
-                        Fornecedor:<?= $nome_fornecedor ?> 
-                        </a>
-                      </p>
-                      <p>
-                        <a class='btn btn-default' role='button'>Preço:<?= $preco."00" ?> </a> 
-                        <a href='#linkParaoProduto' class='btn btn-default' role='button'>
-                        Link para o Produto</a>
-                      </p>
+          <div class='col-sm-8 col-md-4'>
+              <div class='thumbnail'>
+                <img src=<?= $imagem ?> height='10' width='50'>  
+                  <div class='caption'>
+                    <h3><a href="#linkParaoProduto"><b class='preto'><?= $titulo ?></b></a></h3>
+                    <p>
+                      <a class='btn btn-default' role='button'>Preço:<?= $preco,00 ?></a> 
+                    </p>
+                    <p>
+                      <a href=perfil.php?id=<?= $perfil ?> class='btn btn-primary' role='button'>
+                      Fornecedor: <?= $nome_fornecedor ?>
+                      </a>
+                    </p>
                   </div>
-                </div>
-            </div>
+              </div>
+          </div>
 
         <?php endwhile; 
 
@@ -149,22 +146,20 @@
 
           <div class='col-sm-8 col-md-4'>
               <div class='thumbnail'>
-                <img src=<?= $imagem?> height='10' width='50'>
-                    <div class='caption'>
-                      <h3><b class='preto'><?= $titulo ?></b></h3>
-                      <p><?= $descricao1 ?></p>
-                      <p>
-                        <a href=perfil.php?id=<?= $perfil ?> class='btn btn-primary' role='button'>
-                        Fornecedor:<?= $nome_fornecedor ?> 
-                        </a>
-                      </p>
-                      <p>
-                        <a class='btn btn-default' role='button'>Preço:<?= $preco,00 ?> </a> 
-                        <a href='#linkParaoProduto' class='btn btn-default' role='button'>Link para o Produto</a>
-                      </p>
+                <img src=<?= $imagem ?> height='10' width='50'>  
+                  <div class='caption'>
+                    <h3><a href="#linkParaoProduto"><b class='preto'><?= $titulo ?></b></a></h3>
+                    <p>
+                      <a class='btn btn-default' role='button'>Preço:<?= $preco,00 ?></a> 
+                    </p>
+                    <p>
+                      <a href=perfil.php?id=<?= $perfil ?> class='btn btn-primary' role='button'>
+                      Fornecedor: <?= $nome_fornecedor ?>
+                      </a>
+                    </p>
                   </div>
-                </div>
-                </div>
+              </div>
+          </div>
      <?php endwhile; 
         
      elseif (isset($_GET['i']) || isset($id)): 
@@ -187,20 +182,18 @@
                   <div class='thumbnail'>
                     <img src=<?= $imagem ?> height='10' width='50'>  
                       <div class='caption'>
-                        <h3><b class='preto'><?= $titulo ?></b></h3>
-                        <p><?= $descricao ?></p>
+                        <h3><a href="#linkParaoProduto"><b class='preto'><?= $titulo ?></b></a></h3>
+                        <p>
+                          <a class='btn btn-default' role='button'>Preço:<?= $preco,00 ?></a> 
+                        </p>
                         <p>
                           <a href=perfil.php?id=<?= $perfil ?> class='btn btn-primary' role='button'>
                           Fornecedor: <?= $nome_fornecedor ?>
                           </a>
                         </p>
-                        <p>
-                          <a class='btn btn-default' role='button'>Preço:<?= $preco,00 ?></a> 
-                          <a href='#linkParaoProduto' class='btn btn-default' role='button'>Link para o Produto</a>
-                        </p>
-                    </div>
-                    </div>
-                </div>
+                      </div>
+                  </div>
+              </div>
              
       <?php endwhile;
           endif;  

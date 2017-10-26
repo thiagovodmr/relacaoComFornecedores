@@ -135,8 +135,7 @@
 						}, function(){
 							$('#div-jcrop').html( '<img src="' + img + '?' + Math.random() + '" width="'+$('#w').val()+'" height="'+$('#h').val()+'" />' );
 							$('#debug').hide();
-							$('#tit-jcrop').html(
-								'Feito!<br /><a href="../usuario.php"><button>volte para serviços</button</a>');
+							$('#tit-jcrop').html(window.location = "../usuario.php");
 						});
 						return false;
 					});
