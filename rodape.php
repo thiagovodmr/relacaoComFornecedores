@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/rodape1.css">
+	<link rel="stylesheet" type="text/css" href="css/rodape2.css">
 </head>
 <body>
 <div class="rodape">

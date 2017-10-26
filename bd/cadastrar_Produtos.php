@@ -46,7 +46,7 @@
 						if( $oImg->valida() == 'OK' )
 						{
 							// redimensiona (opcional, só pra evitar imagens muito grandes)
-							$oImg->redimensiona( '500',"350", '' );
+							$oImg->redimensiona( '570',"420", '' );
 							// grava nova imagem
 							$oImg->grava( $dirTemp );
 							// novas dimensões da imagem
@@ -88,7 +88,8 @@
 						minSize		: [ 500, 350 ],
 						maxSize		: [ 500, 350 ],
 						allowResize	: false,
-						addClass	: 'custom'
+						addClass	: 'custom',
+						setSelect: [0,0, 500,350]
 					});
 					$('#btn-crop').click(function(){
 						$.post( 'crop.php', {
