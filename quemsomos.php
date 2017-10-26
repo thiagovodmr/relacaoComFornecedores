@@ -10,16 +10,17 @@
 <body>
 	<div class="row">
 		<div class="jumbotron jumbotron-fluid" >
- 	 	<h2 id="jumbo">Quem somos</h2>
+ 	 		<h2 id="jumbo">Quem somos</h2>
+		</div>
 	</div>
-</div>
-<div class="row"> 
-	<div id="somos">	
-	<h3>
-		A SSexpress foi cria em outubro, 2017 na cidade de Igarassu pelos desenvolvedores: Davi Guaraná, Lucas Henrique, Thiago Vinicius, Edna, Joselma, Thomas, Victor Souza, Mikaelly Carla, Jameson, Caio. E sua principal missão é facilitar a relação entre uma empresa e seu fornecedor e também ajudar os fornecedores a divulgar seus produtos. Atualmente contamos com 10 funcionários e não possuimos patriocinadores.
-	</h3>
+	<div class="row"> 
+		<div id="somos">	
+		<h3>
+			A SSexpress foi cria em outubro, 2017 na cidade de Igarassu pelos desenvolvedores: Davi Guaraná, Lucas Henrique, Thiago Vinicius, Edna, Joselma, Thomas, Victor Souza, Mikaelly Carla, Jameson, Caio. E sua principal missão é facilitar a relação entre uma empresa e seu fornecedor e também ajudar os fornecedores a divulgar seus produtos. Atualmente contamos com 10 funcionários e não possuimos patriocinadores.
+		</h3>
+		</div>
 	</div>
-</div>
+
 <div id="oi">
 </div>
 </body>
