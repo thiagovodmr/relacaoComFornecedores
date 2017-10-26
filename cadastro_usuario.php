@@ -37,7 +37,7 @@
                 <input type="text" id="inputEmail" class="form-control" name="logradouro_da_empresa" placeholder="Logradouro" 
                 required autofocus  maxlength="45">
                 <input type="text" id="inputEmail" class="form-control" name="email_da_empresa" placeholder="E-mail" 
-                required autofocus  maxlength="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                required autofocus  maxlength="90" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                 <input type="text" id="inputEmail" class="form-control" name="login_da_empresa" placeholder="Login" 
                 required autofocus  maxlength="20">
                 <input type="password" id="inputPassword" class="form-control" name="senha_da_empresa" placeholder="Senha" 

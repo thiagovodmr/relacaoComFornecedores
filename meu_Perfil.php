@@ -8,13 +8,7 @@ include 'bd/conexao.php';
   <title>Teste</title>
   <link rel="stylesheet" type="text/css" href="recursos/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="recursos/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/perfil.css">
-  <style type="text/css">
-    #oi{
-      cursor: pointer; 
-      float: right;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="css/meu_Perfil.css">
 </head>
 <body>
 <?php
@@ -54,7 +48,7 @@ echo "<div class='container' id='contai'>
           <div class='col-lg-12'>
             <div class='col-xs-12 col-sm-4'>
               <figure>
-                <img class='img-circle img-responsive' alt='' src='http://placehold.it/300x300'>
+                <img class='img-circle img-responsive' alt='' src='imagens/300x300.png'>
               </figure>
               
               <div class='row'>
@@ -124,7 +118,6 @@ echo "<div class='container' id='contai'>
 </div>
 
 </div>";
-<<<<<<< HEAD
 
 echo "<!-- Modal -->
 <div class='modal fade' id='nomeusuario' tabindex='-1' role='dialog' 
@@ -139,7 +132,7 @@ echo "<!-- Modal -->
                        <span class='sr-only'>Close</span>
                 </button>
                 <h4 class='modal-title' id='myModalLabel'>
-                    Modal title
+                    <b>Editar</b>
                 </h4>
             </div>
             
@@ -150,8 +143,9 @@ echo "<!-- Modal -->
                   <div class='form-group'>
                     <label for='exampleInputPassword1'>Alterar Nome</label>
                       <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' placeholder='Mude seu nome...'/>
+                          id='exampleInputPassword1' name='atual' maxlength='40' placeholder='Mude seu nome...' required autofocus/>
                   </div>
+
                   <button type='submit' class='btn btn-default'>Alterar</button>
                 </form>
                 
@@ -182,7 +176,7 @@ echo "<!-- Modal -->
                        <span class='sr-only'>Close</span>
                 </button>
                 <h4 class='modal-title' id='myModalLabel'>
-                    Modal title
+                    <b>Editar</b>
                 </h4>
             </div>
             
@@ -193,8 +187,9 @@ echo "<!-- Modal -->
                   <div class='form-group'>
                     <label for='exampleInputPassword1'>Alterar nome da empresa</label>
                       <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' placeholder='Mude o nome da empresa...'/>
+                          id='exampleInputPassword1' name='atual' maxlength='100' placeholder='Mude o nome da empresa...' required autofocus/>
                   </div>
+
                   <button type='submit' class='btn btn-default'>Alterar</button>
                 </form>
                 
@@ -224,7 +219,7 @@ echo "<!-- Modal -->
                        <span class='sr-only'>Close</span>
                 </button>
                 <h4 class='modal-title' id='myModalLabel'>
-                    Modal title
+                    <b>Editar</b>
                 </h4>
             </div>
             
@@ -235,8 +230,9 @@ echo "<!-- Modal -->
                   <div class='form-group'>
                     <label for='exampleInputPassword1'>Alterar Cidade</label>
                       <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' placeholder='Mude a sua cidade...'/>
+                          id='exampleInputPassword1' name='atual' maxlength='25' placeholder='Mude a sua cidade...' required autofocus/>
                   </div>
+
                   <button type='submit' class='btn btn-default'>Alterar</button>
                 </form>
                 
@@ -266,7 +262,7 @@ echo "<!-- Modal -->
                        <span class='sr-only'>Close</span>
                 </button>
                 <h4 class='modal-title' id='myModalLabel'>
-                    Modal title
+                    <b>Editar</b>
                 </h4>
             </div>
             
@@ -277,8 +273,9 @@ echo "<!-- Modal -->
                   <div class='form-group'>
                     <label for='exampleInputPassword1'>Alterar Logradouro</label>
                       <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' placeholder='Mude o seu logradouro...'/>
+                          id='exampleInputPassword1' name='atual' maxlength='45' placeholder='Mude o seu logradouro...' required autofocus/>
                   </div>
+
                   <button type='submit' class='btn btn-default'>Alterar</button>
                 </form>
                 
@@ -308,7 +305,7 @@ echo "<!-- Modal -->
                        <span class='sr-only'>Close</span>
                 </button>
                 <h4 class='modal-title' id='myModalLabel'>
-                    Modal title
+                    <b>Editar</b>
                 </h4>
             </div>
             
@@ -319,8 +316,9 @@ echo "<!-- Modal -->
                   <div class='form-group'>
                     <label for='exampleInputPassword1'>Alterar CNPJ</label>
                       <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' placeholder='Mude o seu CNPJ...'/>
+                          id='exampleInputPassword1' name='atual' maxlength='20' placeholder='Mude o seu CNPJ...' required autofocus/>
                   </div>
+
                   <button type='submit' class='btn btn-default'>Alterar</button>
                 </form>
                 
@@ -350,7 +348,7 @@ echo "<!-- Modal -->
                        <span class='sr-only'>Close</span>
                 </button>
                 <h4 class='modal-title' id='myModalLabel'>
-                    Modal title
+                    <b>Editar</b>
                 </h4>
             </div>
             
@@ -361,8 +359,9 @@ echo "<!-- Modal -->
                   <div class='form-group'>
                     <label for='exampleInputPassword1'>Alterar Telefone</label>
                       <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' placeholder='Mude o seu telefone...'/>
+                          id='exampleInputPassword1' name='atual' maxlength='15' placeholder='Mude o seu telefone...' required autofocus/>
                   </div>
+
                   <button type='submit' class='btn btn-default'>Alterar</button>
                 </form>
                 
@@ -392,7 +391,7 @@ echo "<!-- Modal -->
                        <span class='sr-only'>Close</span>
                 </button>
                 <h4 class='modal-title' id='myModalLabel'>
-                    Modal title
+                    <b>Editar</b>
                 </h4>
             </div>
             
@@ -403,8 +402,9 @@ echo "<!-- Modal -->
                   <div class='form-group'>
                     <label for='exampleInputPassword1'>Altere E-mail</label>
                       <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' placeholder='Mude seu E-mail'/>
+                          id='exampleInputPassword1' name='atual' maxlength='90' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$' placeholder='Mude seu E-mail' required autofocus/>
                   </div>
+
                   <button type='submit' class='btn btn-default'>Alterar</button>
                 </form>
                 
@@ -422,15 +422,6 @@ echo "<!-- Modal -->
     </div>
 </div>";
 }
-=======
-echo "<div class='container' id='contai'>
-
-<div class='resume'>
-    <header class='page-header'>
-    <h1 class='page-title'>Perfil</h1>
-  </header>
-}";
->>>>>>> c494ea68e781d0745c624e55fdfc9525a730dd00
 ?>
 <?php
 include 'rodape.php';
