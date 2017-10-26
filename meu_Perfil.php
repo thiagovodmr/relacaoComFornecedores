@@ -132,7 +132,7 @@ echo "<!-- Modal -->
                        <span class='sr-only'>Close</span>
                 </button>
                 <h4 class='modal-title' id='myModalLabel'>
-                    <b>Editar</b>
+                    <b class='branco'>Editar</b>
                 </h4>
             </div>
             
@@ -146,7 +146,7 @@ echo "<!-- Modal -->
                           id='exampleInputPassword1' name='atual' maxlength='40' placeholder='Mude seu nome...' required autofocus/>
                   </div>
 
-                  <button type='submit' class='btn btn-default'>Alterar</button>
+                  <button type='submit' class='btn btn-primary'>Alterar</button>
                 </form>
                 
                 
@@ -154,7 +154,7 @@ echo "<!-- Modal -->
             
             <!-- Modal Footer -->
             <div class='modal-footer'>
-                <button type='button' class='btn btn-default'
+                <button type='button' class='btn btn-primary'
                         data-dismiss='modal'>
                             Close
                 </button>
@@ -176,7 +176,7 @@ echo "<!-- Modal -->
                        <span class='sr-only'>Close</span>
                 </button>
                 <h4 class='modal-title' id='myModalLabel'>
-                    <b>Editar</b>
+                    <b class='branco'>Editar</b>
                 </h4>
             </div>
             
@@ -190,7 +190,7 @@ echo "<!-- Modal -->
                           id='exampleInputPassword1' name='atual' maxlength='100' placeholder='Mude o nome da empresa...' required autofocus/>
                   </div>
 
-                  <button type='submit' class='btn btn-default'>Alterar</button>
+                  <button type='submit' class='btn btn-primary'>Alterar</button>
                 </form>
                 
                 
@@ -198,7 +198,7 @@ echo "<!-- Modal -->
             
             <!-- Modal Footer -->
             <div class='modal-footer'>
-                <button type='button' class='btn btn-default'
+                <button type='button' class='btn btn-primary'
                         data-dismiss='modal'>
                             Close
                 </button>
@@ -219,7 +219,7 @@ echo "<!-- Modal -->
                        <span class='sr-only'>Close</span>
                 </button>
                 <h4 class='modal-title' id='myModalLabel'>
-                    <b>Editar</b>
+                    <b class='branco'>Editar</b>
                 </h4>
             </div>
             
@@ -233,7 +233,7 @@ echo "<!-- Modal -->
                           id='exampleInputPassword1' name='atual' maxlength='25' placeholder='Mude a sua cidade...' required autofocus/>
                   </div>
 
-                  <button type='submit' class='btn btn-default'>Alterar</button>
+                  <button type='submit' class='btn btn-primary'>Alterar</button>
                 </form>
                 
                 
@@ -241,7 +241,7 @@ echo "<!-- Modal -->
             
             <!-- Modal Footer -->
             <div class='modal-footer'>
-                <button type='button' class='btn btn-default'
+                <button type='button' class='btn btn-primary'
                         data-dismiss='modal'>
                             Close
                 </button>
@@ -262,7 +262,7 @@ echo "<!-- Modal -->
                        <span class='sr-only'>Close</span>
                 </button>
                 <h4 class='modal-title' id='myModalLabel'>
-                    <b>Editar</b>
+                    <b class='branco'>Editar</b>
                 </h4>
             </div>
             
@@ -276,7 +276,7 @@ echo "<!-- Modal -->
                           id='exampleInputPassword1' name='atual' maxlength='45' placeholder='Mude o seu logradouro...' required autofocus/>
                   </div>
 
-                  <button type='submit' class='btn btn-default'>Alterar</button>
+                  <button type='submit' class='btn btn-primary'>Alterar</button>
                 </form>
                 
                 
@@ -284,7 +284,7 @@ echo "<!-- Modal -->
             
             <!-- Modal Footer -->
             <div class='modal-footer'>
-                <button type='button' class='btn btn-default'
+                <button type='button' class='btn btn-primary'
                         data-dismiss='modal'>
                             Close
                 </button>
@@ -305,7 +305,7 @@ echo "<!-- Modal -->
                        <span class='sr-only'>Close</span>
                 </button>
                 <h4 class='modal-title' id='myModalLabel'>
-                    <b>Editar</b>
+                    <b class='branco'>Editar</b>
                 </h4>
             </div>
             
@@ -319,7 +319,7 @@ echo "<!-- Modal -->
                           id='exampleInputPassword1' name='atual' maxlength='20' placeholder='Mude o seu CNPJ...' required autofocus/>
                   </div>
 
-                  <button type='submit' class='btn btn-default'>Alterar</button>
+                  <button type='submit' class='btn btn-primary'>Alterar</button>
                 </form>
                 
                 
@@ -327,7 +327,7 @@ echo "<!-- Modal -->
             
             <!-- Modal Footer -->
             <div class='modal-footer'>
-                <button type='button' class='btn btn-default'
+                <button type='button' class='btn btn-primary'
                         data-dismiss='modal'>
                             Close
                 </button>
@@ -348,7 +348,7 @@ echo "<!-- Modal -->
                        <span class='sr-only'>Close</span>
                 </button>
                 <h4 class='modal-title' id='myModalLabel'>
-                    <b>Editar</b>
+                    <b class='branco'>Editar</b>
                 </h4>
             </div>
             
@@ -362,7 +362,7 @@ echo "<!-- Modal -->
                           id='exampleInputPassword1' name='atual' maxlength='15' placeholder='Mude o seu telefone...' required autofocus/>
                   </div>
 
-                  <button type='submit' class='btn btn-default'>Alterar</button>
+                  <button type='submit' class='btn btn-primary'>Alterar</button>
                 </form>
                 
                 
@@ -370,7 +370,7 @@ echo "<!-- Modal -->
             
             <!-- Modal Footer -->
             <div class='modal-footer'>
-                <button type='button' class='btn btn-default'
+                <button type='button' class='btn btn-primary'
                         data-dismiss='modal'>
                             Close
                 </button>
@@ -391,7 +391,7 @@ echo "<!-- Modal -->
                        <span class='sr-only'>Close</span>
                 </button>
                 <h4 class='modal-title' id='myModalLabel'>
-                    <b>Editar</b>
+                    <b class='branco'>Editar</b>
                 </h4>
             </div>
             
@@ -405,7 +405,7 @@ echo "<!-- Modal -->
                           id='exampleInputPassword1' name='atual' maxlength='90' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$' placeholder='Mude seu E-mail' required autofocus/>
                   </div>
 
-                  <button type='submit' class='btn btn-default'>Alterar</button>
+                  <button type='submit' class='btn btn-primary'>Alterar</button>
                 </form>
                 
                 
@@ -413,7 +413,7 @@ echo "<!-- Modal -->
             
             <!-- Modal Footer -->
             <div class='modal-footer'>
-                <button type='button' class='btn btn-default'
+                <button type='button' class='btn btn-primary'
                         data-dismiss='modal'>
                             Close
                 </button>

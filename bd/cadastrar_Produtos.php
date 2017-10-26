@@ -46,7 +46,7 @@
 						if( $oImg->valida() == 'OK' )
 						{
 							// redimensiona (opcional, só pra evitar imagens muito grandes)
-							$oImg->redimensiona( '510',"", '' );
+							$oImg->redimensiona( '500',"350", '' );
 							// grava nova imagem
 							$oImg->grava( $dirTemp );
 							// novas dimensões da imagem

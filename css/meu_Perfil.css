@@ -2,6 +2,12 @@
     cursor: pointer; 
     float: right;
 }
+.branco{
+  color: white;
+}
+.modal-header{
+  background-color: tomato;
+}
 .page-header{
   text-align: center;    
 }
