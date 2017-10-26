@@ -19,7 +19,7 @@
 	
 	<h2>
 		Projeto: Relacionamento com fornecedor
-	</h1>	
+	</h2>	
 	<div id="para">
 		
 	<b>
