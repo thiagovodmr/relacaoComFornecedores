@@ -152,11 +152,6 @@ echo "<!-- Modal -->
                       <input type='text' class='form-control'
                           id='exampleInputPassword1' name='atual' placeholder='Mude seu nome...'/>
                   </div>
-                  <div class='checkbox'>
-                    <label>
-                        <input type='checkbox'/> Check me out
-                    </label>
-                  </div>
                   <button type='submit' class='btn btn-default'>Alterar</button>
                 </form>
                 
@@ -200,11 +195,6 @@ echo "<!-- Modal -->
                       <input type='text' class='form-control'
                           id='exampleInputPassword1' name='atual' placeholder='Mude o nome da empresa...'/>
                   </div>
-                  <div class='checkbox'>
-                    <label>
-                        <input type='checkbox'/> Check me out
-                    </label>
-                  </div>
                   <button type='submit' class='btn btn-default'>Alterar</button>
                 </form>
                 
@@ -246,11 +236,6 @@ echo "<!-- Modal -->
                     <label for='exampleInputPassword1'>Alterar Cidade</label>
                       <input type='text' class='form-control'
                           id='exampleInputPassword1' name='atual' placeholder='Mude a sua cidade...'/>
-                  </div>
-                  <div class='checkbox'>
-                    <label>
-                        <input type='checkbox'/> Check me out
-                    </label>
                   </div>
                   <button type='submit' class='btn btn-default'>Alterar</button>
                 </form>
@@ -294,11 +279,6 @@ echo "<!-- Modal -->
                       <input type='text' class='form-control'
                           id='exampleInputPassword1' name='atual' placeholder='Mude o seu logradouro...'/>
                   </div>
-                  <div class='checkbox'>
-                    <label>
-                        <input type='checkbox'/> Check me out
-                    </label>
-                  </div>
                   <button type='submit' class='btn btn-default'>Alterar</button>
                 </form>
                 
@@ -340,11 +320,6 @@ echo "<!-- Modal -->
                     <label for='exampleInputPassword1'>Alterar CNPJ</label>
                       <input type='text' class='form-control'
                           id='exampleInputPassword1' name='atual' placeholder='Mude o seu CNPJ...'/>
-                  </div>
-                  <div class='checkbox'>
-                    <label>
-                        <input type='checkbox'/> Check me out
-                    </label>
                   </div>
                   <button type='submit' class='btn btn-default'>Alterar</button>
                 </form>
@@ -388,11 +363,6 @@ echo "<!-- Modal -->
                       <input type='text' class='form-control'
                           id='exampleInputPassword1' name='atual' placeholder='Mude o seu telefone...'/>
                   </div>
-                  <div class='checkbox'>
-                    <label>
-                        <input type='checkbox'/> Check me out
-                    </label>
-                  </div>
                   <button type='submit' class='btn btn-default'>Alterar</button>
                 </form>
                 
@@ -434,11 +404,6 @@ echo "<!-- Modal -->
                     <label for='exampleInputPassword1'>Altere E-mail</label>
                       <input type='text' class='form-control'
                           id='exampleInputPassword1' name='atual' placeholder='Mude seu E-mail'/>
-                  </div>
-                  <div class='checkbox'>
-                    <label>
-                        <input type='checkbox'/> Check me out
-                    </label>
                   </div>
                   <button type='submit' class='btn btn-default'>Alterar</button>
                 </form>
