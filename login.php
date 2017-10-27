@@ -11,9 +11,9 @@ include 'cabecalho.php';
 <body>
     <?php
     // session_start();
-        if($_SESSION['logado']){
-            header('location: usuario.php');
-        }
+    if($_SESSION['logado']==True){
+        echo "<script> window.location='usuario.php'</script>'";
+    }
     ?>
 <!--
     you can substitue the span of reauth email for a input with the email and

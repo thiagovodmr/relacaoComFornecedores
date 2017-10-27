@@ -25,7 +25,7 @@
 <head>
   <title>Produtos</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="css/usuario.css">
+  <link rel="stylesheet" type="text/css" href="css/usuario1.css">
 </head>
 <body>
 
@@ -68,14 +68,14 @@
                 <a href='bd/excluir_Categoria.php?id=<?= $id ?>'>
                   <i class='fa fa-window-close-o fa-2x' aria-hidden='true' id='icone'></i>
                 </a>
-                <a href="usuario.php?i=<?=$id?>" class='list-group-item justify-content-between'><?= strtoupper($nome)?><span class="badge badge-default badge-pill"><?= $tamanho?></span></a>
+                <a href="usuario.php?i=<?=$id?>" class='list-group-item justify-content-between'><?= strtoupper($nome)?><span class="badge badge-success badge-pill" style="background-color: green;"><?= $tamanho?></span></a>
             
         <?php else: ?>
-               <a href="usuario.php?i=<?=$id?>" class='list-group-item justify-content-between'><?= strtoupper($nome)?><span class="badge badge-default badge-pill"><?= $tamanho?></span></a>
+               <a href="usuario.php?i=<?=$id?>" class='list-group-item justify-content-between'><?= strtoupper($nome)?><span class="badge badge-success badge-pill" style="background-color: green;"><?= $tamanho?></span></a>
         <?php endif ?>
 
       <?php else: ?>
-          <a href="usuario.php?i=<?=$id?>" class='list-group-item justify-content-between'><?= strtoupper($nome)?><span class="badge badge-default badge-pill"><?= $tamanho?></span></a>
+          <a href="usuario.php?i=<?=$id?>" class='list-group-item justify-content-between'><?= strtoupper($nome)?><span class="badge badge-success badge-pill" style="background-color: green;"><?= $tamanho?></span></a>
 
     <?php 
         endif; 
@@ -112,11 +112,9 @@
                   <div class='caption'>
                     <h3><a href="#linkParaoProduto"><b class='preto'><?= $titulo ?></b></a></h3>
                     <p>
-                      <a class='btn btn-default' role='button'>Preço:<?= $preco,00 ?></a> 
-                    </p>
-                    <p>
-                      <a href=perfil.php?id=<?= $perfil ?> class='btn btn-primary' role='button'>
-                      Fornecedor: <?= $nome_fornecedor ?>
+                      <a class='btn btn-info' role='button'>Preço: <?= $preco.",00" ?></a> 
+                      <a href=perfil.php?id=<?= $perfil ?> class='btn btn-warning' role='button'>
+                      Fornecedor: <?= ucwords($nome_fornecedor) ?>
                       </a>
                     </p>
                   </div>
@@ -150,11 +148,9 @@
                   <div class='caption'>
                     <h3><a href="#linkParaoProduto"><b class='preto'><?= $titulo ?></b></a></h3>
                     <p>
-                      <a class='btn btn-default' role='button'>Preço:<?= $preco,00 ?></a> 
-                    </p>
-                    <p>
-                      <a href=perfil.php?id=<?= $perfil ?> class='btn btn-primary' role='button'>
-                      Fornecedor: <?= $nome_fornecedor ?>
+                      <a class='btn btn-info' role='button'>Preço: <?= $preco.",00" ?></a> 
+                      <a href=perfil.php?id=<?= $perfil ?> class='btn btn-warning' role='button'>
+                      Fornecedor: <?= ucwords($nome_fornecedor) ?>
                       </a>
                     </p>
                   </div>
@@ -184,11 +180,9 @@
                       <div class='caption'>
                         <h3><a href="#linkParaoProduto"><b class='preto'><?= $titulo ?></b></a></h3>
                         <p>
-                          <a class='btn btn-default' role='button'>Preço:<?= $preco,00 ?></a> 
-                        </p>
-                        <p>
-                          <a href=perfil.php?id=<?= $perfil ?> class='btn btn-primary' role='button'>
-                          Fornecedor: <?= $nome_fornecedor ?>
+                          <a class='btn btn-info' role='button'>Preço: <?= $preco.",00" ?></a> 
+                          <a href=perfil.php?id=<?= $perfil ?> class='btn btn-warning' role='button'>
+                          Fornecedor: <?= ucwords($nome_fornecedor) ?>
                           </a>
                         </p>
                       </div>

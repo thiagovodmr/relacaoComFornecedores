@@ -48,6 +48,9 @@
 .thumbnail img{
 	width: 100%;
 }
+.thumbnail{
+	background-color: #C2EBDD;
+}
 .caption{
 	width: 100%;
 }

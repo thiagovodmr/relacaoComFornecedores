@@ -2,11 +2,12 @@
 	width: 45%;
 }
 #altura{
-	height: 100px;
+	height: 100%;
 }
 #jumbo{
 	font-size: 40px;
 }
-#oi{
-	margin-top: 20%;
+.rodape{
+	position: absolute;
+	bottom: 0;
 }

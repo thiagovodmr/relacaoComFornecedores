@@ -104,9 +104,13 @@ echo "<div class='container' id='contai'>
           </div>
         </div>
       </div>
-      <div class='bs-callout bs-callout-danger'>
-        <h4>Descrição</h4>
+      <div class='bs-callout bs-callout-danger'>";
+
+      echo "<div><i class='fa fa-pencil-square-o fa-2x' aria-hidden='true' data-toggle='modal' data-target='#descricao' id='oi'></i></div>";
+      
+        echo "<h4>Descrição</h4>
         <p>";
+        echo "$descricao";
          echo "$descricao";
         echo "</p>
       </div>
@@ -143,7 +147,7 @@ echo "<!-- Modal -->
                   <div class='form-group'>
                     <label for='exampleInputPassword1'>Alterar Nome</label>
                       <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' maxlength='40' placeholder='Mude seu nome...' required autofocus/>
+                          id='exampleInputPassword1' name='atual' maxlength='40' required autofocus value='".ucwords($nome)."'/>
                   </div>
 
                   <button type='submit' class='btn btn-primary'>Alterar</button>
@@ -187,7 +191,7 @@ echo "<!-- Modal -->
                   <div class='form-group'>
                     <label for='exampleInputPassword1'>Alterar nome da empresa</label>
                       <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' maxlength='100' placeholder='Mude o nome da empresa...' required autofocus/>
+                          id='exampleInputPassword1' name='atual' maxlength='100' value='".$empresa."' required autofocus/>
                   </div>
 
                   <button type='submit' class='btn btn-primary'>Alterar</button>
@@ -230,7 +234,7 @@ echo "<!-- Modal -->
                   <div class='form-group'>
                     <label for='exampleInputPassword1'>Alterar Cidade</label>
                       <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' maxlength='25' placeholder='Mude a sua cidade...' required autofocus/>
+                          id='exampleInputPassword1' name='atual' maxlength='25' value='".$empresa."' required autofocus/>
                   </div>
 
                   <button type='submit' class='btn btn-primary'>Alterar</button>
@@ -273,7 +277,7 @@ echo "<!-- Modal -->
                   <div class='form-group'>
                     <label for='exampleInputPassword1'>Alterar Logradouro</label>
                       <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' maxlength='45' placeholder='Mude o seu logradouro...' required autofocus/>
+                          id='exampleInputPassword1' name='atual' maxlength='45' value='".$logradouro."' required autofocus/>
                   </div>
 
                   <button type='submit' class='btn btn-primary'>Alterar</button>
@@ -316,7 +320,7 @@ echo "<!-- Modal -->
                   <div class='form-group'>
                     <label for='exampleInputPassword1'>Alterar CNPJ</label>
                       <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' maxlength='20' placeholder='Mude o seu CNPJ...' required autofocus/>
+                          id='exampleInputPassword1' name='atual' maxlength='20' value='".$cnpj."' required autofocus/>
                   </div>
 
                   <button type='submit' class='btn btn-primary'>Alterar</button>
@@ -359,7 +363,7 @@ echo "<!-- Modal -->
                   <div class='form-group'>
                     <label for='exampleInputPassword1'>Alterar Telefone</label>
                       <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' maxlength='15' placeholder='Mude o seu telefone...' required autofocus/>
+                          id='exampleInputPassword1' name='atual' maxlength='15' value='".$telefone."' required autofocus/>
                   </div>
 
                   <button type='submit' class='btn btn-primary'>Alterar</button>
@@ -402,7 +406,50 @@ echo "<!-- Modal -->
                   <div class='form-group'>
                     <label for='exampleInputPassword1'>Altere E-mail</label>
                       <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' maxlength='90' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$' placeholder='Mude seu E-mail' required autofocus/>
+                          id='exampleInputPassword1' name='atual' maxlength='90' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$' value='".$email."' required autofocus/>
+                  </div>
+
+                  <button type='submit' class='btn btn-primary'>Alterar</button>
+                </form>
+                
+                
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class='modal-footer'>
+                <button type='button' class='btn btn-primary'
+                        data-dismiss='modal'>
+                            Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>";
+echo "<!-- Modal -->
+<div class='modal fade' id='descricao' tabindex='-1' role='dialog' 
+     aria-labelledby='myModalLabel' aria-hidden='true'>
+    <div class='modal-dialog'>
+        <div class='modal-content'>
+            <!-- Modal Header -->
+            <div class='modal-header'>
+                <button type='button' class='close' 
+                   data-dismiss='modal'>
+                       <span aria-hidden='true'>&times;</span>
+                       <span class='sr-only'>Close</span>
+                </button>
+                <h4 class='modal-title' id='myModalLabel'>
+                    <b class='branco'>Editar</b>
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class='modal-body'>
+                
+                <form role='form' action='bd/update_usuarios/update_descricao.php' method='POST'>
+                  <div class='form-group'>
+                    <label for='exampleInputPassword1'>Altere E-mail</label>
+                      <input type='text' class='form-control'
+                          id='exampleInputPassword1' name='atual' maxlength='90' value='".$descricao."' required autofocus/>
                   </div>
 
                   <button type='submit' class='btn btn-primary'>Alterar</button>

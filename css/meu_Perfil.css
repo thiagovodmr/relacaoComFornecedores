@@ -2,9 +2,13 @@
     cursor: pointer; 
     float: right;
 }
+#oi:hover{
+  color: tomato;
+}
 .branco{
   color: white;
 }
+
 .modal-header{
   background-color: tomato;
 }
