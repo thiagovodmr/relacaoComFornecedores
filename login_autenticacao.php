@@ -1,11 +1,15 @@
 <?php
 session_start();
-$host = "localhost";
-$banco = "id2846308_projeto1";
-$user = "id2846308_pep1";
-$pass = "@lunoifpe";
-$conexao = mysqli_connect($host, $user, $pass) or die(mysqli_error());
-mysqli_select_db($conexao, $banco) or die(mysqli_error());
+	$dbname = "id2846308_projeto1";
+	$usuario = "id2846308_pep1";
+  	$senha = "@lunoifpe";
+  
+	try {
+	  	$conn = new PDO("mysql:host=localhost;dbname=$dbname", $usuario, $senha);
+	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	} catch(PDOException $e) {
+	    echo 'ERROR: ' . $e->getMessage();
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,8 +30,16 @@ mysqli_select_db($conexao, $banco) or die(mysqli_error());
 <?php  
 $login = $_POST['login'];
 $senha = $_POST['senha'];
-$sql = mysqli_query($conexao,"SELECT * FROM usuarios WHERE USER_LOGIN = '$login' and USER_SENHA = '$senha'") or die(mysql_error('Login ou senha errado'));
-$row = mysqli_num_rows($sql);
+
+$sql ="SELECT * FROM usuarios WHERE USER_LOGIN = :login and USER_SENHA = :senha";
+$stmt = $conn->prepare($sql);
+
+$stmt->bindParam(":login",$login);
+$stmt->bindParam(":senha",$senha);
+
+$result = $stmt->execute();
+
+$row = $stmt->rowCount();
 if($row > 0){
 	$_SESSION['login'] = $login;
 	$_SESSION['senha'] = $senha;
