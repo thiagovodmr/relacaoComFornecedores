@@ -93,11 +93,17 @@
         $pesquisa = $_POST["pesquisa"];
         $sql = "SELECT * FROM produtos WHERE PRO_TITULO  LIKE '%$pesquisa%' Or PRO_DESCRICAO LIKE '%$pesquisa%'";
         $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
-        $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO FROM produtos") or die(mysqli_error($strcon));
-        $re = mysqli_fetch_array($name); 
+        // $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO FROM produtos") or die(mysqli_error($strcon));
+        // $re = mysqli_fetch_array($name);
+        $r = mysqli_num_rows($resultado); 
         ?>
-        <?php  
-         while($registro = mysqli_fetch_array($resultado)): 
+        
+        <?php if ($r==0): ?>
+           <div class='col-md-8' style='text-align:center;'><h3>Nenhum produto encontrado</h3></div> 
+        
+        <?php else: ?>
+          <?php  
+          while($registro = mysqli_fetch_array($resultado)): 
             $perfil = $registro['PRO_PERFIL'];
             $titulo = $registro['PRO_TITULO'];
             $preco = $registro['PRO_PRECO'];
@@ -121,9 +127,12 @@
               </div>
           </div>
 
-        <?php endwhile; 
+        <?php endwhile;?>
 
-     elseif($_GET['i']==[]): 
+        <?php endif ?>
+         
+        <?php
+        elseif($_GET['i']==[]): 
 
         $sql = "SELECT * FROM produtos";
         $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
@@ -162,16 +171,21 @@
       
         $sql = "SELECT * FROM produtos WHERE PRO_CATEGORIA = '$i'";
         $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
-          $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO, PRO_NOME, PRO_PERFIL FROM produtos") or die(mysqli_error($strcon));
-          $re = mysqli_fetch_array($name);
-       
-        while($registro = mysqli_fetch_array($resultado)): 
-            $perfil = $registro['PRO_PERFIL'];
-            $titulo = $registro['PRO_TITULO'];
-            $preco = $registro['PRO_PRECO'];
-            $descricao = $registro['PRO_DESCRICAO'];
-            $imagem = $registro['PRO_ARQUIVO'];
-            $nome_fornecedor = $registro['PRO_NOME']; 
+          // $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO, PRO_NOME, PRO_PERFIL FROM produtos") or die(mysqli_error($strcon));
+          // $re = mysqli_fetch_array($name);
+        $r = mysqli_num_rows($resultado);
+        ?>
+        <?php if ($r==0): ?>
+            <div class='col-md-8' style='text-align:center;'><h3>Nenhum produto encontrado</h3></div> 
+        <?php else: ?>
+            <?php 
+            while($registro = mysqli_fetch_array($resultado)): 
+              $perfil = $registro['PRO_PERFIL'];
+              $titulo = $registro['PRO_TITULO'];
+              $preco = $registro['PRO_PRECO'];
+              $descricao = $registro['PRO_DESCRICAO'];
+              $imagem = $registro['PRO_ARQUIVO'];
+              $nome_fornecedor = $registro['PRO_NOME']; 
             ?>
             
               <div class='col-sm-8 col-md-4'>
@@ -189,9 +203,12 @@
                   </div>
               </div>
              
-      <?php endwhile;
-          endif;  
+      <?php 
+        endwhile;
+        endif 
       ?>
+
+      <?php  endif;  ?>
   </div>
 </div>
 
