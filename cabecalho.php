@@ -11,7 +11,7 @@ session_start();
 <head>
   <title></title>
 
-  <link rel="shortcut icon" href="imagens/ss.ico" type="image/x-icon" />  
+  <link rel="shortcut icon" href="imagens/ss-logo-s.ico" type="image/x-icon" />  
   <link rel="stylesheet" type="text/css" href="recursos/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="recursos/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/cabecalho.css">
@@ -65,6 +65,7 @@ session_start();
             echo "<li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Olá, ".ucwords($re['USER_EMPRESA'])." <i class='fa fa-user-circle' aria-hidden='true'></i></a>
               <ul class='dropdown-menu'>
                <li><a href='meu_Perfil.php'>Meu Perfil <i class='fa fa-user-circle fa-1x' aria-hidden='true'></i></a></li>
+               <li><a href='mensagens.php'>Mensagens <i class='fa fa-comments fa-1x' aria-hidden='true'></i></a></li>
                <li><a href='logout.php'>Sair <i class='fa fa-sign-out' aria-hidden='true'></i></a></li>
               </ul>
            </li>

@@ -102,7 +102,10 @@ include 'cabecalho.php';
 </div>
 <br>
 
+
 <?php
+  include 'google-maps.html';
+  echo "<br>";
   include 'rodape.php';
 ?>
 </body>
