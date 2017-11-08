@@ -10,6 +10,8 @@ session_start();
 <html>
 <head>
   <title></title>
+
+  <link rel="shortcut icon" href="imagens/ss.ico" type="image/x-icon" />  
   <link rel="stylesheet" type="text/css" href="recursos/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="recursos/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/cabecalho.css">
