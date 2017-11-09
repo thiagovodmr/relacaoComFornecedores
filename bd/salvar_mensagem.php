@@ -9,17 +9,20 @@
 	} catch(PDOException $e) {
 	    echo 'ERROR: ' . $e->getMessage();
 	}
+
+	$data = date("Y-m-d H:i:s");
 	$remetente = $_SESSION["perfil"];
 	$mensagem = $_POST["conteudo"];
 	$destinatario = $_SESSION['dest'];
 
-	$sql = "INSERT INTO mensagens(MEN_REMETENTE, MEN_DESTINATARIO, MEN_CONTEUDO) 
-		VALUES(:remetente, :destinatario, :mensagem)";	
+	$sql = "INSERT INTO mensagens(MEN_REMETENTE, MEN_DESTINATARIO, MEN_CONTEUDO, MEN_HORARIO) 
+		VALUES(:remetente, :destinatario, :mensagem, :horario)";	
 	$stmt = $conn->prepare( $sql );
 	$stmt->bindParam( ':remetente', $remetente );
 	$stmt->bindParam( ':destinatario',$destinatario  );
 	$stmt->bindParam( ':mensagem',$mensagem  );
-	
+	$stmt->bindParam( ':horario',$data  );
+
 	$result = $stmt->execute();
 
 	if ( ! $result ){
