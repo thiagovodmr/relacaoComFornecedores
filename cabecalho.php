@@ -9,7 +9,6 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
 
   <link rel="shortcut icon" href="imagens/ss-logo-s.ico" type="image/x-icon" />  
   <link rel="stylesheet" type="text/css" href="recursos/bootstrap/css/bootstrap.min.css">

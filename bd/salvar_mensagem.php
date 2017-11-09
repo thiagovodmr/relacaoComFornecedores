@@ -9,19 +9,16 @@
 	} catch(PDOException $e) {
 	    echo 'ERROR: ' . $e->getMessage();
 	}
-
-	$empresa = $_SESSION["empresa"];
+	$remetente = $_SESSION["perfil"];
 	$mensagem = $_POST["conteudo"];
-	$destinatario = $_POST["destinatario"];
+	$destinatario = $_SESSION['dest'];
 
 	$sql = "INSERT INTO mensagens(MEN_REMETENTE, MEN_DESTINATARIO, MEN_CONTEUDO) 
 		VALUES(:remetente, :destinatario, :mensagem)";	
 	$stmt = $conn->prepare( $sql );
-	$stmt->bindParam( ':remetente', $empresa );
+	$stmt->bindParam( ':remetente', $remetente );
 	$stmt->bindParam( ':destinatario',$destinatario  );
 	$stmt->bindParam( ':mensagem',$mensagem  );
-	
-
 	
 	$result = $stmt->execute();
 
@@ -29,7 +26,7 @@
 	    var_dump( $stmt->errorInfo() );
 	    exit;
 	}
-	header("location: ../mensagens.php");
+	header("location: ../mensagens.php?id=$destinatario");
 ?>
 
 

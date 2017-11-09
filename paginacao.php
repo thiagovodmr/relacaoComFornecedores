@@ -1,17 +1,17 @@
 <?php 
  
-    mysql_connect("localhost","root",""); 
-    mysql_select_db("banco_teste");
+    mysqli_connect("localhost","root",""); 
+    mysqli_select_db("banco_teste");
      
     //verifica a página atual caso seja informada na URL, senão atribui como 1ª página 
     $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1; 
  
     //seleciona todos os itens da tabela 
     $cmd = "select * from produtos"; 
-    $produtos = mysql_query($cmd); 
+    $produtos = mysqli_query($cmd); 
  
     //conta o total de itens 
-    $total = mysql_num_rows($produtos); 
+    $total = mysqli_num_rows($produtos); 
  
     //seta a quantidade de itens por página, neste caso, 12 itens 
     $registros = 12; 
@@ -24,11 +24,11 @@
  
     //seleciona os itens por página 
     $cmd = "select * from produtos limit $inicio,$registros"; 
-    $produtos = mysql_query($cmd); 
-    $total = mysql_num_rows($produtos); 
+    $produtos = mysqli_query($cmd); 
+    $total = mysqli_num_rows($produtos); 
      
     //exibe os produtos selecionados 
-    while ($produto = mysql_fetch_array($produtos)) { 
+    while ($produto = mysqli_fetch_array($produtos)) { 
         echo $produto['id']." - "; 
         echo $produto['nome']." - "; 
         echo $produto['descricao']." - "; 
