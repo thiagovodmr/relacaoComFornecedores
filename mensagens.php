@@ -6,23 +6,61 @@ include 'bd/conexao.php';
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title>
-	<script src="recursos/jquery/jquery-3.2.1.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="recursos/bootstrap/css/bootstrap.min.css">
-	<script src="recursos/bootstrap/js/bootstrap.min.js"></script>
+	<title>Mensagens</title>
 	<style>
+.container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.container img {
+    float: left;
+    max-width: 60px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+}
+
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+.time-left {
+    float: left;
+    color: #999;
+}
 		#menssage{
 			font-size: 20px;
 			overflow: auto;
 			margin-left: 10px;
-			height: 200px;
+			height: 500px;
 		}
 		.list-group-item{
 			border: 1px solid black;
 		}
 		form{
 			border: 3px solid black;
-			height: 500px;
+			height: 800px;
 			font-size: 2em;
 		}
 		.container-fluid{
@@ -30,9 +68,6 @@ include 'bd/conexao.php';
 		}
 		fieldset{
 			margin-top: 50px;
-		}
-		textarea.form-control{
-			height: 200px;
 		}
 		input[type=submit]{
 			background-color: #90EE90;
@@ -42,7 +77,12 @@ include 'bd/conexao.php';
 		input[type=text]{
 			width: 100%;
 		}
-
+		#recebido{
+			margin-left: 800px;
+		}
+		#enviados{
+			background-color: green;
+		}
 	</style>
 </head>
 </head>
@@ -75,7 +115,7 @@ include 'bd/conexao.php';
 			</ul>
 		</div>
 
-		<div class="col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1">	
+		<div class="col-md-8 col-md-offset-1 col-sm-6 col-sm-offset-1">	
 			<form action="bd/salvar_mensagem.php" method="POST">
 				
 				<fieldset>
@@ -101,9 +141,18 @@ include 'bd/conexao.php';
 						if (isset($_GET['id']) || isset($id)) {
 							$sql2 = "SELECT * FROM mensagens WHERE MEN_REMETENTE = '$id' and MEN_DESTINATARIO = '$perfilId'";
 							$resultado2 = mysqli_query($strcon, $sql2) or die('Erro ao tentar cadastrar registro');
+							$sql3 = "SELECT * FROM mensagens WHERE MEN_REMETENTE = '$perfilId' and MEN_DESTINATARIO = '$id'";
+							$resultado3 = mysqli_query($strcon, $sql3) or die('Erro ao tentar cadastrar registro');
+
 							while($registro2 = mysqli_fetch_array($resultado2)){
 			  					$mensagemParaMim = $registro2['MEN_CONTEUDO'];
-			  					echo $mensagemParaMim."<p>";
+			  					$datetime = $registro2['MEN_HORARIO'];
+			  					$explode = explode(" ", $datetime);
+			  					$horario = date('H:i:s', strtotime($explode[1]));
+			  					echo "<div class='container darker'>
+							  	<p>$mensagemParaMim</p>
+							 	<span class='time-right'>$horario</span>
+								</div>";
 			  				}
 						}
 						?>
