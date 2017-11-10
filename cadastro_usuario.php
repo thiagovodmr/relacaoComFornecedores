@@ -22,32 +22,62 @@
 
             <form class="form-signin" action="bd/cadastrarUsuario.php" method="POST">
                 <span id="reauth-email" class="reauth-email"></span>
-
-                <input type="text" id="inputEmail" class="form-control" name="nome_do_usuario" placeholder="Nome" 
+                
+                <label>Nome: </label>
+                <input type="text" id="inputEmail" class="form-control" name="nome_do_usuario" 
                 required autofocus  maxlength="40">
-                <input type="text" id="inputEmail" class="form-control" name="nome_da_empresa" placeholder="Nome da Empresa" 
+                
+                <label>Nome da Empresa:</label>
+                <input type="text" id="inputEmail" class="form-control" name="nome_da_empresa" 
                 required autofocus  maxlength="40">
-                <input type="text" id="inputEmail" class="form-control" name="descricao" placeholder="Descrição da Empresa" 
+                
+                <label>Descrição da Empresa</label>
+                <input type="text" id="inputEmail" class="form-control" name="descricao" 
                 required autofocus  maxlength="5000">
-                <input type="text" id="inputEmail" class="form-control" name="cidade_da_empresa" placeholder="Cidade" 
+                
+                <label>Cidade:</label>
+                <input type="text" id="inputEmail" class="form-control" name="cidade_da_empresa"  
                 required autofocus  maxlength="25">
-                <input type="number" id="inputEmail" class="form-control" name="telefone_da_empresa" placeholder="Telefone" required autofocus  maxlength="15"></p>
-                <input type="text" id="inputEmail" class="form-control" name="cnpj_da_empresa" placeholder="CNPJ" 
+                
+                <label>Telefone:</label>
+                <input type="number" id="inputEmail" class="form-control" name="telefone_da_empresa"  required autofocus  maxlength="15"></p>
+                
+                <label>CNPJ:</label>
+                <input type="text" id="inputEmail" class="form-control" name="cnpj_da_empresa"  
                 required autofocus  maxlength="20">
-                <input type="text" id="inputEmail" class="form-control" name="logradouro_da_empresa" placeholder="Logradouro" 
+                
+                <label>Logradouro:</label>
+                <input type="text" id="inputEmail" class="form-control" name="logradouro_da_empresa" 
                 required autofocus  maxlength="45">
-                <input type="text" id="inputEmail" class="form-control" name="email_da_empresa" placeholder="E-mail" 
+                
+                <label>E-mail:</label>
+                <input type="text" id="inputEmail" class="form-control" name="email_da_empresa" placeholder="ex: you@email.com" 
                 required autofocus  maxlength="90" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-                <input type="text" id="inputEmail" class="form-control" name="login_da_empresa" placeholder="Login" 
+                
+                <label>Login:</label>
+                <input type="text" id="inputEmail" class="form-control" name="login_da_empresa" placeholder="No máximo 20 caracteres" 
                 required autofocus  maxlength="20">
-                <input type="password" id="inputPassword" class="form-control" name="senha_da_empresa" placeholder="Senha" 
+                
+                <label>Senha:</label>
+                <input type="password" id="inputPassword" class="form-control" name="senha_da_empresa" placeholder="No máximo 10 caracteres"
                 required  maxlength="10">
                 <h3>Opcional</h3>
-                <input type="text" id="inputEmail" class="form-control" name="google_plus" pattern="https?://.+" title="Inclua o http://" placeholder="Google Plus">
-                <input type="text" id="inputEmail" class="form-control" name="facebook" pattern="https?://.+" title="Inclua o http://" placeholder="Facebook">
-                <input type="text" id="inputEmail" class="form-control" name="twitter" pattern="https?://.+" title="Inclua o http://" placeholder="Twitter">
-                <input type="text" id="inputEmail" class="form-control" name="linkedln" pattern="https?://.+" title="Inclua o http://" placeholder="Linkedln">
-                <input type="text" id="inputEmail" class="form-control" name="github" pattern="https?://.+" title="Inclua o http://" placeholder="Github">
+                
+                <label>Google plus:</label>
+                <input type="text" id="inputEmail" class="form-control" name="google_plus" pattern="https?://.+" title="Inclua o http://" >
+                
+                <label>Facebook:</label>
+                <input type="text" id="inputEmail" class="form-control" name="facebook" pattern="https?://.+" title="Inclua o http://" >
+                
+                <label>Twitter:</label>
+                <input type="text" id="inputEmail" class="form-control" name="twitter" pattern="https?://.+" title="Inclua o http://" >
+                
+                <label>Linkdln:</label>
+                <input type="text" id="inputEmail" class="form-control" name="linkedln" pattern="https?://.+" title="Inclua o http://" >
+                
+                <label>Github:</label>
+                <input type="text" id="inputEmail" class="form-control" name="github" pattern="https?://.+" title="Inclua o http://">
+                
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Cadastrar</button>
             </form><!-- /form -->
 

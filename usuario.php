@@ -59,9 +59,9 @@
           $nome = $registro['CAT_NOME'];
             $id = $registro['CAT_ID'];
             $nnn = mysqli_query($strcon, "SELECT PRO_CATEGORIA FROM produtos WHERE PRO_CATEGORIA = '$id'") or die(mysqli_error($strcon));
-            $resul = mysqli_fetch_array($nnn);
-            $tamanho = sizeof($resul['PRO_CATEGORIA']);
-            
+            // $resul = mysqli_fetch_array($nnn);
+            // $tamanho = sizeof($resul);
+            $tamanho = mysqli_num_rows($nnn);
             if ($_SESSION['logado']): 
         
               if ($ssenha == "pep1" && $llogin == "admin"): ?>
