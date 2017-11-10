@@ -136,12 +136,20 @@
 
         $sql = "SELECT * FROM produtos";
         $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
-        $nnome = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO, PRO_NOME, PRO_PERFIL FROM produtos") or die(mysqli_error($strcon));
+        
+        $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1; 
+        $total = mysqli_num_rows($resultado);
+        $registros = 12;
+        $numPaginas = ceil($total/$registros);
+        $inicio = ($registros*$pagina)-$registros;
 
-        $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO, PRO_NOME, PRO_PERFIL FROM produtos") or die(mysqli_error($strcon));
-        $re = mysqli_fetch_array($name);
-      
-       while($registro = mysqli_fetch_array($resultado)): 
+
+        $cmd = "SELECT * FROM produtos LIMIT $inicio, $registros"; 
+        $produtos = mysqli_query($strcon,$cmd); 
+        $total = mysqli_num_rows($produtos); 
+     
+
+       while($registro = mysqli_fetch_array($produtos)):  
           $perfil = $registro['PRO_PERFIL'];      
           $titulo = $registro['PRO_TITULO'];
           $preco = $registro['PRO_PRECO'];
@@ -210,6 +218,15 @@
 
       <?php  endif;  ?>
   </div>
+</div>
+<div class="row">
+  <div id="paginacao" class="col-md-8 col-md-offset-3">
+          <?php if (isset($numPaginas)): ?>
+            <?php for($i=1;$i<($numPaginas+1);$i++): ?>
+                 <a id ="n_pagina" href="usuario.php?pagina=<?= $i ?>"><?=$i?></a>
+            <?php endfor; ?>
+          <?php endif ?>
+  </div>  
 </div>
 
 <?php  

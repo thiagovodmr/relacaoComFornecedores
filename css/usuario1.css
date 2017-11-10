@@ -68,3 +68,15 @@ h1{
 .badge{
 	font-size: 20px;
 }
+#n_pagina{
+	
+	font-size: 30px;
+	margin-right: 16px;
+}
+#n_pagina .hover{
+	text-decoration: underline;
+}
+
+#paginacao{
+	margin-bottom: 5px;
+}
