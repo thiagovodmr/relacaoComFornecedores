@@ -25,7 +25,7 @@
 <head>
   <title>Produtos</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="css/usuario1.css">
+  <link rel="stylesheet" type="text/css" href="css/usuario2.css">
 </head>
 <body>
 
@@ -139,7 +139,7 @@
         
         $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1; 
         $total = mysqli_num_rows($resultado);
-        $registros = 12;
+        $registros = 15;
         $numPaginas = ceil($total/$registros);
         $inicio = ($registros*$pagina)-$registros;
 
@@ -219,14 +219,23 @@
       <?php  endif;  ?>
   </div>
 </div>
-<div class="row">
-  <div id="paginacao" class="col-md-8 col-md-offset-3">
-          <?php if (isset($numPaginas)): ?>
-            <?php for($i=1;$i<($numPaginas+1);$i++): ?>
-                 <a id ="n_pagina" href="usuario.php?pagina=<?= $i ?>"><?=$i?></a>
-            <?php endfor; ?>
-          <?php endif ?>
-  </div>  
+
+
+
+    <div class="row">
+
+    <div id="paginacao" class="col-md-8 col-md-offset-4">
+
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <?php if (isset($numPaginas)): ?>
+    <?php for($i=1;$i<($numPaginas+1);$i++): ?>
+    <li class="page-item"><a class="page-link" id="pag" href="usuario.php?pagina=<?= $i ?>"><?=$i?></a></li>
+    <?php endfor; ?>
+    <?php endif ?>
+  </ul>
+</nav>
+</div>
 </div>
 
 <?php  

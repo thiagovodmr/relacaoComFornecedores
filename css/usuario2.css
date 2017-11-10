@@ -69,8 +69,7 @@ h1{
 	font-size: 20px;
 }
 #n_pagina{
-	
-	font-size: 30px;
+	font-size: 50px;
 	margin-right: 16px;
 }
 #n_pagina .hover{
@@ -79,4 +78,7 @@ h1{
 
 #paginacao{
 	margin-bottom: 5px;
+}
+.page-link{
+	font-size: 30px;	
 }

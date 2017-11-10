@@ -10,7 +10,9 @@
 	    echo 'ERROR: ' . $e->getMessage();
 	}
 
-	$data = date("Y-m-d H:i:s");
+
+	$dat = date("Y-m-d H:i:s");
+	$data = date('Y-m-d H:i:s', strtotime($dat.' - 3 hours'));
 	$remetente = $_SESSION["perfil"];
 	$mensagem = $_POST["conteudo"];
 	$destinatario = $_SESSION['dest'];

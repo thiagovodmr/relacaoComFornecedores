@@ -8,81 +8,119 @@ include 'bd/conexao.php';
 	<meta charset="utf-8">
 	<title>Mensagens</title>
 	<style>
-.container {
-    border: 2px solid #dedede;
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
-}
+	.container {
+	    width: 99%;
+	    border: 2px solid #dedede;
+	    background-color: #ffffff;
+	    border-radius: 5px;
+	    padding: 10px;
+	    margin: 10px 0;
+	}
 
-.darker {
-    border-color: #ccc;
-    background-color: #ddd;
-}
+	.darker {
+	    border-color: #ccc;
+	    background-color: #B0C4DE;
+	}
 
-.container::after {
-    content: "";
-    clear: both;
-    display: table;
-}
+	.container::after {
+	    content: "";
+	    clear: both;
+	    display: table;
+	}
 
-.container img {
-    float: left;
-    max-width: 60px;
-    margin-right: 20px;
-    border-radius: 50%;
-}
+	.container img {
+	    float: left;
+	    max-width: 60px;
+	    margin-right: 20px;
+	    border-radius: 50%;
+	}
 
-.container img.right {
-    float: right;
-    margin-left: 20px;
-    margin-right:0;
-}
+	.container img.right {
+	    float: right;
+	    margin-left: 20px;
+	    margin-right:0;
+	}
 
-.time-right {
-    float: right;
-    color: #aaa;
-}
+	.time-right {
+	    float: right;
+	    color: #aaa;
+	}
 
-.time-left {
-    float: left;
-    color: #999;
-}
-		#menssage{
-			font-size: 20px;
-			overflow: auto;
-			margin-left: 10px;
-			height: 500px;
-		}
-		.list-group-item{
-			border: 1px solid black;
-		}
-		form{
-			border: 3px solid black;
-			height: 800px;
-			font-size: 2em;
-		}
-		.container-fluid{
-			/*margin-top: 50px;*/
-		}
-		fieldset{
-			margin-top: 50px;
-		}
-		input[type=submit]{
-			background-color: #90EE90;
-			border-radius: 10px;
-			width: 100%;
-		}
-		input[type=text]{
-			width: 100%;
-		}
-		#recebido{
-			margin-left: 800px;
-		}
-		#enviados{
-			background-color: green;
-		}
+	.time-left {
+	    float: left;
+	    color: #999;
+	}
+	#menssage{
+		font-size: 20px;
+		overflow: auto;
+		margin-left: 10px;
+		height: 500px;
+	}
+	.list-group-item{
+		border: 1px solid black;
+	}
+	form{
+	    background-repeat: no-repeat;
+   	 	background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+   		background-size: cover;
+		border: 3px solid black;
+		height: 80%;
+		font-size: 2em;
+	}
+	.container-fluid{
+		/*margin-top: 50px;*/
+	}
+	fieldset{
+		margin-top: 50px;
+	}
+	input[type=submit]{
+		background-color: #90EE90;
+		border-radius: 10px;
+		width: 100%;
+	}
+	input[type=text]{
+		border-radius: 20px;
+		width: 100%;
+	}
+	#recebido{
+		margin-left: 800px;
+	}
+	#enviados{
+		background-color: green;
+	}
+	.scrollbar-morpheus-den::-webkit-scrollbar-track {
+	  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+	  background-color: #F5F5F5;
+	  border-radius: 10px; }
+
+	.scrollbar-morpheus-den::-webkit-scrollbar {
+	  width: 13px;
+	  background-color: #F5F5F5; }
+
+	.scrollbar-morpheus-den::-webkit-scrollbar-thumb {
+	  border-radius: 10px;
+	  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+	  background-image: -webkit-gradient(linear, left bottom, left top, from(#30cfd0), to(#330867));
+	  background-image: -webkit-linear-gradient(bottom, #30cfd0 0%, #330867 100%);
+	  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%); }
+    .table-tb{
+    	text-align: center;
+    	font-size: 40px;
+   		margin: 5px;
+    }
+    .text-a{    	
+    	text-decoration: none;
+    }
+    .td{
+    	padding: 5px;
+    }
+    #nome_inter{
+    	color: white;
+    	font-size: 40px;
+    }
+    .editmensagem{
+    	font-size: 25px;
+    }
 	</style>
 </head>
 </head>
@@ -101,17 +139,21 @@ include 'bd/conexao.php';
 ?>
 	<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-2 col-sm-2">	
+		<div class="col-md-2 col-sm-4">	
 			<ul class="list-group">
+				<table border="1" width="100%" class="table-tb">
+					
 	<?php
 		$sql = "SELECT * FROM usuarios";
 		$resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
 		while($registro = mysqli_fetch_array($resultado)){
   			$nome_interprise = $registro['USER_EMPRESA'];
   			$identificador = $registro['USER_PERFIL'];
-			echo "<li class='list-group-item justify-content-between'><a href=mensagens.php?id=".$identificador.">".$nome_interprise."</a></li>";
+			echo "<tr><td class='td'><a class='text-a' href=mensagens.php?id=".$identificador.">".$nome_interprise."</a></td></tr>";
   		}
 	?>
+				</table>
+				
 			</ul>
 		</div>
 
@@ -127,33 +169,42 @@ include 'bd/conexao.php';
 									$resultado1 = mysqli_query($strcon, $sql1) or die('Erro ao tentar cadastrar registro');
 									while($registro1 = mysqli_fetch_array($resultado1)){
   										$nome_empresa = $registro1['USER_EMPRESA'];
-						 				echo "<label for='exampleInputEmail1'>$nome_empresa</label>";
+						 				echo "<label for='exampleInputEmail1' id='nome_inter'>$nome_empresa</label>";
 						 			}
-						 		}
-						 		else{
-						 			echo "errouuu";
 						 		}
 						 	?>
 						</div>
 					</div>
-					<div id="menssage">
+					<div id="menssage" class="scrollbar scrollbar-morpheus-den">
 						<?php
 						if (isset($_GET['id']) || isset($id)) {
-							$sql2 = "SELECT * FROM mensagens WHERE MEN_REMETENTE = '$id' and MEN_DESTINATARIO = '$perfilId'";
+							$sql2 = "SELECT * FROM mensagens WHERE (MEN_REMETENTE = '$id' and MEN_DESTINATARIO = '$perfilId') or (MEN_REMETENTE = '$perfilId' and MEN_DESTINATARIO = '$id')";
 							$resultado2 = mysqli_query($strcon, $sql2) or die('Erro ao tentar cadastrar registro');
-							$sql3 = "SELECT * FROM mensagens WHERE MEN_REMETENTE = '$perfilId' and MEN_DESTINATARIO = '$id'";
-							$resultado3 = mysqli_query($strcon, $sql3) or die('Erro ao tentar cadastrar registro');
 
-							while($registro2 = mysqli_fetch_array($resultado2)){
-			  					$mensagemParaMim = $registro2['MEN_CONTEUDO'];
-			  					$datetime = $registro2['MEN_HORARIO'];
-			  					$explode = explode(" ", $datetime);
-			  					$horario = date('H:i:s', strtotime($explode[1]));
-			  					echo "<div class='container darker'>
-							  	<p>$mensagemParaMim</p>
-							 	<span class='time-right'>$horario</span>
-								</div>";
-			  				}
+						while($registro2 = mysqli_fetch_array($resultado2)){
+							if($registro2['MEN_REMETENTE'] == $id && $registro2['MEN_DESTINATARIO'] == $perfilId){
+									
+
+									$mensagemParaMim = $registro2['MEN_CONTEUDO'];
+				  					$datetime = $registro2['MEN_HORARIO'];
+				  					$explode = explode(" ", $datetime);
+				  					$horario = date('H:i:s', strtotime($explode[1]));
+				  					echo "<div class='container'>
+								  	<p class='editmensagem'>$mensagemParaMim</p>
+								 	<span class='time-right'>$horario</span>
+									</div>";
+							}
+							else{
+									$mensagemParaMim = $registro2['MEN_CONTEUDO'];
+				  					$datetime = $registro2['MEN_HORARIO'];
+				  					$explode = explode(" ", $datetime);
+				  					$horario = date('H:i:s', strtotime($explode[1]));
+				  					echo "<div class='container darker'>
+								  	<p class='editmensagem'>$mensagemParaMim</p>
+								 	<span class='time-left'>$horario</span>
+									</div>";
+								}
+							}
 						}
 						?>
 					</div>
@@ -167,7 +218,7 @@ include 'bd/conexao.php';
 					<div class="row">
 						<div class="form-group col-md-10 col-md-offset-1  col-sm-10 col-sm-offset-1">
 							<label for="exampleFormControlTextarea1"></label>
-							<input type="text" name="conteudo" placeholder="Digite sua mensagem">
+							<input type="text" name="conteudo" placeholder="Digite sua mensagem" required oninvalid="this.setCustomValidity(\'Campo requerido\')">
 						</div>
 						<div class="form-group col-md-5 col-md-offset-5">
 							<input type="submit" value="Enviar">
@@ -181,5 +232,22 @@ include 'bd/conexao.php';
 		</div>
 	</div>
 	</div>
+	<script>
+		$("#menssage").animate({ scrollTop: $("#menssage")[0].scrollHeight}, 1000);
+		$(document).ready(function() {
+			var elements = document.getElementsByTagName("INPUT");
+			for (var i = 0; i < elements.length; i++) {
+				elements[i].oninvalid = function(e) {
+			   		e.target.setCustomValidity("");
+		    		if (!e.target.validity.valid) {
+		        		e.target.setCustomValidity("Não consegue né, Moises?");
+		   			}
+				};
+				elements[i].oninput = function(e) {
+		    		e.target.setCustomValidity("");
+				};
+			}
+		})
+	</script>
 </body>
 </html>
