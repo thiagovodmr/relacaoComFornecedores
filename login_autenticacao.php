@@ -8,7 +8,7 @@ session_start();
 	  	$conn = new PDO("mysql:host=localhost;dbname=$dbname", $usuario, $senha);
 	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	} catch(PDOException $e) {
-	    echo 'ERROR: ' . $e->getMessage();
+	    echo 'Falha na conexão : ' . $e->getMessage();
 	}
 ?>
 <!DOCTYPE html>
