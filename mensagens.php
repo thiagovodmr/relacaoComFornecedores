@@ -233,6 +233,10 @@ include 'bd/conexao.php';
 	</div>
 	</div>
 	<script>
+		setInterval(function(){
+   			$('#menssage').load('men.php');
+		}, 1000);
+		
 		$("#menssage").animate({ scrollTop: $("#menssage")[0].scrollHeight}, 1000);
 		$(document).ready(function() {
 			var elements = document.getElementsByTagName("INPUT");
