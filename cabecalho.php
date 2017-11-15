@@ -32,6 +32,8 @@ session_start();
           <li><a href="cadastro_Categoria.php">Inserir Categoria <i class="fa fa-cloud-upload" aria-hidden="true"></i></a></li>
         <?php endif ?>
       <?php endif ?>
+      <li><a href="rotas.php">Traçar Rotas </a></li>
+      <li><a href="fornecedores.php">Fornecedores </a></li>
       <li><a href="usuario.php">Serviços <i class="fa fa-truck" aria-hidden="true"></i></a></li>
       <li><a href="contatos.php">Contatos <i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
       <li><a href="quemsomos.php">Quem somos <i class="fa fa-users" aria-hidden="true"></i></a></li>

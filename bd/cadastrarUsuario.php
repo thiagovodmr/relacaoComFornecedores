@@ -1,4 +1,6 @@
-<?php  
+<?php
+	session_start();
+	ob_start();
 	$dbname = "id2846308_projeto1";
 	$usuario="id2846308_pep1";
 	$senha = "@lunoifpe";
@@ -8,7 +10,6 @@
 	} catch(PDOException $e) {
 	    echo 'ERROR: ' . $e->getMessage();
 	}
-
 	//Redes sociais
 	$google_plus  = $_POST["google_plus"];
 	$facebook	  = $_POST["facebook"];
@@ -27,11 +28,13 @@
 	$login 		  = $_POST["login_da_empresa"];
 	$senha 		  = $_POST["senha_da_empresa"];
 	$descricao 	  = $_POST["descricao"];
+	$latitude 	  = $_POST["lat"];
+	$longitude 	  = $_POST["lng"];
 	$perfil       = md5($nome);
 
-	$sql = "INSERT INTO usuarios(USER_NOME,USER_EMPRESA,USER_CIDADE,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_EMAIL						  			,USER_LOGIN,USER_SENHA,USER_PERFIL,USER_DESCRICAO,
-								USER_GOOGLE_PLUS,USER_FACEBOOK,USER_TWITTER,USER_LINKEDLN,USER_GITHUB) 
-		VALUES(:nome, :nome_empresa, :cidade, :telefone, :cnpj, :logradouro, :email, :login, :senha, :perfil, :descricao, :google_plus, :facebook, :twitter, :linkedln, :github)";
+	$sql = "INSERT INTO usuarios(USER_NOME,USER_EMPRESA,USER_CIDADE,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_LATITUDE,USER_LONGITUDE,USER_EMAIL,USER_LOGIN,USER_SENHA,USER_PERFIL,USER_DESCRICAO,USER_GOOGLE_PLUS,USER_FACEBOOK,USER_TWITTER,USER_LINKEDLN,USER_GITHUB)
+			VALUES(:nome, :nome_empresa, :cidade, :telefone, :cnpj, :logradouro,:latitude,:longitude,:email, :login, :senha, :perfil, :descricao, :google_plus, :facebook, :twitter, :linkedln, :github)";
+	
 	$stmt = $conn->prepare( $sql );
 	$stmt->bindParam( ':nome', $nome );
 	$stmt->bindParam( ':nome_empresa', $nome_empresa);
@@ -39,6 +42,8 @@
 	$stmt->bindParam( ':telefone',$telefone );
 	$stmt->bindParam( ':cnpj', $cnpj);
 	$stmt->bindParam( ':logradouro', $logradouro);
+	$stmt->bindParam( ':latitude', $latitude);
+	$stmt->bindParam( ':longitude', $longitude);
 	$stmt->bindParam( ':email', $email);
 	$stmt->bindParam( ':login', $login);
 	$stmt->bindParam( ':senha', $senha);
@@ -49,9 +54,7 @@
 	$stmt->bindParam( ':twitter', $twitter);
 	$stmt->bindParam( ':linkedln', $linkedln);
 	$stmt->bindParam( ':github', $github);
-
 	$result = $stmt->execute();
-
 	if ( ! $result ){
 	    var_dump( $stmt->errorInfo() );
 	    exit;
