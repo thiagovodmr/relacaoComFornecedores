@@ -82,6 +82,10 @@ include 'bd/conexao.php';
 		border-radius: 20px;
 		width: 100%;
 	}
+	textarea{
+		border-radius: 20px;
+		width: 100%;	
+	}
 	#recebido{
 		margin-left: 800px;
 	}
@@ -121,6 +125,9 @@ include 'bd/conexao.php';
     .editmensagem{
     	font-size: 25px;
     }
+    #m{
+    	padding-bottom: 20px;
+    }
 	</style>
 </head>
 </head>
@@ -146,9 +153,11 @@ include 'bd/conexao.php';
 	<?php
 		$sql = "SELECT * FROM usuarios";
 		$resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
+		
 		while($registro = mysqli_fetch_array($resultado)){
   			$nome_interprise = $registro['USER_EMPRESA'];
   			$identificador = $registro['USER_PERFIL'];
+			
 			echo "<tr><td class='td'><a class='text-a' href=mensagens.php?id=".$identificador.">".$nome_interprise."</a></td></tr>";
   		}
 	?>
@@ -157,7 +166,7 @@ include 'bd/conexao.php';
 			</ul>
 		</div>
 
-		<div class="col-md-8 col-md-offset-1 col-sm-6 col-sm-offset-1">	
+		<div id="m" class="col-md-8 col-md-offset-1 col-sm-6 col-sm-offset-1">	
 			<form action="bd/salvar_mensagem.php" method="POST">
 				
 				<fieldset>
@@ -234,9 +243,9 @@ include 'bd/conexao.php';
 					<div class="row">
 						<div class="form-group col-md-10 col-md-offset-1  col-sm-10 col-sm-offset-1">
 							<label for="exampleFormControlTextarea1"></label>
-							<input type="text" name="conteudo" placeholder="Digite sua mensagem" required oninvalid="this.setCustomValidity(\'Campo requerido\')">
+							<textarea class="form-group" rows="3" name="conteudo" placeholder=" Digite sua mensagem" required oninvalid="this.setCustomValidity(\'Campo requerido\')"></textarea>
 						</div>
-						<div class="form-group col-md-5 col-md-offset-5">
+						<div class="form-group col-md-10 col-md-offset-1">
 							<input type="submit" value="Enviar">
 							
 						</div>
@@ -249,9 +258,12 @@ include 'bd/conexao.php';
 	</div>
 	</div>
 	<script>
-		setInterval(function(){
-   			$('#menssage').load('men.php');
-		}, 1000);
+		// setInterval(function(){
+		// 	$.get("men.php?id=<?= $id ?>",function(data){
+  		//  	$('#menssage').html(data);
+				
+		// 	});
+		// }, 1000);
 		
 		$("#menssage").animate({ scrollTop: $("#menssage")[0].scrollHeight}, 1000);
 		$(document).ready(function() {
