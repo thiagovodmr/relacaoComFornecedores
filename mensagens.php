@@ -128,6 +128,11 @@ include 'bd/conexao.php';
     #m{
     	padding-bottom: 20px;
     }
+    .badge-pill{
+        font-size:20px;
+        float: right;
+    }
+    
 	</style>
 </head>
 </head>
@@ -154,11 +159,26 @@ include 'bd/conexao.php';
 		$sql = "SELECT * FROM usuarios";
 		$resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
 		
+
+  			
 		while($registro = mysqli_fetch_array($resultado)){
   			$nome_interprise = $registro['USER_EMPRESA'];
   			$identificador = $registro['USER_PERFIL'];
-			
-			echo "<tr><td class='td'><a class='text-a' href=mensagens.php?id=".$identificador.">".$nome_interprise."</a></td></tr>";
+  			
+			$query = "SELECT * FROM mensagens WHERE MEN_REMETENTE = '$identificador' AND MEN_DESTINATARIO = '$perfilId' AND 
+	  			MEN_LIDA = 0";
+  			
+  			$q = mysqli_query($strcon, $query);
+  			$quant = mysqli_num_rows($q);
+  			
+// 			echo "<tr><td class='td'><a class='text-a' href=mensagens.php?id=".$identificador.">".$nome_interprise."</a></td></tr>";
+
+           echo "<tr>
+			 		<td class='td'>
+			            <a class='text-a' href=mensagens.php?id=".$identificador.">".$nome_interprise."</a>
+			            <span class='badge badge-success badge-pill' style='background-color: green;'>". $quant."</span>
+			        </td>
+			     </tr>";
   		}
 	?>
 				</table>
@@ -258,12 +278,12 @@ include 'bd/conexao.php';
 	</div>
 	</div>
 	<script>
-		// setInterval(function(){
-		// 	$.get("men.php?id=<?= $id ?>",function(data){
-  		//  	$('#menssage').html(data);
+		 setInterval(function(){
+		 	$.get("men.php?id=<?= $id ?>",function(data){
+  		  	$('#menssage').html(data);
 				
-		// 	});
-		// }, 1000);
+		 	});
+		 }, 1000);
 		
 		$("#menssage").animate({ scrollTop: $("#menssage")[0].scrollHeight}, 1000);
 		$(document).ready(function() {
