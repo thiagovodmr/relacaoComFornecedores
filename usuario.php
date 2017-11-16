@@ -30,6 +30,24 @@
 <body>
 
 <div class="row">
+  <div class="col-md-6 col-md-offset-4">
+    <form action="usuario.php" method="POST">
+      <label>Filtro por preço:</label>
+      <select name="filtro">
+        <option value="0,10">abaixo de 10</option>
+        <option value="11,20">11 a 20</option>
+        <option value="21,30">21 a 30</option>
+        <option value="31,40">31 a 40</option>
+        <option value="41,50">41 a 50</option>
+        <option value="50,100">50 a 100</option>
+        <option value="101,20000">acima de 100</option>
+      </select>
+      <input type="submit" Value="Filtrar">
+    </form>
+  </div>
+</div>
+
+<div class="row">
   <div class="col-md-3 col-sm-3 text-center">
     <h1>Categorias</h1>
   </div>
@@ -90,112 +108,28 @@
   <div class="col-md-9 col-sm-8">
     <?php if (isset($_POST["pesquisa"])): 
       
-        $pesquisa = $_POST["pesquisa"];
-        $sql = "SELECT * FROM produtos WHERE PRO_TITULO  LIKE '%$pesquisa%' Or PRO_DESCRICAO LIKE '%$pesquisa%'";
-        $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
-        // $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO FROM produtos") or die(mysqli_error($strcon));
-        // $re = mysqli_fetch_array($name);
-        $r = mysqli_num_rows($resultado); 
-        ?>
-        
-        <?php if ($r==0): ?>
-           <div class='col-md-8' style='text-align:center;'><h3>Nenhum produto encontrado</h3></div> 
-        
-        <?php else: ?>
-          <?php  
-          while($registro = mysqli_fetch_array($resultado)): 
-            $perfil = $registro['PRO_PERFIL'];
-            $titulo = $registro['PRO_TITULO'];
-            $preco = $registro['PRO_PRECO'];
-            $descricao = $registro['PRO_DESCRICAO'];
-            $imagem = $registro['PRO_ARQUIVO'];
-            $nome_fornecedor = $registro['PRO_NOME'];
-           ?>
-           
-          <div class='col-sm-8 col-md-4'>
-              <div class='thumbnail'>
-                <img src=<?= $imagem ?> height='10' width='50'>  
-                  <div class='caption'>
-                    <h3><a href="#linkParaoProduto"><b class='preto'><?= $titulo ?></b></a></h3>
-                    <p>
-                      <a class='btn btn-info' role='button'>Preço: <?= $preco.",00" ?></a> 
-                      <a href=perfil.php?id=<?= $perfil ?> class='btn btn-warning' role='button'>
-                      Fornecedor: <?= ucwords($nome_fornecedor) ?>
-                      </a>
-                    </p>
-                  </div>
-              </div>
-          </div>
-
-        <?php endwhile;?>
-
-        <?php endif ?>
-         
-        <?php
-        elseif($_GET['i']==[]): 
-
-        $sql = "SELECT * FROM produtos";
-        $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
-        
-        $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1; 
-        $total = mysqli_num_rows($resultado);
-        $registros = 15;
-        $numPaginas = ceil($total/$registros);
-        $inicio = ($registros*$pagina)-$registros;
-
-
-        $cmd = "SELECT * FROM produtos LIMIT $inicio, $registros"; 
-        $produtos = mysqli_query($strcon,$cmd); 
-        $total = mysqli_num_rows($produtos); 
-     
-
-       while($registro = mysqli_fetch_array($produtos)):  
-          $perfil = $registro['PRO_PERFIL'];      
-          $titulo = $registro['PRO_TITULO'];
-          $preco = $registro['PRO_PRECO'];
-          $descricao = $registro['PRO_DESCRICAO'];
-          $descricao1 = wordwrap($descricao, 25, "\n", false);
-          $imagem = $registro['PRO_ARQUIVO'];
-          $nome_fornecedor = $registro['PRO_NOME'];
-         ?>
-
-          <div class='col-sm-8 col-md-4'>
-              <div class='thumbnail'>
-                <img src=<?= $imagem ?> height='10' width='50'>  
-                  <div class='caption'>
-                    <h3><a href="#linkParaoProduto"><b class='preto'><?= $titulo ?></b></a></h3>
-                    <p>
-                      <a class='btn btn-info' role='button'>Preço: <?= $preco.",00" ?></a> 
-                      <a href=perfil.php?id=<?= $perfil ?> class='btn btn-warning' role='button'>
-                      Fornecedor: <?= ucwords($nome_fornecedor) ?>
-                      </a>
-                    </p>
-                  </div>
-              </div>
-          </div>
-     <?php endwhile; 
-        
-     elseif (isset($_GET['i']) || isset($id)): 
-      
-        $sql = "SELECT * FROM produtos WHERE PRO_CATEGORIA = '$i'";
-        $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
-          // $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO, PRO_NOME, PRO_PERFIL FROM produtos") or die(mysqli_error($strcon));
-          // $re = mysqli_fetch_array($name);
-        $r = mysqli_num_rows($resultado);
-        ?>
-        <?php if ($r==0): ?>
-            <div class='col-md-8' style='text-align:center;'><h3>Nenhum produto encontrado</h3></div> 
-        <?php else: ?>
-            <?php 
-            while($registro = mysqli_fetch_array($resultado)): 
-              $perfil = $registro['PRO_PERFIL'];
-              $titulo = $registro['PRO_TITULO'];
-              $preco = $registro['PRO_PRECO'];
-              $descricao = $registro['PRO_DESCRICAO'];
-              $imagem = $registro['PRO_ARQUIVO'];
-              $nome_fornecedor = $registro['PRO_NOME']; 
+            $pesquisa = $_POST["pesquisa"];
+            $sql = "SELECT * FROM produtos WHERE PRO_TITULO  LIKE '%$pesquisa%' Or PRO_DESCRICAO LIKE '%$pesquisa%'";
+            $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
+            // $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO FROM produtos") or die(mysqli_error($strcon));
+            // $re = mysqli_fetch_array($name);
+            $r = mysqli_num_rows($resultado); 
             ?>
             
+            <?php if ($r==0): ?>
+               <div class='col-md-8' style='text-align:center;'><h3>Nenhum produto encontrado</h3></div> 
+            
+            <?php else: ?>
+              <?php  
+              while($registro = mysqli_fetch_array($resultado)): 
+                $perfil = $registro['PRO_PERFIL'];
+                $titulo = $registro['PRO_TITULO'];
+                $preco = $registro['PRO_PRECO'];
+                $descricao = $registro['PRO_DESCRICAO'];
+                $imagem = $registro['PRO_ARQUIVO'];
+                $nome_fornecedor = $registro['PRO_NOME'];
+               ?>
+               
               <div class='col-sm-8 col-md-4'>
                   <div class='thumbnail'>
                     <img src=<?= $imagem ?> height='10' width='50'>  
@@ -210,13 +144,142 @@
                       </div>
                   </div>
               </div>
-             
-      <?php 
-        endwhile;
-        endif 
-      ?>
 
-      <?php  endif;  ?>
+            <?php endwhile;?>
+
+            <?php endif ?>
+
+
+          <?php elseif (isset($_POST["filtro"])) :
+                
+                $arr = explode(",",$_POST["filtro"]);
+                $sql = "SELECT * FROM produtos WHERE
+                 PRO_PRECO >= '$arr[0]' AND PRO_PRECO <= '$arr[1]' ";
+            $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
+              // $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO, PRO_NOME, PRO_PERFIL FROM produtos") or die(mysqli_error($strcon));
+              // $re = mysqli_fetch_array($name);
+            $r = mysqli_num_rows($resultado);
+          
+             if ($r==0): ?>
+                <div class='col-md-8' style='text-align:center;'>
+                  <h3>Nenhum produto encontrado</h3>
+                </div> 
+            
+            <?php else: ?>
+                <?php 
+                while($registro = mysqli_fetch_array($resultado)): 
+                  $perfil = $registro['PRO_PERFIL'];
+                  $titulo = $registro['PRO_TITULO'];
+                  $preco = $registro['PRO_PRECO'];
+                  $descricao = $registro['PRO_DESCRICAO'];
+                  $imagem = $registro['PRO_ARQUIVO'];
+                  $nome_fornecedor = $registro['PRO_NOME']; 
+                ?>
+                
+                  <div class='col-sm-8 col-md-4'>
+                      <div class='thumbnail'>
+                        <img src=<?= $imagem ?> height='10' width='50'>  
+                          <div class='caption'>
+                            <h3><a href="#linkParaoProduto"><b class='preto'><?= $titulo ?></b></a></h3>
+                            <p>
+                              <a class='btn btn-info' role='button'>Preço: <?= $preco.",00" ?></a> 
+                              <a href=perfil.php?id=<?= $perfil ?> class='btn btn-warning' role='button'>
+                              Fornecedor: <?= ucwords($nome_fornecedor) ?>
+                              </a>
+                            </p>
+                          </div>
+                      </div>
+                  </div>
+                 
+          <?php 
+              endwhile;
+            endif ?>
+
+        <?php
+        elseif($_GET['i']==[]): 
+
+            $sql = "SELECT * FROM produtos";
+            $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
+            
+            $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1; 
+            $total = mysqli_num_rows($resultado);
+            $registros = 15;
+            $numPaginas = ceil($total/$registros);
+            $inicio = ($registros*$pagina)-$registros;
+
+
+            $cmd = "SELECT * FROM produtos LIMIT $inicio, $registros"; 
+            $produtos = mysqli_query($strcon,$cmd); 
+            $total = mysqli_num_rows($produtos); 
+         
+
+           while($registro = mysqli_fetch_array($produtos)):  
+              $perfil = $registro['PRO_PERFIL'];      
+              $titulo = $registro['PRO_TITULO'];
+              $preco = $registro['PRO_PRECO'];
+              $descricao = $registro['PRO_DESCRICAO'];
+              $descricao1 = wordwrap($descricao, 25, "\n", false);
+              $imagem = $registro['PRO_ARQUIVO'];
+              $nome_fornecedor = $registro['PRO_NOME'];
+             ?>
+
+              <div class='col-sm-8 col-md-4'>
+                  <div class='thumbnail'>
+                    <img src=<?= $imagem ?> height='10' width='50'>  
+                      <div class='caption'>
+                        <h3><a href="#linkParaoProduto"><b class='preto'><?= $titulo ?></b></a></h3>
+                        <p>
+                          <a class='btn btn-info' role='button'>Preço: <?= $preco.",00" ?></a> 
+                          <a href=perfil.php?id=<?= $perfil ?> class='btn btn-warning' role='button'>
+                          Fornecedor: <?= ucwords($nome_fornecedor) ?>
+                          </a>
+                        </p>
+                      </div>
+                  </div>
+              </div>
+         <?php endwhile; 
+            
+        elseif (isset($_GET['i']) || isset($id)): 
+      
+            $sql = "SELECT * FROM produtos WHERE PRO_CATEGORIA = '$i'";
+            $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
+              // $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO, PRO_NOME, PRO_PERFIL FROM produtos") or die(mysqli_error($strcon));
+              // $re = mysqli_fetch_array($name);
+            $r = mysqli_num_rows($resultado);
+            ?>
+            <?php if ($r==0): ?>
+                <div class='col-md-8' style='text-align:center;'><h3>Nenhum produto encontrado</h3></div> 
+            <?php else: ?>
+                <?php 
+                while($registro = mysqli_fetch_array($resultado)): 
+                  $perfil = $registro['PRO_PERFIL'];
+                  $titulo = $registro['PRO_TITULO'];
+                  $preco = $registro['PRO_PRECO'];
+                  $descricao = $registro['PRO_DESCRICAO'];
+                  $imagem = $registro['PRO_ARQUIVO'];
+                  $nome_fornecedor = $registro['PRO_NOME']; 
+                ?>
+                
+                  <div class='col-sm-8 col-md-4'>
+                      <div class='thumbnail'>
+                        <img src=<?= $imagem ?> height='10' width='50'>  
+                          <div class='caption'>
+                            <h3><a href="#linkParaoProduto"><b class='preto'><?= $titulo ?></b></a></h3>
+                            <p>
+                              <a class='btn btn-info' role='button'>Preço: <?= $preco.",00" ?></a> 
+                              <a href=perfil.php?id=<?= $perfil ?> class='btn btn-warning' role='button'>
+                              Fornecedor: <?= ucwords($nome_fornecedor) ?>
+                              </a>
+                            </p>
+                          </div>
+                      </div>
+                  </div>
+                 
+          <?php 
+              endwhile;
+            endif 
+          ?>
+<?php  endif;  ?>
   </div>
 </div>
 

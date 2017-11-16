@@ -26,8 +26,10 @@ include 'cabecalho.php';
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin" action="login_autenticacao.php" method="POST">
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="text" id="inputEmail" class="form-control" name="login" placeholder="Login" required autofocus>
-                <input type="password" id="inputPassword" class="form-control" name="senha" placeholder="Senha" required>
+               <label>Login: </label>
+                <input type="text" id="inputEmail" class="form-control" name="login" required autofocus>
+                <label>Senha:</label>
+                <input type="password" id="inputPassword" class="form-control" name="senha" required>
 
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
             </form><!-- /form -->
