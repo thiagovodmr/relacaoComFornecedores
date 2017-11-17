@@ -117,7 +117,6 @@ echo "<div class='container' id='contai'>
         echo "<h4>Descrição</h4>
         <p>";
         echo "$descricao";
-         echo "$descricao";
         echo "</p>
       </div>
     </div>

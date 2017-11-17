@@ -20,6 +20,7 @@
 	//Dados da empresa
 	$nome 		  = $_POST["nome_do_usuario"];
 	$nome_empresa = $_POST["nome_da_empresa"];
+	$estado 	  = $_POST["estado"];
 	$cidade 	  = $_POST["cidade_da_empresa"];
 	$telefone     = $_POST["telefone_da_empresa"];
 	$cnpj 		  = $_POST["cnpj_da_empresa"];
@@ -32,12 +33,13 @@
 	$longitude 	  = $_POST["lng"];
 	$perfil       = md5($nome);
 
-	$sql = "INSERT INTO usuarios(USER_NOME,USER_EMPRESA,USER_CIDADE,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_LATITUDE,USER_LONGITUDE,USER_EMAIL,USER_LOGIN,USER_SENHA,USER_PERFIL,USER_DESCRICAO,USER_GOOGLE_PLUS,USER_FACEBOOK,USER_TWITTER,USER_LINKEDLN,USER_GITHUB)
-			VALUES(:nome, :nome_empresa, :cidade, :telefone, :cnpj, :logradouro,:latitude,:longitude,:email, :login, :senha, :perfil, :descricao, :google_plus, :facebook, :twitter, :linkedln, :github)";
+	$sql = "INSERT INTO usuarios(USER_NOME,USER_EMPRESA,USER_ESTADO,USER_CIDADE,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_LATITUDE,USER_LONGITUDE,USER_EMAIL,USER_LOGIN,USER_SENHA,USER_PERFIL,USER_DESCRICAO,USER_GOOGLE_PLUS,USER_FACEBOOK,USER_TWITTER,USER_LINKEDLN,USER_GITHUB)
+			VALUES(:nome, :nome_empresa, :estado ,:cidade, :telefone, :cnpj, :logradouro,:latitude,:longitude,:email, :login, :senha, :perfil, :descricao, :google_plus, :facebook, :twitter, :linkedln, :github)";
 	
 	$stmt = $conn->prepare( $sql );
 	$stmt->bindParam( ':nome', $nome );
 	$stmt->bindParam( ':nome_empresa', $nome_empresa);
+	$stmt->bindParam( ':estado', $estado);
 	$stmt->bindParam( ':cidade', $cidade );
 	$stmt->bindParam( ':telefone',$telefone );
 	$stmt->bindParam( ':cnpj', $cnpj);

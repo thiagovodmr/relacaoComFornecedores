@@ -1,11 +1,12 @@
 <?php
 include "cabecalho.php";
+include "bd/conexao.php";
 ?>
 <html lang="pt-br">
     <head>
         <meta charset="utf-8" />
-        <title>Google Maps API v3: Criando rotas</title>
-        <link rel="stylesheet" type="text/css" href="css/rotas1.css">
+        <title>Rotas</title>
+        <link rel="stylesheet" type="text/css" href="css/rotas2.css">
     </head>
  
     <body>
@@ -27,8 +28,21 @@ include "cabecalho.php";
                     </div>
                     
                     <div>
-                        <label for="txtEnderecoChegada">Endereço de chegada:</label>
-                        <input type="text" id="txtEnderecoChegada" name="txtEnderecoChegada" />
+                        <label for="txtEnderecoChegada">Empresas Cadastradas:</label>
+                        <select name="txtEnderecoChegada" id="txtEnderecoChegada">
+                        <?php
+                            $sql = "SELECT * FROM usuarios ORDER BY USER_EMPRESA";
+                            $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
+                            
+                            while($registro = mysqli_fetch_array($resultado)){
+                                $endereco = $registro['USER_LOGRADOURO'];
+                                $empresa = $registro['USER_EMPRESA'];
+                                echo "<option  value='".$endereco."'>".$empresa."</option>";
+                            }
+                        ?>
+                        </select>
+                        <!-- <label for="txtEnderecoChegada">Endereço de chegada:</label>
+                        <input type="text" id="txtEnderecoChegada" name="txtEnderecoChegada" /> -->
                     </div>
                     
                     <div>

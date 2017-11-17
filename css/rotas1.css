@@ -9,6 +9,8 @@
 	font-size: 30px 
 }
 #site input { width: 500px; padding: 5px }
+#site select{ width: 500px; padding: 5px }
+
 #site input[type=submit] { padding: 5px 10px; width: auto }
 #site form { 
 	margin-bottom: 20px; 

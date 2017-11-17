@@ -202,7 +202,13 @@ body, html {
           <h4 class="modal-title">Ajuda</h4>
         </div>
         <div class="modal-body">
-          <p>Some text in the modal.</p>
+            <p><a href="https://www.google.com.br/maps?hl=pt-BR&tab=wl" target="_blank">MAPA</a></p>
+            <p>1° - click no link acima para o mapa</p>
+            <p>2° - Depois pesquise a sua localização</p>
+            <p>3° - Depois aperte com o botão direito do mouse sobre o local e click em "O que há aqui?"</p>
+            <p>4° - Depois pegue a latitude e a longitude,respectivamente, como mostra a figura</p>
+            <img src="imagens/tutorial1.png" width="55  0px">
+            <p>5° - Por fim, cole cada um em seu respectivo formulário.</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -225,7 +231,37 @@ body, html {
         <label>Nome da Empresa <input type="text" name="nome_da_empresa" required autofocus  maxlength="100"/></label>
         
         <label>Descrição da Empresa<textarea name="descricao" required autofocus  maxlength="5000"></textarea></label>
-        
+        <label>Estado
+        <select name="estado" id="estadoselect">
+            <option value="ac">Acre </option>
+            <option value="al">Alagoas </option>
+            <option value="ap">Amapá </option>
+            <option value="am">Amazonas </option>
+            <option value="ba">Bahia </option>
+            <option value="ce">Ceará </option>
+            <option value="df">Distrito Federal </option>
+            <option value="ed">Espírito Santo </option>
+            <option value="go">Goiás </option>
+            <option value="ma">Maranhão </option>
+            <option value="mt">Mato Grosso </option>
+            <option value="ms">Mato Grosso do Sul </option>
+            <option value="mg">Minas Gerais </option>
+            <option value="pa">Pará </option> 
+            <option value="pb">Paraíba </option>
+            <option value="pr">Paraná </option>
+            <option value="pe">Pernambuco </option>
+            <option value="pi">Piauí </option>
+            <option value="rj">Rio de Janeiro </option>
+            <option value="rn">Rio Grande do Norte </option>
+            <option value="rs">Rio Grande do Sul </option>
+            <option value="ro">Rondônia </option>
+            <option value="rr">Roraima </option>
+            <option value="sc">Santa Catarina </option>
+            <option value="sp">São Paulo </option>
+            <option value="se">Sergipe </option>
+            <option value="to">Tocantins </option>
+        </select>
+        </label>
         <label>Cidade <input type="text" name="cidade_da_empresa" required autofocus  maxlength="25"/></label>
         
         <label>Logradouro <input type="text" name="logradouro_da_empresa" required autofocus  maxlength="45"/>
