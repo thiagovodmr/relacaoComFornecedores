@@ -9,10 +9,10 @@ $strcon = mysqli_connect("$host","$usuario","$senha","$bd") or die('Erro ao cone
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Teste</title>
+  <title>Perfil</title>
   <link rel="stylesheet" type="text/css" href="recursos/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="recursos/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/perfil.css">
+  <link rel="stylesheet" type="text/css" href="css/perfil1.css">
 </head>
 <body>
 <?php
@@ -115,8 +115,33 @@ echo "<div class='container' id='contai'>
 </div>
 
 </div>";
+
+$latitude = $registro['USER_LATITUDE'];
+$longitude = $registro['USER_LONGITUDE'];
+
+echo "<h2 id='tittlemapa' style='text-align: center;'>Localização <i class='fa fa-map-marker fa-2x' aria-hidden='true'></i></h2>
+    <div id='map'></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: $latitude, lng: $longitude};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>";
 }
 ?>
+    
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-xE7a7Pi92cA69kmk-zwtGg5M9l0N2Ag&callback=initMap">
+    </script>
+
+<br>
 <?php
 include 'rodape.php';
 ?>

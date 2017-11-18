@@ -149,3 +149,11 @@ opacity:0.9;
 .progress-meter > .meter.meter-right > .meter-text {
   text-align: right;
 }
+#tittlemapa{
+    font-weight: bold;
+}
+#map {
+    height: 500px;
+    width: 100%;
+    background-color: grey;
+}
