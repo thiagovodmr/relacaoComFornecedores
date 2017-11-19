@@ -91,19 +91,35 @@
         <input name="uf" type="text" id="uf" size="2" disabled="true" /></label><br />
         <label>IBGE:
         <input name="ibge" type="text" id="ibge" size="8" disabled="true" /></label><br />
+
+        <label>Latitude:
+        <input name="ibge" type="text" id="latitude" size="8" disabled="true" disabled="true" /></label><br />
+        </label>
+
+        <label>Longitude:
+        <input name="ibge" type="text" id="longitude" size="8" disabled="true" disabled="true" /></label><br />
+        </label>
+        <input type="submit" value="Endereçar">
       </form>          
 
 <script>
     $(document).ready(function(){
-            $.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyC-xE7a7Pi92cA69kmk-zwtGg5M9l0N2Ag", function(result){
+       
+            $.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=53625-816&key=AIzaSyC-xE7a7Pi92cA69kmk-zwtGg5M9l0N2Ag", function(result){
+                $('#latitude').val(result.results[0].geometry.location.lat);
+                $('#longitude').val(result.results[0].geometry.location.lng);
 
-                $('#teste').html('<p> Name: ' + result.results.address_components + '</p>');
-                
-                $.each(result, function(i, field){
-                    $("div").append(field + " ");
-                });
             });
+            var myVar = setInterval(function(){ myTimer() }, 1000);
+
+            function myTimer() {
+                $("#cep").focusout(function(){
+                    alert($("#cep").val());
+                });
+            }
     });
+                
+                
 </script>
 
 <div id="teste"></div>
