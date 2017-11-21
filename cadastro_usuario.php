@@ -180,8 +180,14 @@ body, html {
       #target {
         width: 345px;
       }
-</style>
+      .hide{
+        visibility: hide;
+      }
+      .show{
 
+      }
+</style>
+<script src="javascript/cadastro.js"></script>
 </head>
 
 <body>
@@ -191,34 +197,6 @@ body, html {
         echo "<script> window.location='usuario.php'</script>'";
     }
 ?>
-
-<div class="modal fade" id="help" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Ajuda</h4>
-        </div>
-        <div class="modal-body">
-            <p><a href="https://www.google.com.br/maps?hl=pt-BR&tab=wl" target="_blank">MAPA</a></p>
-            <p>1° - click no link acima para o mapa</p>
-            <p>2° - Depois pesquise a sua localização</p>
-            <p>3° - Depois aperte com o botão direito do mouse sobre o local e click em "O que há aqui?"</p>
-            <p>4° - Depois pegue a latitude e a longitude,respectivamente, como mostra a figura</p>
-            <img src="imagens/tutorial1.png" width="55  0px">
-            <p>5° - Por fim, cole cada um em seu respectivo formulário.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  
-</div>
 
 <div class="form-style-10">
 <h1>Cadastre-se Agora!<span>Cadastre-se e aproveite nossos recursos!</span></h1>
@@ -231,49 +209,22 @@ body, html {
         <label>Nome da Empresa <input type="text" name="nome_da_empresa" required autofocus  maxlength="100"/></label>
         
         <label>Descrição da Empresa<textarea name="descricao" required autofocus  maxlength="5000"></textarea></label>
-        <label>Estado
-        <select name="estado" id="estadoselect">
-            <option value="ac">Acre </option>
-            <option value="al">Alagoas </option>
-            <option value="ap">Amapá </option>
-            <option value="am">Amazonas </option>
-            <option value="ba">Bahia </option>
-            <option value="ce">Ceará </option>
-            <option value="df">Distrito Federal </option>
-            <option value="ed">Espírito Santo </option>
-            <option value="go">Goiás </option>
-            <option value="ma">Maranhão </option>
-            <option value="mt">Mato Grosso </option>
-            <option value="ms">Mato Grosso do Sul </option>
-            <option value="mg">Minas Gerais </option>
-            <option value="pa">Pará </option> 
-            <option value="pb">Paraíba </option>
-            <option value="pr">Paraná </option>
-            <option value="pe">Pernambuco </option>
-            <option value="pi">Piauí </option>
-            <option value="rj">Rio de Janeiro </option>
-            <option value="rn">Rio Grande do Norte </option>
-            <option value="rs">Rio Grande do Sul </option>
-            <option value="ro">Rondônia </option>
-            <option value="rr">Roraima </option>
-            <option value="sc">Santa Catarina </option>
-            <option value="sp">São Paulo </option>
-            <option value="se">Sergipe </option>
-            <option value="to">Tocantins </option>
-        </select>
-        </label>
-        <label>Cidade <input type="text" name="cidade_da_empresa" required autofocus  maxlength="25"/></label>
         
-        <label>Logradouro <input type="text" name="logradouro_da_empresa" required autofocus  maxlength="45"/>
-            <a href="https://www.google.com.br/maps?hl=pt-BR&tab=wl" target="_blank">Mapa</a></label>
+        <label>CEP <input disabled="true" type="text" name="cep" id="cep" required></label>        
 
-        <label>Latitude <input type="text" name="lat" required autofocus  maxlength="45"/></label>
+        <label>Logradouro <input type="text" name="logradouro_da_empresa" id="rua" required autofocus  maxlength="45"/></label>
 
-        <label>Longitude <input type="text" name="lng" required autofocus  maxlength="45"/>
-        <a data-toggle="modal" data-target="#help">Como cadastrar minha localização?</a></label>
+        <label>Bairro <input disabled="true" type="text" name="bairro" id="bairro" required></label>
 
+        <label>Cidade <input disabled="true" type="text" name="cidade_da_empresa" id="cidade" required autofocus  maxlength="25" /></label>
         
-        <label>CNPJ <input type="text" name="cnpj_da_empresa" required autofocus  maxlength="20"/></label>
+        <label>Estado <input disabled="true" type="text" name="estado" id="uf" required></label>
+
+        <input type="text" name="lat" id="latitude" class="hide" />
+        <input type="text" name="lng" id="longitude" class="hide" />
+        <input type="text" name="complet_address" id="complet" class="hide" />
+        
+        <label>CNPJ <input disabled="true" type="text" name="cnpj_da_empresa" required autofocus  maxlength="20"/></label>
     </div>
 
     <div class="section"><span>2</span>Contatos</div>
@@ -288,9 +239,9 @@ body, html {
 
     <div class="section"><span>3</span>Login e senha</div>
         <div class="inner-wrap">
-        <label>Login <input type="text" name="login_da_empresa" placeholder="No máximo 20 caracteres" required autofocus  maxlength="20"></label>
+        <label>Login <input disabled="true" type="text" name="login_da_empresa" placeholder="No máximo 20 caracteres" required autofocus  maxlength="20"></label>
 
-        <label>Senha <input type="password" name="senha_da_empresa" placeholder="No máximo 10 caracteres" required  maxlength="10">
+        <label>Senha <input disabled="true" type="password" name="senha_da_empresa" placeholder="No máximo 10 caracteres" required  maxlength="10">
         </label>
         
     </div>
@@ -318,5 +269,6 @@ body, html {
     </div>
 </form>
 </div>
+<script src="javascript/cadastro-lat-lng.js"></script>
 </body>
 </html>

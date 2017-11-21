@@ -35,7 +35,7 @@ include "bd/conexao.php";
                             $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
                             
                             while($registro = mysqli_fetch_array($resultado)){
-                                $endereco = $registro['USER_LOGRADOURO'];
+                                $endereco = $registro['USER_COMPLETO'];
                                 $empresa = $registro['USER_EMPRESA'];
                                 echo "<option  value='".$endereco."'>".$empresa."</option>";
                             }

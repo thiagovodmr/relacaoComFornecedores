@@ -113,33 +113,33 @@ include "bd/conexao.php";
         Estados
         </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="fornecedores.php?estado=ac">Acre</a></li>
-            <li><a href="fornecedores.php?estado=al">Alagoas</a></li>
-            <li><a href="fornecedores.php?estado=ap">Amapá</a></li>
-            <li><a href="fornecedores.php?estado=am">Amazonas</a></li>
-            <li><a href="fornecedores.php?estado=ba">Bahia</a></li>
-            <li><a href="fornecedores.php?estado=ce">Ceará</a></li>
-            <li><a href="fornecedores.php?estado=df">Distrito Federal</a></li>
-            <li><a href="fornecedores.php?estado=es">Espírito Santo</a></li>
-            <li><a href="fornecedores.php?estado=go">Goiás</a></li>
-            <li><a href="fornecedores.php?estado=ma">Maranhão</a></li>
-            <li><a href="fornecedores.php?estado=mt">Mato Grosso</a></li>
-            <li><a href="fornecedores.php?estado=ms">Mato Grosso do Sul</a></li>
-            <li><a href="fornecedores.php?estado=mg">Minas Gerais</a></li>
-            <li><a href="fornecedores.php?estado=pa">Pará</a></li>
-            <li><a href="fornecedores.php?estado=pb">Paraíba</a></li>
-            <li><a href="fornecedores.php?estado=pr">Paraná</a></li>
-            <li><a href="fornecedores.php?estado=pe">Pernambuco</a></li>
-            <li><a href="fornecedores.php?estado=pe">Piauí</a></li>
-            <li><a href="fornecedores.php?estado=rj">Rio de Janeiro</a></li>
-            <li><a href="fornecedores.php?estado=rn">Rio Grande do Norte</a></li>
-            <li><a href="fornecedores.php?estado=rs">Rio Grande do Sul</a></li>
-            <li><a href="fornecedores.php?estado=ro">Rondônia</a></li>
-            <li><a href="fornecedores.php?estado=rr">Roraima</a></li>
-            <li><a href="fornecedores.php?estado=sc">Santa Catarina</a></li>
-            <li><a href="fornecedores.php?estado=sp">São Paulo</a></li>
-            <li><a href="fornecedores.php?estado=se">Sergipe</a></li>
-            <li><a href="fornecedores.php?estado=to">Tocantins</a></li>
+            <li><a href="fornecedores.php?estado=AC">Acre</a></li>
+            <li><a href="fornecedores.php?estado=AL">Alagoas</a></li>
+            <li><a href="fornecedores.php?estado=AP">Amapá</a></li>
+            <li><a href="fornecedores.php?estado=AM">Amazonas</a></li>
+            <li><a href="fornecedores.php?estado=BA">Bahia</a></li>
+            <li><a href="fornecedores.php?estado=CE">Ceará</a></li>
+            <li><a href="fornecedores.php?estado=DF">Distrito Federal</a></li>
+            <li><a href="fornecedores.php?estado=ES">Espírito Santo</a></li>
+            <li><a href="fornecedores.php?estado=GO">Goiás</a></li>
+            <li><a href="fornecedores.php?estado=MA">Maranhão</a></li>
+            <li><a href="fornecedores.php?estado=MT">Mato Grosso</a></li>
+            <li><a href="fornecedores.php?estado=MS">Mato Grosso do Sul</a></li>
+            <li><a href="fornecedores.php?estado=MG">Minas Gerais</a></li>
+            <li><a href="fornecedores.php?estado=PA">Pará</a></li>
+            <li><a href="fornecedores.php?estado=PB">Paraíba</a></li>
+            <li><a href="fornecedores.php?estado=PR">Paraná</a></li>
+            <li><a href="fornecedores.php?estado=PE">Pernambuco</a></li>
+            <li><a href="fornecedores.php?estado=PI">Piauí</a></li>
+            <li><a href="fornecedores.php?estado=RJ">Rio de Janeiro</a></li>
+            <li><a href="fornecedores.php?estado=RN">Rio Grande do Norte</a></li>
+            <li><a href="fornecedores.php?estado=RS">Rio Grande do Sul</a></li>
+            <li><a href="fornecedores.php?estado=RO">Rondônia</a></li>
+            <li><a href="fornecedores.php?estado=RR">Roraima</a></li>
+            <li><a href="fornecedores.php?estado=SC">Santa Catarina</a></li>
+            <li><a href="fornecedores.php?estado=SP">São Paulo</a></li>
+            <li><a href="fornecedores.php?estado=SE">Sergipe</a></li>
+            <li><a href="fornecedores.php?estado=TO">Tocantins</a></li>
           </div>
         </div>
       </label> 
@@ -165,7 +165,7 @@ include "bd/conexao.php";
             echo "<hr>";
         }
       }
-    ?>
+    ?>  
 
 
 

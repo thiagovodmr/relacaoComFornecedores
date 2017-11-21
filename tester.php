@@ -33,7 +33,6 @@
                         $("#bairro").val("...");
                         $("#cidade").val("...");
                         $("#uf").val("...");
-                        $("#ibge").val("...");
                         //Consulta o webservice viacep.com.br/
                         $.getJSON("//viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
                             if (!("erro" in dados)) {
@@ -42,7 +41,6 @@
                                 $("#bairro").val(dados.bairro);
                                 $("#cidade").val(dados.localidade);
                                 $("#uf").val(dados.uf);
-                                $("#ibge").val(dados.ibge);
                             } //end if.
                             else {
                                 //CEP pesquisado não foi encontrado.
@@ -79,13 +77,11 @@
         <input name="cidade" type="text" id="cidade" size="40" disabled="true" /></label><br />
         <label>Estado:
         <input name="uf" type="text" id="uf" size="2" disabled="true" /></label><br />
-        <label>IBGE:
-        <input name="ibge" type="text" id="ibge" size="8" disabled="true" /></label>
 
         <input name="latitude" type="text" id="latitude" size="8" disabled="true" disabled="true" hidden="true" /></label>
         </label>
 
-        <input name="longitude" type="text" id="longitude" size="8" disabled="true" disabled="true" hidden="true" /></label><br />
+        <input name="longitude" type="text" id="longitude" size="8" disabled="true" disabled="true" hidden="true" /></label>
         </label>
         <input type="submit" value="Endereçar">
       </form>          
