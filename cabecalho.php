@@ -46,11 +46,12 @@ session_start();
           $strcon = mysqli_connect("$host","$usuario","$senha","$bd") or die('Erro ao conectar ao banco!');
           $sql = "SELECT * FROM usuarios WHERE USER_LOGIN = '$llogin' and USER_SENHA = '$ssenha'";
           $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
-          $name = mysqli_query($strcon, "SELECT USER_EMPRESA,USER_NOME,USER_PERFIL FROM usuarios WHERE USER_LOGIN = '$llogin' and USER_SENHA = '$ssenha'") or die(mysqli_error($strcon));
+          $name = mysqli_query($strcon, "SELECT USER_ID,USER_EMPRESA,USER_NOME,USER_PERFIL FROM usuarios WHERE USER_LOGIN = '$llogin' and USER_SENHA = '$ssenha'") or die(mysqli_error($strcon));
           $re = mysqli_fetch_array($name);
           $_SESSION['nome'] = $re['USER_NOME'];
           $_SESSION['empresa'] = $re['USER_EMPRESA'];
           $_SESSION['perfil'] = $re['USER_PERFIL'];
+          $_SESSION["id"] = $re["USER_ID"];
 
           echo "<ul class='nav navbar-nav'>";
             echo "<li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Produtos <i class='fa fa-chevron-down' aria-hidden='true'></i></a>

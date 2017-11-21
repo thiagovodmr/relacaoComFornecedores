@@ -20,10 +20,15 @@ $usuario = "id2846308_pep1";
 $senha = "@lunoifpe";
 $bd = "id2846308_projeto1";
 $strcon = mysqli_connect("$host","$usuario","$senha","$bd") or die('Erro ao conectar ao banco!');
-$sql = "SELECT * FROM produtos WHERE PRO_LOGIN = '$llogin'";
+
+//$sql = "SELECT * FROM produtos WHERE USER_LOGIN = '$llogin'";
+$sql = "SELECT p.PRO_TITULO,p.PRO_PRECO,p.PRO_DESCRICAO,p.PRO_ARQUIVO,p.PRO_ID,
+        u.USER_EMPRESA,u.USER_PERFIL,u.USER_LOGIN 
+        FROM produtos as p inner join usuarios as u on p.PRO_USER_ID = u.USER_ID 
+        WHERE u.USER_LOGIN = '$llogin' ";
+
 $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
-$name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO, PRO_ID FROM produtos") or die(mysqli_error($strcon));
-$re = mysqli_fetch_array($name);
+
 while($registro = mysqli_fetch_array($resultado)){
 $titulo = $registro['PRO_TITULO'];
 $preco = $registro['PRO_PRECO'];
@@ -40,7 +45,7 @@ echo "<a href='#' class='list-group-item'>";
     </div>
     <div class='col-md-6'>";
         echo "<h4 class='list-group-item-heading'>"."$titulo"."</h4>";
-		echo "<p class='list-group-item-text'>"."$descricao";
+        echo "<p class='list-group-item-text'>"."$descricao";
         echo "</p>
     </div>
     <div class='col-md-3 text-center'>";
@@ -53,7 +58,7 @@ echo "<a href='#' class='list-group-item'>";
 mysqli_close($strcon);
 ?>
         </div>
-	</div>
+    </div>
 </div>
 <?php
 include 'rodape.php';

@@ -39,7 +39,7 @@
 	$stmt = $conn->prepare( $sql );
 	$stmt->bindParam( ':nome', $nome );
 	$stmt->bindParam( ':nome_empresa', $nome_empresa);
-	$stmt->bindParam( ':estado', $estado);
+	// $stmt->bindParam( ':estado', $estado);
 	$stmt->bindParam( ':cidade', $cidade );
 	$stmt->bindParam( ':telefone',$telefone );
 	$stmt->bindParam( ':cnpj', $cnpj);

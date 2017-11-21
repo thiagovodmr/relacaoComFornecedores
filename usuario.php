@@ -68,17 +68,13 @@
     <div class="list-group" id="formulario">
       <?php 
         $sql = "SELECT * FROM categorias ORDER BY CAT_NOME";
-        $kk = "SELECT * FROM produtos";
         $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
-        $rr = mysqli_query($strcon, $kk) or die('Erro ao tentar cadastrar registro');
-        $name = mysqli_query($strcon, "SELECT CAT_NOME,CAT_ID FROM categorias") or die(mysqli_error($strcon));
         
         while($registro = mysqli_fetch_array($resultado)):
           $nome = $registro['CAT_NOME'];
             $id = $registro['CAT_ID'];
             $nnn = mysqli_query($strcon, "SELECT PRO_CATEGORIA FROM produtos WHERE PRO_CATEGORIA = '$id'") or die(mysqli_error($strcon));
-            // $resul = mysqli_fetch_array($nnn);
-            // $tamanho = sizeof($resul);
+
             $tamanho = mysqli_num_rows($nnn);
             if ($_SESSION['logado']): 
         
@@ -107,34 +103,41 @@
 
   <div class="col-md-9 col-sm-8">
     <?php if (isset($_POST["pesquisa"])): 
-      
-            $pesquisa = $_POST["pesquisa"];
-            $sql = "SELECT * FROM produtos WHERE PRO_TITULO  LIKE '%$pesquisa%' Or PRO_DESCRICAO LIKE '%$pesquisa%'";
-            $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
-            // $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO FROM produtos") or die(mysqli_error($strcon));
-            // $re = mysqli_fetch_array($name);
-            $r = mysqli_num_rows($resultado); 
-            ?>
             
+            //__________________________________________________________      
+            
+            $pesquisa = $_POST["pesquisa"];
+            $sql = "SELECT p.PRO_ID,p.PRO_TITULO,p.PRO_PRECO,p.PRO_DESCRICAO,p.PRO_ARQUIVO,u.USER_EMPRESA,u.USER_PERFIL 
+                FROM produtos as p inner join usuarios as u on p.PRO_USER_ID = u.USER_ID
+             WHERE PRO_TITULO  LIKE '%$pesquisa%' Or PRO_DESCRICAO LIKE '%$pesquisa%'";
+            $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
+            $r = mysqli_num_rows($resultado); 
+            
+            ?>
+
             <?php if ($r==0): ?>
                <div class='col-md-8' style='text-align:center;'><h3>Nenhum produto encontrado</h3></div> 
             
             <?php else: ?>
               <?php  
               while($registro = mysqli_fetch_array($resultado)): 
-                $perfil = $registro['PRO_PERFIL'];
+                $perfil = $registro['USER_PERFIL'];
+                $nome_fornecedor = $registro['USER_EMPRESA'];
                 $titulo = $registro['PRO_TITULO'];
                 $preco = $registro['PRO_PRECO'];
-                $descricao = $registro['PRO_DESCRICAO'];
                 $imagem = $registro['PRO_ARQUIVO'];
-                $nome_fornecedor = $registro['PRO_NOME'];
+                $id = $registro["PRO_ID"];
                ?>
                
               <div class='col-sm-8 col-md-4'>
                   <div class='thumbnail'>
                     <img src=<?= $imagem ?> height='10' width='50'>  
                       <div class='caption'>
-                        <h3><a href="#linkParaoProduto"><b class='preto'><?= $titulo ?></b></a></h3>
+                        <h3>
+                          <a href=pagina_do_produto.php?id=<?= $id ?>>
+                            <b class='preto'><?= $titulo ?></b>
+                          </a>
+                        </h3>
                         <p>
                           <a class='btn btn-info' role='button'>Preço: <?= $preco.",00" ?></a> 
                           <a href=perfil.php?id=<?= $perfil ?> class='btn btn-warning' role='button'>
@@ -149,15 +152,16 @@
 
             <?php endif ?>
 
-
+            <!-- _______________________________________________ -->
+          
           <?php elseif (isset($_POST["filtro"])) :
                 
                 $arr = explode(",",$_POST["filtro"]);
-                $sql = "SELECT * FROM produtos WHERE
-                 PRO_PRECO >= '$arr[0]' AND PRO_PRECO <= '$arr[1]' ";
+                $sql = "SELECT p.PRO_ID,p.PRO_TITULO,p.PRO_PRECO,p.PRO_ARQUIVO,u.USER_EMPRESA,u.USER_PERFIL 
+                FROM produtos as p inner join usuarios as u on p.PRO_USER_ID = u.USER_ID
+                WHERE PRO_PRECO >= '$arr[0]' AND PRO_PRECO <= '$arr[1]' ";
             $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
-              // $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO, PRO_NOME, PRO_PERFIL FROM produtos") or die(mysqli_error($strcon));
-              // $re = mysqli_fetch_array($name);
+
             $r = mysqli_num_rows($resultado);
           
              if ($r==0): ?>
@@ -168,19 +172,23 @@
             <?php else: ?>
                 <?php 
                 while($registro = mysqli_fetch_array($resultado)): 
-                  $perfil = $registro['PRO_PERFIL'];
+                  $perfil = $registro['USER_PERFIL'];
+                  $nome_fornecedor = $registro['USER_EMPRESA']; 
                   $titulo = $registro['PRO_TITULO'];
                   $preco = $registro['PRO_PRECO'];
-                  $descricao = $registro['PRO_DESCRICAO'];
                   $imagem = $registro['PRO_ARQUIVO'];
-                  $nome_fornecedor = $registro['PRO_NOME']; 
+                  $id = $registro["PRO_ID"];
                 ?>
                 
                   <div class='col-sm-8 col-md-4'>
                       <div class='thumbnail'>
                         <img src=<?= $imagem ?> height='10' width='50'>  
                           <div class='caption'>
-                            <h3><a href="#linkParaoProduto"><b class='preto'><?= $titulo ?></b></a></h3>
+                            <h3>
+                              <a href=pagina_do_produto.php?id=<?= $id ?>>
+                                <b class='preto'><?= $titulo ?></b>
+                              </a>
+                            </h3>
                             <p>
                               <a class='btn btn-info' role='button'>Preço: <?= $preco.",00" ?></a> 
                               <a href=perfil.php?id=<?= $perfil ?> class='btn btn-warning' role='button'>
@@ -194,7 +202,7 @@
           <?php 
               endwhile;
             endif ?>
-
+          <!-- ____________________________________________________________ -->
         <?php
         elseif($_GET['i']==[]): 
 
@@ -208,26 +216,31 @@
             $inicio = ($registros*$pagina)-$registros;
 
 
-            $cmd = "SELECT * FROM produtos LIMIT $inicio, $registros"; 
-            $produtos = mysqli_query($strcon,$cmd); 
+            $cmd = "SELECT p.PRO_ID,p.PRO_TITULO,p.PRO_PRECO,p.PRO_ARQUIVO,u.USER_EMPRESA,u.USER_PERFIL 
+            FROM produtos as p inner join usuarios as u on p.PRO_USER_ID = u.USER_ID 
+            LIMIT $inicio, $registros"; 
+            $produtos = mysqli_query($strcon,$cmd) or die("falha no select dos produtos"); 
             $total = mysqli_num_rows($produtos); 
          
 
            while($registro = mysqli_fetch_array($produtos)):  
-              $perfil = $registro['PRO_PERFIL'];      
+              $perfil = $registro['USER_PERFIL'];      
+              $nome_fornecedor = $registro['USER_EMPRESA'];
               $titulo = $registro['PRO_TITULO'];
               $preco = $registro['PRO_PRECO'];
-              $descricao = $registro['PRO_DESCRICAO'];
-              $descricao1 = wordwrap($descricao, 25, "\n", false);
               $imagem = $registro['PRO_ARQUIVO'];
-              $nome_fornecedor = $registro['PRO_NOME'];
+              $id = $registro["PRO_ID"];
              ?>
 
               <div class='col-sm-8 col-md-4'>
                   <div class='thumbnail'>
                     <img src=<?= $imagem ?> height='10' width='50'>  
                       <div class='caption'>
-                        <h3><a href="#linkParaoProduto"><b class='preto'><?= $titulo ?></b></a></h3>
+                        <h3>
+                          <a href=pagina_do_produto.php?id=<?= $id ?>>
+                            <b class='preto'><?= $titulo ?></b>
+                          </a>
+                        </h3>
                         <p>
                           <a class='btn btn-info' role='button'>Preço: <?= $preco.",00" ?></a> 
                           <a href=perfil.php?id=<?= $perfil ?> class='btn btn-warning' role='button'>
@@ -238,33 +251,39 @@
                   </div>
               </div>
          <?php endwhile; 
-            
+          // ________________________________________________
+
         elseif (isset($_GET['i']) || isset($id)): 
       
-            $sql = "SELECT * FROM produtos WHERE PRO_CATEGORIA = '$i'";
+            $sql = "SELECT p.PRO_ID,p.PRO_TITULO,p.PRO_PRECO,p.PRO_ARQUIVO,p.PRO_CATEGORIA,u.USER_EMPRESA,u.USER_PERFIL 
+                FROM produtos as p inner join usuarios as u on p.PRO_USER_ID = u.USER_ID
+             WHERE PRO_CATEGORIA = '$i'";
             $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
-              // $name = mysqli_query($strcon, "SELECT PRO_TITULO, PRO_PRECO, PRO_DESCRICAO, PRO_ARQUIVO, PRO_NOME, PRO_PERFIL FROM produtos") or die(mysqli_error($strcon));
-              // $re = mysqli_fetch_array($name);
             $r = mysqli_num_rows($resultado);
+            
             ?>
             <?php if ($r==0): ?>
                 <div class='col-md-8' style='text-align:center;'><h3>Nenhum produto encontrado</h3></div> 
             <?php else: ?>
                 <?php 
                 while($registro = mysqli_fetch_array($resultado)): 
-                  $perfil = $registro['PRO_PERFIL'];
+                  $perfil = $registro['USER_PERFIL'];
+                  $nome_fornecedor = $registro['USER_EMPRESA']; 
                   $titulo = $registro['PRO_TITULO'];
                   $preco = $registro['PRO_PRECO'];
-                  $descricao = $registro['PRO_DESCRICAO'];
                   $imagem = $registro['PRO_ARQUIVO'];
-                  $nome_fornecedor = $registro['PRO_NOME']; 
+                  $id =  $registro['PRO_ID'];
                 ?>
                 
                   <div class='col-sm-8 col-md-4'>
                       <div class='thumbnail'>
                         <img src=<?= $imagem ?> height='10' width='50'>  
                           <div class='caption'>
-                            <h3><a href="#linkParaoProduto"><b class='preto'><?= $titulo ?></b></a></h3>
+                            <h3>
+                              <a href=pagina_do_produto.php?id=<?= $id ?>>
+                                <b class='preto'><?= $titulo ?></b>
+                              </a>
+                            </h3>
                             <p>
                               <a class='btn btn-info' role='button'>Preço: <?= $preco.",00" ?></a> 
                               <a href=perfil.php?id=<?= $perfil ?> class='btn btn-warning' role='button'>
