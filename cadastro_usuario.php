@@ -82,7 +82,6 @@ body, html {
         -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
         -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
     }
-
     .form-style-10 .section{
         font: normal 20px 'Bitter', serif;
         color: #2A88AD;
@@ -146,7 +145,6 @@ body, html {
         outline: none;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
       }
-
       #pac-input {
         background-color: #fff;
         font-family: Roboto;
@@ -157,21 +155,17 @@ body, html {
         text-overflow: ellipsis;
         width: 300px;
       }
-
       #pac-input:focus {
         border-color: #4d90fe;
       }
-
       .pac-container {
         font-family: Roboto;
       }
-
       #type-selector {
         color: #fff;
         background-color: #4d90fe;
         padding: 5px 11px 0px 11px;
       }
-
       #type-selector label {
         font-family: Roboto;
         font-size: 13px;
@@ -184,7 +178,6 @@ body, html {
         visibility: hide;
       }
       .show{
-
       }
 </style>
 <script src="javascript/cadastro.js"></script>
@@ -210,9 +203,11 @@ body, html {
         
         <label>Descrição da Empresa<textarea name="descricao" required autofocus  maxlength="5000"></textarea></label>
         
-        <label>CEP <input disabled="true" type="text" name="cep" id="cep" required></label>        
+        <label>CEP <input  type="text" name="cep" id="cep" required></label>
 
-        <label>Logradouro <input type="text" name="logradouro_da_empresa" id="rua" required autofocus  maxlength="45"/></label>
+        <label>Número da Rua<input disabled="true" type="text" name="numero" id="numero" required></label>     
+
+        <label>Logradouro <input disabled="true" type="text" name="logradouro_da_empresa" id="rua" required autofocus  maxlength="45"/></label>
 
         <label>Bairro <input disabled="true" type="text" name="bairro" id="bairro" required></label>
 
@@ -222,9 +217,11 @@ body, html {
 
         <input type="text" name="lat" id="latitude" class="hide" />
         <input type="text" name="lng" id="longitude" class="hide" />
-        <input type="text" name="complet_address" id="complet" class="hide" />
+        <label>Endereço Completo
+        <input type="text" name="complet_address" id="complet" />
+        </label>
         
-        <label>CNPJ <input disabled="true" type="text" name="cnpj_da_empresa" required autofocus  maxlength="20"/></label>
+        <label>CNPJ <input disabled="true" type="text" name="cnpj_da_empresa" id="cnpj" required autofocus  maxlength="20"/></label>
     </div>
 
     <div class="section"><span>2</span>Contatos</div>
