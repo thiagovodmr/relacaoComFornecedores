@@ -131,7 +131,8 @@
                
               <div class='col-sm-8 col-md-4'>
                   <div class='thumbnail'>
-                    <img src=<?= $imagem ?> height='10' width='50'>  
+                    <a href=pagina_do_produto.php?id=<?= $id ?>><img src=<?= $imagem ?> height='10' width='50'>  
+                    </a>
                       <div class='caption'>
                         <h3>
                           <a href=pagina_do_produto.php?id=<?= $id ?>>
@@ -182,7 +183,8 @@
                 
                   <div class='col-sm-8 col-md-4'>
                       <div class='thumbnail'>
-                        <img src=<?= $imagem ?> height='10' width='50'>  
+                        <a href=pagina_do_produto.php?id=<?= $id ?>><img src=<?= $imagem ?> height='10' width='50'>  
+                        </a>
                           <div class='caption'>
                             <h3>
                               <a href=pagina_do_produto.php?id=<?= $id ?>>
@@ -234,7 +236,9 @@
 
               <div class='col-sm-8 col-md-4'>
                   <div class='thumbnail'>
+                    <a href=pagina_do_produto.php?id=<?= $id ?>>
                     <img src=<?= $imagem ?> height='10' width='50'>  
+                    </a>
                       <div class='caption'>
                         <h3>
                           <a href=pagina_do_produto.php?id=<?= $id ?>>
@@ -277,7 +281,9 @@
                 
                   <div class='col-sm-8 col-md-4'>
                       <div class='thumbnail'>
+                        <a href=pagina_do_produto.php?id=<?= $id ?>>
                         <img src=<?= $imagem ?> height='10' width='50'>  
+                        </a>
                           <div class='caption'>
                             <h3>
                               <a href=pagina_do_produto.php?id=<?= $id ?>>
