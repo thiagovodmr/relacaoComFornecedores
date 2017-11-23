@@ -120,7 +120,10 @@
                 
                   <div class='col-sm-4 col-md-4'>
                       <div class='thumbnail'>
-                        <img class="largura" src=<?= $imagem ?> height='10' width='50'>  
+			
+                        <a href=pagina_do_produto.php?id=<?= $id ?> >
+                        	<img class="largura" src=<?= $imagem ?> height='10' width='50'>  
+                        </a>
                           <div class='caption'>
                             <h3><a href=pagina_do_produto.php?id=<?= $id ?> ><b class='preto'><?= $titulo ?></b></a></h3>
                             <p>
@@ -168,7 +171,9 @@
                 
                   <div class='col-sm-4 col-md-4'>
                       <div class='thumbnail'>
-                        <img class="largura" src=<?= $imagem ?> height='10' width='50'>  
+                        <a href=pagina_do_produto.php?id=<?= $id ?> >
+                        	<img class="largura" src=<?= $imagem ?> height='10' width='50'>  
+                        </a> 
                           <div class='caption'>
                             <h3><a href=pagina_do_produto.php?id=<?= $id ?>><b class='preto'><?= $titulo ?></b></a></h3>
                             <p>
