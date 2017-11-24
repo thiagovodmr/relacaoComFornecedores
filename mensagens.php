@@ -153,7 +153,7 @@ include 'bd/conexao.php';
 	<div class="row">
 		<div class="col-md-2 col-sm-4">	
 			<ul class="list-group">
-				<table border="1" width="100%" class="table-tb">
+				<table id="menssages_nao_lidas" border="1" width="100%" class="table-tb">
 					
 	<?php
 		$sql = "SELECT * FROM usuarios";
@@ -171,7 +171,6 @@ include 'bd/conexao.php';
   			$q = mysqli_query($strcon, $query);
   			$quant = mysqli_num_rows($q);
   			
-// 			echo "<tr><td class='td'><a class='text-a' href=mensagens.php?id=".$identificador.">".$nome_interprise."</a></td></tr>";
 
            echo "<tr>
 			 		<td class='td'>
@@ -284,6 +283,11 @@ include 'bd/conexao.php';
 				
 		 	});
 		 }, 1000);
+		 
+		 setInterval(function(){$.get("mens_nao_lidas.php",function(data){
+		 	$('#menssages_nao_lidas').html(data);
+		 });
+		},500);
 		
 		$("#menssage").animate({ scrollTop: $("#menssage")[0].scrollHeight}, 1000);
 		$(document).ready(function() {

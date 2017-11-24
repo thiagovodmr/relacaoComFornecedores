@@ -44,8 +44,15 @@
 			padding: 20px;
 			border: 1px solid black;
 			overflow: auto;
+			overflow-x:hidden;
 			height: 380px;
 			margin-bottom: 40px;
+		}
+		.thumbnail{
+			background-color: #C2EBDD;
+		}
+		.caption{
+			width: 100%;
 		}
 	</style>
 </head>
@@ -104,9 +111,13 @@
 
  ?>
 
-<div class="container">
-<div class="row"><h2>Produtos do mesmo fornecedor</h2></div>
-	<div class="produtos_fornecedor col-md-10 col-md-offset-1">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 col-sm-12">
+			<h2>Produtos do mesmo fornecedor</h2>
+		</div>
+	</div>
+	<div class="produtos_fornecedor col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
 		<div class="row">
 			<?php  
 			while($registro = $stmt2->fetch(PDO::FETCH_ASSOC)):
@@ -155,9 +166,14 @@
 
  ?>
 
-<div class="row"><h2>Produtos da mesma categoria</h2></div>
-<div class="container">
-	<div class="produtos_fornecedor col-md-10 col-md-offset-1">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 col-sm-12">
+			<h2>Produtos da mesma categoria</h2>
+		</div>
+	</div>
+
+	<div class="produtos_fornecedor col-md-10 sol-sm-10 col-md-offset-1 col-sm-offset-1">
 		<div class="row">
 			<?php  
 			while($regist = $stmt3->fetch(PDO::FETCH_ASSOC)):
