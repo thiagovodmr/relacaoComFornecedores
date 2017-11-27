@@ -11,7 +11,7 @@
 	}
 
 	$id = $_GET["id"];
-	$query = "SELECT p.*,u.USER_EMPRESA,c.CAT_NOME 
+	$query = "SELECT p.*,u.USER_EMPRESA,u.USER_ID,c.CAT_NOME 
 	FROM produtos AS p INNER JOIN usuarios AS u ON p.PRO_USER_ID = u.USER_ID inner join categorias as c on PRO_CATEGORIA = CAT_ID
 	where PRO_ID = :id ";
 	
@@ -54,6 +54,17 @@
 		.caption{
 			width: 100%;
 		}
+		.comprar{
+			width: 90%;
+			background-color: red; 
+			border: 1px solid black;
+			border-radius: 15px;
+		}
+		a{
+			text-decoration: none;
+			font-size: 20px;
+			color: white;
+		}
 	</style>
 </head>
 <body>
@@ -66,34 +77,41 @@
 		<div class='resume'>
 		    <div class='panel panel-default'>
 			      <div class='panel-heading resume-heading'>
-			      		<div class="row">
+			      	<div class="row">
 			      		<div class="col-md-5 col-sm-5">
 							<img class="largura" src=<?= $row["PRO_ARQUIVO"] ?>>
 				        </div>
 				        <div class="col-md-6 col-sm-6">
 
-							            <ul class='list-group'>
-							          		<li class='list-group-item'>
-							          			<b>Fornecedor  :</b>
-							          			<?=$row["USER_EMPRESA"]  ?>
-							          		</li>
-							          		<li class='list-group-item'>
-							          			<b>Preço  :</b>
-							          			<?="R$ ".$row["PRO_PRECO"]  ?>
-							          		</li>
-							          		<li class='list-group-item'>
-							          			<b>Categoria  :</b>
-							          			<?=$row["CAT_NOME"]  ?>
-							          		</li>
-							        	</ul>
-								      <div class='bs-callout bs-callout-danger'>
-										    <h4>Descrição</h4>
-										    <?= $row["PRO_DESCRICAO"]  ?>
-								      </div>
+							<ul class='list-group'>
+							    <li class='list-group-item'>
+							        <b>Fornecedor  :</b>
+							        <?=$row["USER_EMPRESA"]  ?>
+							    </li>
+							    <li class='list-group-item'>
+							        <b>Preço  :</b>
+							        <?="R$ ".$row["PRO_PRECO"]  ?>
+							    </li>
+							    <li class='list-group-item'>
+							        <b>Categoria  :</b>
+							        <?=$row["CAT_NOME"]  ?>
+							    </li>
+							</ul>
+							<div class='bs-callout bs-callout-danger'>
+								<h4>Descrição</h4>
+								<?= $row["PRO_DESCRICAO"]  ?>
+							</div>
+							<?php if ($_SESSION["logado"] == true and $row["USER_ID"]!= $_SESSION["id"]): ?>
+								  	<a href=/compras/cadastrar_compras.php?id=<?= $id ?>>	
+										<button class="comprar">
+								      		Comprar
+										</button>
+								    </a>
+							<?php endif ?>
 						            
 				        </div>
 			      </div>
-			      </div>
+			    </div>
 			</div>
 		</div>
 	</div>
