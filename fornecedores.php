@@ -39,10 +39,10 @@ include "bd/conexao.php";
         }
       };
 
-        function initMap() {
+          function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(-8.0475622, -34.8769643),
-          zoom: 7
+          center: new google.maps.LatLng(-15.77972, -47.92972),
+          zoom: 4
         });
         var infoWindow = new google.maps.InfoWindow;
 
@@ -69,19 +69,19 @@ include "bd/conexao.php";
               infowincontent.appendChild(text);
               var icon = customLabel[type] || {};
               var marker = new google.maps.Marker({
+                url: 'http://www.google.com/',
                 map: map,
                 position: point,
                 label: icon.label
               });
               marker.addListener('click', function() {
+                window.location.href = marker.url;
                 infoWindow.setContent(infowincontent);
                 infoWindow.open(map, marker);
               });
             });
           });
         }
-
-
 
       function downloadUrl(url, callback) {
         var request = window.ActiveXObject ?

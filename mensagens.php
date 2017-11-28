@@ -54,7 +54,7 @@ include 'bd/conexao.php';
 		font-size: 20px;
 		overflow: auto;
 		margin-left: 10px;
-		height: 500px;
+		height: 450px;
 	}
 	.list-group-item{
 		border: 1px solid black;
