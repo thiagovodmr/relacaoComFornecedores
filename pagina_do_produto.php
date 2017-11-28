@@ -11,7 +11,7 @@
 	}
 
 	$id = $_GET["id"];
-	$query = "SELECT p.*,u.USER_EMPRESA,c.CAT_NOME 
+	$query = "SELECT p.*,u.USER_EMPRESA,u.USER_ID,c.CAT_NOME 
 	FROM produtos AS p INNER JOIN usuarios AS u ON p.PRO_USER_ID = u.USER_ID inner join categorias as c on PRO_CATEGORIA = CAT_ID
 	where PRO_ID = :id ";
 	
@@ -44,8 +44,26 @@
 			padding: 20px;
 			border: 1px solid black;
 			overflow: auto;
+			overflow-x:hidden;
 			height: 380px;
 			margin-bottom: 40px;
+		}
+		.thumbnail{
+			background-color: #C2EBDD;
+		}
+		.caption{
+			width: 100%;
+		}
+		.comprar{
+			width: 90%;
+			background-color: red; 
+			border: 1px solid black;
+			border-radius: 15px;
+		}
+		a{
+			text-decoration: none;
+			font-size: 20px;
+			color: white;
 		}
 	</style>
 </head>
@@ -59,34 +77,41 @@
 		<div class='resume'>
 		    <div class='panel panel-default'>
 			      <div class='panel-heading resume-heading'>
-			      		<div class="row">
+			      	<div class="row">
 			      		<div class="col-md-5 col-sm-5">
 							<img class="largura" src=<?= $row["PRO_ARQUIVO"] ?>>
 				        </div>
 				        <div class="col-md-6 col-sm-6">
 
-							            <ul class='list-group'>
-							          		<li class='list-group-item'>
-							          			<b>Fornecedor  :</b>
-							          			<?=$row["USER_EMPRESA"]  ?>
-							          		</li>
-							          		<li class='list-group-item'>
-							          			<b>Preço  :</b>
-							          			<?="R$ ".$row["PRO_PRECO"]  ?>
-							          		</li>
-							          		<li class='list-group-item'>
-							          			<b>Categoria  :</b>
-							          			<?=$row["CAT_NOME"]  ?>
-							          		</li>
-							        	</ul>
-								      <div class='bs-callout bs-callout-danger'>
-										    <h4>Descrição</h4>
-										    <?= $row["PRO_DESCRICAO"]  ?>
-								      </div>
+							<ul class='list-group'>
+							    <li class='list-group-item'>
+							        <b>Fornecedor  :</b>
+							        <?=$row["USER_EMPRESA"]  ?>
+							    </li>
+							    <li class='list-group-item'>
+							        <b>Preço  :</b>
+							        <?="R$ ".$row["PRO_PRECO"]  ?>
+							    </li>
+							    <li class='list-group-item'>
+							        <b>Categoria  :</b>
+							        <?=$row["CAT_NOME"]  ?>
+							    </li>
+							</ul>
+							<div class='bs-callout bs-callout-danger'>
+								<h4>Descrição</h4>
+								<?= $row["PRO_DESCRICAO"]  ?>
+							</div>
+							<?php if ($_SESSION["logado"] == true and $row["USER_ID"]!= $_SESSION["id"]): ?>
+								  	<a href=/compras/cadastrar_compras.php?id=<?= $id ?>>	
+										<button class="comprar">
+								      		Comprar
+										</button>
+								    </a>
+							<?php endif ?>
 						            
 				        </div>
 			      </div>
-			      </div>
+			    </div>
 			</div>
 		</div>
 	</div>
@@ -104,9 +129,13 @@
 
  ?>
 
-<div class="container">
-<div class="row"><h2>Produtos do mesmo fornecedor</h2></div>
-	<div class="produtos_fornecedor col-md-10 col-md-offset-1">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 col-sm-12">
+			<h2>Produtos do mesmo fornecedor</h2>
+		</div>
+	</div>
+	<div class="produtos_fornecedor col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
 		<div class="row">
 			<?php  
 			while($registro = $stmt2->fetch(PDO::FETCH_ASSOC)):
@@ -120,7 +149,10 @@
                 
                   <div class='col-sm-4 col-md-4'>
                       <div class='thumbnail'>
-                        <img class="largura" src=<?= $imagem ?> height='10' width='50'>  
+			
+                        <a href=pagina_do_produto.php?id=<?= $id ?> >
+                        	<img class="largura" src=<?= $imagem ?> height='10' width='50'>  
+                        </a>
                           <div class='caption'>
                             <h3><a href=pagina_do_produto.php?id=<?= $id ?> ><b class='preto'><?= $titulo ?></b></a></h3>
                             <p>
@@ -152,9 +184,14 @@
 
  ?>
 
-<div class="row"><h2>Produtos da mesma categoria</h2></div>
-<div class="container">
-	<div class="produtos_fornecedor col-md-10 col-md-offset-1">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 col-sm-12">
+			<h2>Produtos da mesma categoria</h2>
+		</div>
+	</div>
+
+	<div class="produtos_fornecedor col-md-10 sol-sm-10 col-md-offset-1 col-sm-offset-1">
 		<div class="row">
 			<?php  
 			while($regist = $stmt3->fetch(PDO::FETCH_ASSOC)):
@@ -168,7 +205,9 @@
                 
                   <div class='col-sm-4 col-md-4'>
                       <div class='thumbnail'>
-                        <img class="largura" src=<?= $imagem ?> height='10' width='50'>  
+                        <a href=pagina_do_produto.php?id=<?= $id ?> >
+                        	<img class="largura" src=<?= $imagem ?> height='10' width='50'>  
+                        </a> 
                           <div class='caption'>
                             <h3><a href=pagina_do_produto.php?id=<?= $id ?>><b class='preto'><?= $titulo ?></b></a></h3>
                             <p>
