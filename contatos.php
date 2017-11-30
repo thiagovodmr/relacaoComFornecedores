@@ -47,6 +47,7 @@
                 <br /> <i class="glyphicon glyphicon-gift"></i> 3 de Setembro de 1997
                 <br /> <i class="fa fa-map-marker" aria-hidden="true"></i> IFPE - Campus Igarassu
         </div>
+        
     </div>
 </div>
 <br><br><br>

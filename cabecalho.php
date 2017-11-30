@@ -59,8 +59,8 @@ session_start();
           echo "<ul class='nav navbar-nav'>";
             echo "<li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Produtos <i class='fa fa-chevron-down' aria-hidden='true'></i></a>
               <ul class='dropdown-menu'>
-               <li><a href='/meus_Produtos.php'>Meus Produtos <i class='fa fa-shopping-bag' aria-hidden='true'></i></a></li>
-               <li><a href='/cadastro_Produtos.php'>Inserir Produtos <i class='fa fa-upload' aria-hidden='true'></i></a></li>
+                <li><a href='/meus_Produtos.php'>Meus Produtos <i class='fa fa-shopping-bag' aria-hidden='true'></i></a></li>
+                <li><a href='/cadastro_Produtos.php'>Inserir Produtos <i class='fa fa-upload' aria-hidden='true'></i></a></li>
               </ul>
            </li>
          </ul>";
@@ -68,7 +68,8 @@ session_start();
           echo "<ul class='nav navbar-nav'>";
             echo "<li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Olá, ".ucwords($re['USER_EMPRESA'])." <i class='fa fa-user-circle' aria-hidden='true'></i></a>
               <ul class='dropdown-menu'>
-               <li><a href='/meu_Perfil.php'>Meu Perfil <i class='fa fa-user-circle fa-1x' aria-hidden='true'></i></a></li>
+               <li><a href='/meu_Perfil.php'>Editar Perfil <i class='fa fa-user-circle fa-1x' aria-hidden='true'></i></a></li>
+                <li><a href='/minhas_compras.php'>Minhas Compras <i class='fa fa-shopping-cart' aria-hidden='true'></i></a></li>
                <li><a href='/mensagens.php'>Mensagens <i class='fa fa-comments fa-1x' aria-hidden='true'></i></a></li>
                <li><a href='/logout.php'>Sair <i class='fa fa-sign-out' aria-hidden='true'></i></a></li>
               </ul>

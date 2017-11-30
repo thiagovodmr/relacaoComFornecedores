@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Progresso</title>
 	<style>
 		.progress{
 			border: 0.6px solid black
@@ -11,14 +11,14 @@
 <body>
 	<?php 
 		include("../cabecalho.php");
-		$larguras = [0,5,55,100]
+	 	$id = $_GET['id'];
+		$larguras = [0,5,54,100];
 	 ?>
-
 
 	 <div class="container">
 		<div class="row">
 			<div class="col-md-1 col-sm-1">
-				<i class="fa fa-credit-card fa-3x" aria-hidden="true"></i>
+				<i class="fa fa-money fa-3x" aria-hidden="true"></i>
 	 		</div>
 	 		<div class="col-md-1 col-md-offset-5 col-sm-1 col-sm-offset-5">
 	 			<i class="fa fa-truck fa-3x" aria-hidden="true"></i>
@@ -30,8 +30,22 @@
 		 <div class="row">
 		 	<div class="col-md-12 col-sm-12">
 				<div class="progress">
-				  <div class="progress-bar progress-bar-success"
-				   style="width: <?= $larguras[0] ?>%">
+				  <?php
+
+				  include "../connect.php";
+				  $sql = "SELECT * FROM compra WHERE COM_ID = :id";
+				  
+				  $stmt = $conn->prepare($sql);
+				  $stmt->bindParam(":id", $id);
+				  $resultado = $stmt->execute();
+				 
+				  $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+				  $status = $row['COM_STATUS'];
+				  
+				  ?>  
+	      		  <div class="progress-bar progress-bar-success" style="width: <?= $larguras[$status] ?>%">;
 				    <span class="sr-only">35% Complete (success)</span>
 				  </div>
 				</div>

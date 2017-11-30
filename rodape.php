@@ -79,8 +79,8 @@
                 <h6 class="title font-bold"><strong>Contatos</strong></h6>
                 <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p><i class="fa fa-home mr-3"></i> Rod. Gov. Mário Covas, S/n - Centro, Igarassu - PE, 53630-220</p>
-                <p><i class="fa fa-envelope mr-3"></i> alexandre.vianna@igarassu.edu.br</p>
-                <p><i class="fa fa-phone mr-3"></i> +55 081 99230-8372</p>
+                <p><i class="fa fa-envelope mr-3"></i> ssexpress@gmail.com</p>
+                <p><i class="fa fa-phone mr-3"></i> +55 081 99999-9999</p>
             </div>
             <!--/.Fourth column-->
 

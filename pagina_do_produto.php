@@ -11,6 +11,7 @@
 	}
 
 	$id = $_GET["id"];
+	
 	$query = "SELECT p.*,u.USER_EMPRESA,u.USER_ID,c.CAT_NOME 
 	FROM produtos AS p INNER JOIN usuarios AS u ON p.PRO_USER_ID = u.USER_ID inner join categorias as c on PRO_CATEGORIA = CAT_ID
 	where PRO_ID = :id ";
@@ -34,7 +35,7 @@
 			/*width: 98%;*/
 		}
 		.largura{
-			width: 98%;
+			width: 90%;
 		}
 		h2{
 			/*text-decoration: underline;*/
@@ -45,7 +46,7 @@
 			border: 1px solid black;
 			overflow: auto;
 			overflow-x:hidden;
-			height: 380px;
+			height: 350px;
 			margin-bottom: 40px;
 		}
 		.thumbnail{
@@ -104,7 +105,7 @@
 							<?php if ($_SESSION["logado"] == true and $row["USER_ID"]!= $_SESSION["id"]): ?>
 								  	<a href=/compras/cadastrar_compras.php?id=<?= $id ?>>	
 										<button class="comprar">
-								      		Comprar
+								      		Comprar <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 										</button>
 								    </a>
 							<?php endif ?>

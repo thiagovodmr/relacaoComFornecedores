@@ -1,4 +1,4 @@
-<?php 
+<?php
 	session_start();
 	$dbname = "id2846308_projeto1";
 	$usuario = "id2846308_pep1";
@@ -25,13 +25,14 @@
 
 	$id_vendedor = $registro["PRO_USER_ID"];
 
-	$insert = "INSERT INTO compras(COMPRADOR_ID,VENDEDOR_ID,ID_PRODUTO) 
-	VALUES(:id_comprador, :id_vendedor,:id_produto)";
+	$insert = "INSERT INTO compra(COM_COMPRADOR,COM_VENDEDOR,COM_PRODUTO, COM_STATUS) 
+	VALUES(:id_comprador, :id_vendedor,:id_produto, :status)";
 
 	$stmt2 = $conn->prepare($insert);
 	$stmt2->bindParam(":id_comprador",$id_comprador);
 	$stmt2->bindParam(":id_vendedor",$id_vendedor);
 	$stmt2->bindParam(":id_produto",$id_produto);
+	$stmt2->bindParam(":status",1);
 	$result = $stmt2->execute();
 
 	if ( ! $result ){

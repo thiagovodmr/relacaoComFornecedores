@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
   include "cabecalho.php";
   // Corrigir erros!
@@ -670,5 +669,4 @@ include 'rodape.php';
 ?>
 
 </body>
->>>>>>> be24e7acb1f30ff5de199f9495c793fea724dfad
 </html>
