@@ -8,12 +8,12 @@
 		$conn = new PDO("mysql:host=localhost;dbname=$dbname",$usuario,$senha);
 		$conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 	}catch(PDOException $e){
-		echo "Falha na conexão: ";$e.getMessage();
+		echo "Falha na conexão: ".$e->getMessage();
 	}
 
 	$id_produto = $_GET["id"];
 	$id_comprador = $_SESSION["id"];
-
+	$status = 0;
 
 	$sql = "SELECT PRO_USER_ID from produtos WHERE PRO_ID = :id";
 
@@ -25,14 +25,13 @@
 
 	$id_vendedor = $registro["PRO_USER_ID"];
 
-	$insert = "INSERT INTO compra(COM_COMPRADOR,COM_VENDEDOR,COM_PRODUTO, COM_STATUS) 
-	VALUES(:id_comprador, :id_vendedor,:id_produto, :status)";
+	$insert = "INSERT INTO compra(COM_COMPRADOR, COM_VENDEDOR, COM_PRODUTO, COM_STATUS) VALUES(:id_comprador, :id_vendedor, :id_produto, :status)";
 
 	$stmt2 = $conn->prepare($insert);
-	$stmt2->bindParam(":id_comprador",$id_comprador);
-	$stmt2->bindParam(":id_vendedor",$id_vendedor);
-	$stmt2->bindParam(":id_produto",$id_produto);
-	$stmt2->bindParam(":status",1);
+	$stmt2->bindParam(":id_comprador", $id_comprador);
+	$stmt2->bindParam(":id_vendedor", $id_vendedor);
+	$stmt2->bindParam(":id_produto", $id_produto);
+	$stmt2->bindParam(":status", $status);
 	$result = $stmt2->execute();
 
 	if ( ! $result ){
