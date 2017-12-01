@@ -3,8 +3,10 @@ session_start();
   if(!isset($_SESSION['logado'])){
     $_SESSION['logado'] = [];
   }
-  $llogin = $_SESSION['login']; 
-  $ssenha = $_SESSION['senha'];
+  if(isset($_SESSION["login"]) && isset($_SESSION["senha"])){
+    $llogin = $_SESSION['login']; 
+    $ssenha = $_SESSION['senha'];
+  }
 ?>
 <!DOCTYPE html>
 <html>

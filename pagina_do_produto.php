@@ -12,7 +12,7 @@
 
 	$id = $_GET["id"];
 	
-	$query = "SELECT p.*,u.USER_EMPRESA,u.USER_ID,c.CAT_NOME 
+	$query = "SELECT p.*,u.USER_EMPRESA,u.USER_ID,c.CAT_NOME,u.USER_LATITUDE,u.USER_LONGITUDE,u.USER_PERFIL 
 	FROM produtos AS p INNER JOIN usuarios AS u ON p.PRO_USER_ID = u.USER_ID inner join categorias as c on PRO_CATEGORIA = CAT_ID
 	where PRO_ID = :id ";
 	
@@ -66,11 +66,19 @@
 			font-size: 20px;
 			color: white;
 		}
+		#map{
+			height:300px;
+			width: 300px;
+			float: right;
+			border: 1px solid gray;
+		}
 	</style>
 </head>
 <body>
 	
 <div class='container' id='contai'>
+	<div class="row">
+	<div class="col-md-8">
     <header class='page-header'>
     	<h1 class='page-title'><?= ucwords($row["PRO_TITULO"]) ?></h1>
   	</header>
@@ -116,6 +124,12 @@
 			</div>
 		</div>
 	</div>
+	 </div>
+	 <div class="col-md-4">
+	 	<h2>Localização</h2>
+	 	<div id="map"></div>
+	 </div>
+	 </div>
 </div>
 
 
@@ -184,7 +198,6 @@
 	$resultado = $stmt3->execute();
 
  ?>
-
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12 col-sm-12">
@@ -232,6 +245,98 @@
 <?php
 include 'rodape.php';
 ?>
+
+
+<script>
+      var customLabel = {
+        restaurant: {
+          label: 'R'
+        },
+        bar: {
+          label: 'B'
+        }
+      };
+
+      <?php 
+      		$longitude =  intval($row["USER_LONGITUDE"]);
+      		$latitude = intval($row["USER_LATITUDE"]);
+       ?>
+
+          function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: new google.maps.LatLng(<?= $latitude ?>,<?= $longitude  ?>),
+          zoom: 5
+        });
+        var infoWindow = new google.maps.InfoWindow;
+
+          // Change this depending on the name of your PHP or XML file
+          downloadUrl("resultado2.php?id=<?= $row['PRO_USER_ID'] ?>", function(data) {
+            var xml = data.responseXML;
+            var markers = xml.documentElement.getElementsByTagName('marker');
+            Array.prototype.forEach.call(markers, function(markerElem) {
+              var name = markerElem.getAttribute('name');
+              var address = markerElem.getAttribute('address');
+              var type = markerElem.getAttribute('type');
+              var point = new google.maps.LatLng(
+                  parseFloat(markerElem.getAttribute('lat')),
+                  parseFloat(markerElem.getAttribute('lng')));
+
+              var infowincontent = document.createElement('div');
+              var strong = document.createElement('strong');
+              strong.textContent = name
+              infowincontent.appendChild(strong);
+              infowincontent.appendChild(document.createElement('br'));
+
+              var text = document.createElement('text');
+              text.textContent = address
+              infowincontent.appendChild(text);
+              var icon = customLabel[type] || {};
+              var marker = new google.maps.Marker({
+                map: map,
+                animation: google.maps.Animation.DROP,
+                position: point,
+                label: icon.label
+              });
+              marker.addListener('click', function() {
+                infoWindow.setContent(infowincontent);
+                infoWindow.open(map, marker);
+              });
+            });
+          });
+        }
+
+      function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+      }
+
+      function downloadUrl(url, callback) {
+        var request = window.ActiveXObject ?
+            new ActiveXObject('Microsoft.XMLHTTP') :
+            new XMLHttpRequest;
+
+        request.onreadystatechange = function() {
+          if (request.readyState == 4) {
+            request.onreadystatechange = doNothing;
+            callback(request, request.status);
+          }
+        };
+
+        request.open('GET', url, true);
+        request.send(null);
+      }
+
+      function doNothing() {}
+    </script>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-xE7a7Pi92cA69kmk-zwtGg5M9l0N2Ag&callback=initMap">
+    </script>
+
+
 
 </body>
 </html>
