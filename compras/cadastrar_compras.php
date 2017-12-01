@@ -13,10 +13,8 @@
 
 	$id_produto = $_GET["id"];
 	$id_comprador = $_SESSION["id"];
-<<<<<<< HEAD
-=======
+
 	$status = 0;
->>>>>>> e8b274fd9250763ea244c2b61b5cc0b6f06a5a33
 
 	$sql = "SELECT PRO_USER_ID from produtos WHERE PRO_ID = :id";
 
@@ -42,6 +40,6 @@
 	    exit;
 	}	
  	
-	header("location: mostrar_progresso.php");
+	header("location: ../minhas_compras.php");
 
  ?>

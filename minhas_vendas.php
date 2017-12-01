@@ -6,6 +6,9 @@ include "cabecalho.php";
 <head>
 	<title>Minhas Compras</title>
 	<style type="text/css">
+		h1{
+			text-align: center;
+		}
 		#foto{
 			width: 220px;
 			float: left;
@@ -31,7 +34,9 @@ include "cabecalho.php";
 	$id = $_SESSION['id'];
 
 	echo "<h1> Produtos Vendidos</h1>";
-	$sql1 = "SELECT p.PRO_TITULO, p.PRO_PRECO, p.PRO_ARQUIVO, p.PRO_USER_ID, c.COM_VENDEDOR, c.COM_COMPRADOR, c.COM_ID, c.COM_STATUS FROM produtos as p inner join compra as c on c.COM_VENDEDOR = p.PRO_USER_ID WHERE COM_VENDEDOR = '$id'";
+	
+	$sql1 = "SELECT p.PRO_TITULO, p.PRO_PRECO, p.PRO_ARQUIVO, p.PRO_USER_ID, c.COM_VENDEDOR, c.COM_COMPRADOR, c.COM_ID, c.COM_STATUS FROM produtos as p inner join compra as c on c.COM_PRODUTO = p.PRO_ID WHERE COM_VENDEDOR = '$id'";
+	
 	foreach ($conn->query($sql1) as $row1){
 		$titulo1 = $row1['PRO_TITULO'];
 		$compraid1 = $row1['COM_ID'];
@@ -54,9 +59,9 @@ include "cabecalho.php";
 			 </div>
 			 <div class='row'>
 			 	<div class='col-md-12 col-sm-12'>
-					<div class='progress'>
+					<div class='progress progress-striped'>
 
-					<div class='progress-bar progress-bar-success' style='width: $larguras[$status]%'>
+					<div class='progress-bar progress-bar-success' role='progressbar' style='width: $larguras[$status]%'>
 					    <span class='sr-only'>35% Complete (success)</span>
 					  </div>
 					</div>
@@ -64,10 +69,10 @@ include "cabecalho.php";
 			</div>
 		</div>";
 	if($status == 0){
-		echo "<a href='bd/update_compra.php?status=$status&idcompra=$compraid1'>Confirmar Pagamento</a>";
+		echo "<a href='bd/update_venda.php?status=$status&idcompra=$compraid1'>Confirmar Pagamento</a>";
 	}
 	elseif($status == 1){
-		echo "<a href='bd/update_compra.php?status=$status&idcompra=$compraid1'>Produto em andamento</a>";
+		echo "<a href='bd/update_venda.php?status=$status&idcompra=$compraid1'>Produto em andamento</a>";
 	}
 
 
