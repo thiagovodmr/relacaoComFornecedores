@@ -14,7 +14,6 @@
 	$id_produto = $_GET["id"];
 	$id_comprador = $_SESSION["id"];
 
-
 	$sql = "SELECT PRO_USER_ID from produtos WHERE PRO_ID = :id";
 
 	$stmt = $conn->prepare($sql);

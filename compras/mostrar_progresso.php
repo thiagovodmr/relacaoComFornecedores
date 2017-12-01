@@ -30,22 +30,9 @@
 		 <div class="row">
 		 	<div class="col-md-12 col-sm-12">
 				<div class="progress">
-				  <?php
 
-				  include "../connect.php";
-				  $sql = "SELECT * FROM compra WHERE COM_ID = :id";
-				  
-				  $stmt = $conn->prepare($sql);
-				  $stmt->bindParam(":id", $id);
-				  $resultado = $stmt->execute();
-				 
-				  $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-
-				  $status = $row['COM_STATUS'];
-				  
-				  ?>  
-	      		  <div class="progress-bar progress-bar-success" style="width: <?= $larguras[$status] ?>%">;
+					
+	      		  <div class="progress-bar progress-bar-success" style="width: <?= $larguras[$status] ?>%">
 				    <span class="sr-only">35% Complete (success)</span>
 				  </div>
 				</div>

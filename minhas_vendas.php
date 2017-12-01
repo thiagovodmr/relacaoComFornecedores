@@ -29,17 +29,16 @@ include "cabecalho.php";
 		echo "Falha na conexão: ";$e.getMessage();
 	}
 	$id = $_SESSION['id'];
-	
-	echo "<h1>Produtos Comprados</h1>";
-	$sql = "SELECT p.PRO_TITULO, p.PRO_PRECO, p.PRO_USER_ID, c.COM_VENDEDOR, c.COM_COMPRADOR, c.COM_ID FROM produtos as p inner join compra as c on c.COM_COMPRADOR = p.PRO_USER_ID WHERE COM_COMPRADOR = '$id'";
 
-	foreach ($conn->query($sql) as $row){
-		$titulo = $row['PRO_TITULO'];
-		$compraid = $row['COM_ID'];
-		$status = $row['COM_STATUS'];
-		$foto = $row['PRO_ARQUIVO'];
-		echo "<h2>$titulo</h2>
-		<img src='.".$foto."' id='foto'>
+	echo "<h1> Produtos Vendidos</h1>";
+	$sql1 = "SELECT p.PRO_TITULO, p.PRO_PRECO, p.PRO_ARQUIVO, p.PRO_USER_ID, c.COM_VENDEDOR, c.COM_COMPRADOR, c.COM_ID, c.COM_STATUS FROM produtos as p inner join compra as c on c.COM_VENDEDOR = p.PRO_USER_ID WHERE COM_VENDEDOR = '$id'";
+	foreach ($conn->query($sql1) as $row1){
+		$titulo1 = $row1['PRO_TITULO'];
+		$compraid1 = $row1['COM_ID'];
+		$status = $row1['COM_STATUS'];
+		$foto = $row1['PRO_ARQUIVO'];
+		echo "<h2>$titulo1</h2>
+		<img src='$foto' id='foto'>
 
 		<div class='container'>
 			<div class='row'>
@@ -64,9 +63,16 @@ include "cabecalho.php";
 				</div>
 			</div>
 		</div>";
-
+	if($status == 0){
+		echo "<a href='bd/update_compra.php?status=$status&idcompra=$compraid1'>Confirmar Pagamento</a>";
+	}
+	elseif($status == 1){
+		echo "<a href='bd/update_compra.php?status=$status&idcompra=$compraid1'>Produto em andamento</a>";
 	}
 
+
+	echo "<hr>";
+	}
 
 	?>
 

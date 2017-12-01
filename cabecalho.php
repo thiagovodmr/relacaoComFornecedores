@@ -23,7 +23,7 @@ session_start();
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="index.php" id="ss">SS Express</a>
+      <a class="navbar-brand" href="/index.php" id="ss">SS Express</a>
     </div>
     
     <ul class="nav navbar-nav navbar-right">
@@ -69,6 +69,7 @@ session_start();
             echo "<li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>Olá, ".ucwords($re['USER_EMPRESA'])." <i class='fa fa-user-circle' aria-hidden='true'></i></a>
               <ul class='dropdown-menu'>
                <li><a href='/meu_Perfil.php'>Editar Perfil <i class='fa fa-user-circle fa-1x' aria-hidden='true'></i></a></li>
+                <li><a href='/minhas_vendas.php'>Minhas Vendas <i class='fa fa-money' aria-hidden='true'></i></a></li>
                 <li><a href='/minhas_compras.php'>Minhas Compras <i class='fa fa-shopping-cart' aria-hidden='true'></i></a></li>
                <li><a href='/mensagens.php'>Mensagens <i class='fa fa-comments fa-1x' aria-hidden='true'></i></a></li>
                <li><a href='/logout.php'>Sair <i class='fa fa-sign-out' aria-hidden='true'></i></a></li>
