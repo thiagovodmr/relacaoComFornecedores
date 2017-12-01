@@ -10,7 +10,7 @@ if($status == 2) {
 			WHERE COM_ID = $compraid";
 
 	if ($conn->query($sql) == true) {
-	    header('location: /minhas_vendas.php');
+	    header('location: /minhas_compras.php');
 	} else {
 	    echo "Error updating record: " . $conn->error;
 	}

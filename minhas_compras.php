@@ -11,12 +11,15 @@ include "cabecalho.php";
 		}
 		#foto{
 			width: 220px;
-			float: left;
 			margin: 5px;
+		}
+		#compras a{
+			font-size: 30px;
 		}
 	</style>
 </head>
 <body>
+	<div id="compras">
 	<?php
 	$larguras = [0,5,54,100];
 
@@ -29,14 +32,14 @@ include "cabecalho.php";
 		$conn = new PDO("mysql:host=localhost;dbname=$dbname",$usuario,$senha);
 		$conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 	}catch(PDOException $e){
-		echo "Falha na conexão: ";$e.getMessage();
+		echo "Falha na conexão: ". $e->getMessage();
 	}
 
 	$id = $_SESSION['id'];
 
 	echo "<h1>Produtos Comprados</h1>";
 
-	$sql = "SELECT p.PRO_TITULO, p.PRO_PRECO, p.PRO_USER_ID, p.PRO_ARQUIVO, c.COM_VENDEDOR, c.COM_COMPRADOR, c.COM_ID, c.COM_STATUS FROM produtos as p inner join compra as c on c.COM_PRODUTO = p.PRO_ID WHERE COM_COMPRADOR = '$id'";
+	$sql = "SELECT p.PRO_TITULO, p.PRO_PRECO, p.PRO_ARQUIVO, p.PRO_USER_ID, c.COM_VENDEDOR, c.COM_COMPRADOR, c.COM_ID, c.COM_STATUS,u.* FROM produtos as p inner join compra as c on c.COM_PRODUTO = p.PRO_ID inner join usuarios as u on c.COM_VENDEDOR = u.USER_ID WHERE COM_COMPRADOR = '$id'";
 
 
 	foreach ($conn->query($sql) as $row){
@@ -44,8 +47,10 @@ include "cabecalho.php";
 		$compraid = $row['COM_ID'];
 		$status = $row['COM_STATUS'];
 		$foto = $row['PRO_ARQUIVO'];
+		$nome = $row['USER_EMPRESA'];
 
-		echo "<h2>$titulo</h2>
+		echo "<h2>Produto: $titulo</h2>";
+		echo "<h2>Vendedor: $nome</h2>
 		<img src='$foto' id='foto'>
 
 		<div class='container'>
@@ -85,6 +90,6 @@ include "cabecalho.php";
 
 
 	?>
-
+</div>
 </body>
 </html>
