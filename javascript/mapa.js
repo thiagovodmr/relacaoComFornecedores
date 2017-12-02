@@ -3,7 +3,9 @@ var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 
 function initialize() {	
+	
 	directionsDisplay = new google.maps.DirectionsRenderer();
+
 	var latlng = new google.maps.LatLng(-18.8800397, -47.05878999999999);
 	
     var options = {
@@ -15,6 +17,9 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("mapa"), options);
 	directionsDisplay.setMap(map);
 	directionsDisplay.setPanel(document.getElementById("trajeto-texto"));
+
+	var trafficLayer = new google.maps.TrafficLayer();
+	trafficLayer.setMap(map);
 	
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function (position) {

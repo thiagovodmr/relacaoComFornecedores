@@ -57,7 +57,7 @@ include "bd/conexao.php";
         <script src="javascript/jquery.min.js"></script>
         
         <!-- Maps API Javascript -->
-        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC-xE7a7Pi92cA69kmk-zwtGg5M9l0N2Ag"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-xE7a7Pi92cA69kmk-zwtGg5M9l0N2Ag"></script>
  
         <!-- Arquivo de inicialização do mapa -->
         <script src="javascript/mapa.js"></script>

@@ -30,12 +30,10 @@ include "bd/conexao.php";
     <div id="map"></div><br><br>
 
     <script>
+      var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
       var customLabel = {
-        restaurant: {
-          label: 'R'
-        },
-        bar: {
-          label: 'B'
+        interprise: {
+          label: iconBase + 'truck.png'
         }
       };
 
@@ -44,6 +42,7 @@ include "bd/conexao.php";
           center: new google.maps.LatLng(-15.77972, -47.92972),
           zoom: 4
         });
+        
         var infoWindow = new google.maps.InfoWindow;
 
           // Change this depending on the name of your PHP or XML file
@@ -68,19 +67,24 @@ include "bd/conexao.php";
               text.textContent = address
               infowincontent.appendChild(text);
               var icon = customLabel[type] || {};
+
               var marker = new google.maps.Marker({
-                url: 'http://www.google.com/',
+                title: "Empresa: " + name,
+                animation: google.maps.Animation.DROP,
                 map: map,
                 position: point,
-                label: icon.label
+                icon: icon.label,
+                size: new google.maps.Size(10, 10)
               });
+
               marker.addListener('click', function() {
-                window.location.href = marker.url;
                 infoWindow.setContent(infowincontent);
                 infoWindow.open(map, marker);
               });
             });
           });
+          var trafficLayer = new google.maps.TrafficLayer();
+          trafficLayer.setMap(map);
         }
 
       function downloadUrl(url, callback) {

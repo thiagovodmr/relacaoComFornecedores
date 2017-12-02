@@ -26,7 +26,7 @@ while ($row_markers = mysqli_fetch_assoc($resultado_markers)){
   echo 'name="' . parseToXML($row_markers['USER_EMPRESA']) . '" ';
   echo 'address="' . parseToXML($row_markers['USER_LOGRADOURO']) . '" ';
   echo 'lat="' . $row_markers['USER_LATITUDE'] . '" ';
-  echo 'type="' . $row_markers['USER_TELEFONE'] . '" ';
+  echo 'type="' . 'interprise' . '" ';
   echo 'lng="' . $row_markers['USER_LONGITUDE'] . '" ';
   echo '/>';
 }
