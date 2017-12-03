@@ -1,12 +1,13 @@
 <?php
 include "cabecalho.php";
+include 'security.php';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
-  <title>Displaying text directions with <code>setPanel()</code></title>
+  <title>Traçar Rota <code>setPanel()</code></title>
   <style>
       /* Always set the map height explicitly to define the size of the div
       * element that contains the map. */
@@ -86,19 +87,21 @@ include "cabecalho.php";
     <body>
       <div id="floating-panel">
         <strong>Partida: </strong>
-
         <select id="start" data-live-search="true" class="selectpicker">
 
           <?php
           include "connect.php";
+          $id = $_SESSION['id'];
           $sql = "SELECT * FROM usuarios ORDER BY USER_EMPRESA";
 
           foreach($conn->query($sql) as $registro):
             $endereco = $registro['USER_COMPLETO'];
             $empresa = $registro['USER_EMPRESA'];
+            $iduser = $registro['USER_ID'];
             ?>
 
-            <option value="<?= $endereco ?>"><?= $empresa ?></option>
+            <option <?php if($iduser == $id){ echo "selected"; }?> value="<?= $endereco ?>"><?= $empresa ?></option>
+            
           <?php endforeach ?>
         
         </select>
@@ -125,8 +128,8 @@ include "cabecalho.php";
           var directionsDisplay = new google.maps.DirectionsRenderer;
           var directionsService = new google.maps.DirectionsService;
           var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 7,
-            center: {lat: 41.85, lng: -87.65}
+            zoom: 10,
+            center: {lat: -8.0475, lng: -34.877}
           });
 
           var trafficLayer = new google.maps.TrafficLayer();

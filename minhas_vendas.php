@@ -1,5 +1,6 @@
 <?php
 include "cabecalho.php";
+include 'security.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -95,11 +96,11 @@ include "cabecalho.php";
 													</li>
 													<li class='list-group-item'>
 														<b>Produto  :</b>
-														<a href="pagina_do_produto?id=<?=$prodir ?>"><?=$row1["PRO_TITULO"]  ?></a>
+														<a href="pagina_do_produto.php?id=<?=$prodir ?>"><?=$row1["PRO_TITULO"]  ?></a>
 													</li>
 													<li class='list-group-item'>
 														<b>Preço: </b>
-														R$ <i id="precop"> <?=$row1["PRO_PRECO"] ?> </i>
+														R$ <i id="precop"> <?=$row1["COM_PRECO"] ?> </i>
 													</li>
 													<li class='list-group-item'>
 														<b>Quantidade  :</b>
@@ -110,7 +111,7 @@ include "cabecalho.php";
 														<?=$data  ?>
 													</li>
 													<li class='list-group-item'>
-														<b>Horário  :</b>
+															<b>Horário  :</b>
 														<?=$horario  ?>
 													</li>
 												</ul>

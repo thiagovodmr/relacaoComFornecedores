@@ -15,6 +15,8 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/cadastro_produtos1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.js"></script>
 	<title>
 		Cadastrar Produtos
 	</title>
@@ -24,7 +26,7 @@
 	<h1>Cadastre seus Produtos</h1>
     	<p id="profile-name" class="profile-name-card"></p>
 	<form name="frm-jcrop" id="frm-jcrop" action="bd/cadastrar_Produtos.php" method="POST" enctype="multipart/form-data">
-		Selecione a categoria:<select name="categoria" class="selectpicker">
+		Selecione a categoria:<select name="categoria" data-live-search="true" class="selectpicker">
 			<?php
 			while($registro = mysqli_fetch_array($resultado)){
    				$nome = $registro['CAT_NOME'];

@@ -1,5 +1,6 @@
 <?php
 include 'cabecalho.php';
+include 'security.php';
 ?>
 <!DOCTYPE html>
 <html>

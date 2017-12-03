@@ -1,5 +1,6 @@
 <?php 
 include_once "cabecalho.php";
+include 'security.php';
 $dbname = "id2846308_projeto1";
 $usuario="id2846308_pep1";
 $senha = "@lunoifpe";

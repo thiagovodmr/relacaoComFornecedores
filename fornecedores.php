@@ -1,6 +1,7 @@
 <?php
 include "cabecalho.php";
 include "bd/conexao.php";
+include 'security.php';
 ?>
 <!DOCTYPE html>
   <head>

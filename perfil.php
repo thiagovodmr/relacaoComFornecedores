@@ -1,6 +1,6 @@
-<<<<<<< HEAD
 <?php
 include 'cabecalho.php';
+include 'security.php';
 $host = "localhost";
 $usuario = "id2846308_pep1";
 $senha = "@lunoifpe";
