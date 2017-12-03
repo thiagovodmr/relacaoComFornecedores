@@ -6,9 +6,7 @@ include 'security.php';
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Teste</title>
-  <link rel="stylesheet" type="text/css" href="recursos/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="recursos/font-awesome/css/font-awesome.min.css">
+  <title>Meu Perfil</title>
   <link rel="stylesheet" type="text/css" href="css/meu_Perfil.css">
 </head>
 <body>

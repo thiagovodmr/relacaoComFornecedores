@@ -23,12 +23,34 @@
           zoom: 15,
           center: uluru
         });
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">IFPE - Campus Igarassu</h1>'+
+            '<div id="bodyContent">'+
+            '<p>O <b> IFPE</b>, é uma Instituição Federal que busca promover a Educação ' +
+            'de qualidade e incentivo ao estudo e qualificação aos estudantes. O Campus Igarassu abrange 2 cursos, '+
+            'Informática para Internet e Logística. Este site foi desenvolvido por alguns estudantes do cursos de IPI'+
+            'que você pode ver <a href="contatos.php"> Aqui</a> na disciplina Projeto e Prática 1.</p>'+
+            '<p><a href="http://www.ifpe.edu.br/campus/igarassu"> IFPE - Campus Igarassu '+
+            '</a> '+
+            '</p>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
         var marker = new google.maps.Marker({
           position: uluru,
           map: map
         });
         var trafficLayer = new google.maps.TrafficLayer();
           trafficLayer.setMap(map);
+
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
       }
     </script>
     <script async defer

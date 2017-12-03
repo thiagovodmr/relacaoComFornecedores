@@ -4,47 +4,47 @@ include "bd/conexao.php";
 include 'security.php';
 ?>
 <!DOCTYPE html>
-  <head>
-    <title>Fornecedores</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <style>
+<head>
+  <title>Fornecedores</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <style>
+  
+  #map {
+    float: right;
+    width: 80%;
+    height: 500px; 
+  }
+  #rolamento{
+    margin-top: -38px;
+    overflow: scroll;
+    height: 500px;
+  }
+  .detalhes{
+    font-size: 20px;
+  }
+</style>
+</head>
+
+<body>
+
+  <div id="map"></div><br><br>
+
+  <script>
+    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+    var customLabel = {
+      interprise: {
+        label: iconBase + 'truck.png'
+      }
+    };
+
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: new google.maps.LatLng(-15.77972, -47.92972),
+        zoom: 4
+      });
       
-      #map {
-        float: right;
-        width: 80%;
-        height: 500px; 
-      }
-      #rolamento{
-        margin-top: -38px;
-        overflow: scroll;
-        height: 500px;
-      }
-      .detalhes{
-        font-size: 20px;
-      }
-    </style>
-  </head>
-
-  <body>
-
-    <div id="map"></div><br><br>
-
-    <script>
-      var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-      var customLabel = {
-        interprise: {
-          label: iconBase + 'truck.png'
-        }
-      };
-
-          function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(-15.77972, -47.92972),
-          zoom: 4
-        });
-        
-        var infoWindow = new google.maps.InfoWindow;
+      var infoWindow = new google.maps.InfoWindow;
 
           // Change this depending on the name of your PHP or XML file
           downloadUrl('resultado.php', function(data) {
@@ -55,8 +55,8 @@ include 'security.php';
               var address = markerElem.getAttribute('address');
               var type = markerElem.getAttribute('type');
               var point = new google.maps.LatLng(
-                  parseFloat(markerElem.getAttribute('lat')),
-                  parseFloat(markerElem.getAttribute('lng')));
+                parseFloat(markerElem.getAttribute('lat')),
+                parseFloat(markerElem.getAttribute('lng')));
 
               var infowincontent = document.createElement('div');
               var strong = document.createElement('strong');
@@ -88,35 +88,35 @@ include 'security.php';
           trafficLayer.setMap(map);
         }
 
-      function downloadUrl(url, callback) {
-        var request = window.ActiveXObject ?
-            new ActiveXObject('Microsoft.XMLHTTP') :
-            new XMLHttpRequest;
+        function downloadUrl(url, callback) {
+          var request = window.ActiveXObject ?
+          new ActiveXObject('Microsoft.XMLHTTP') :
+          new XMLHttpRequest;
 
-        request.onreadystatechange = function() {
-          if (request.readyState == 4) {
-            request.onreadystatechange = doNothing;
-            callback(request, request.status);
-          }
-        };
+          request.onreadystatechange = function() {
+            if (request.readyState == 4) {
+              request.onreadystatechange = doNothing;
+              callback(request, request.status);
+            }
+          };
 
-        request.open('GET', url, true);
-        request.send(null);
-      }
+          request.open('GET', url, true);
+          request.send(null);
+        }
 
-      function doNothing() {}
-    </script>
+        function doNothing() {}
+      </script>
 
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-xE7a7Pi92cA69kmk-zwtGg5M9l0N2Ag&callback=initMap">
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-xE7a7Pi92cA69kmk-zwtGg5M9l0N2Ag&callback=initMap">
     </script>
 
     <div id="rolamento">
       <label>Filtro por Estado:
         <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Estados
-        </button>
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Estados
+          </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
             <li><a href="fornecedores.php?estado=AC">Acre</a></li>
             <li><a href="fornecedores.php?estado=AL">Alagoas</a></li>
@@ -150,30 +150,30 @@ include 'security.php';
       </label> 
     </div>
     <?php
-      if(isset($_GET['estado'])){
-        $state = $_GET['estado'];
-        $sql = "SELECT * FROM usuarios WHERE USER_ESTADO = '$state'";
-        $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
-        $r = mysqli_num_rows($resultado); 
-        if($r==0){
-          echo "<h3>Nenhum Empresa encontrada nesse estado!</h3>";
-        }
-        while($registro = mysqli_fetch_array($resultado)){
-            $empresa = $registro['USER_EMPRESA'];
-            $cidade = $registro['USER_CIDADE'];
-            $telefone = $registro['USER_TELEFONE'];
-            $endereco = $registro['USER_LOGRADOURO'];
-            echo "<p class='detalhes'><b>Empresa :</b>". $empresa."</p>";
-            echo "<p class='detalhes'><b>Cidade :</b>". $cidade."</p>";
-            echo "<p class='detalhes'><b>Logradouro :</b>". $endereco."</p>";
-            echo "<p class='detalhes'><b>Telefone :</b>". $telefone."</p>";
-            echo "<hr>";
-        }
+    if(isset($_GET['estado'])){
+      $state = $_GET['estado'];
+      $sql = "SELECT * FROM usuarios WHERE USER_ESTADO = '$state'";
+      $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
+      $r = mysqli_num_rows($resultado); 
+      if($r==0){
+        echo "<h3>Nenhum Empresa encontrada nesse estado!</h3>";
       }
+      while($registro = mysqli_fetch_array($resultado)){
+        $empresa = $registro['USER_EMPRESA'];
+        $cidade = $registro['USER_CIDADE'];
+        $telefone = $registro['USER_TELEFONE'];
+        $endereco = $registro['USER_LOGRADOURO'];
+        echo "<p class='detalhes'><b>Empresa :</b>". $empresa."</p>";
+        echo "<p class='detalhes'><b>Cidade :</b>". $cidade."</p>";
+        echo "<p class='detalhes'><b>Logradouro :</b>". ucwords($endereco)."</p>";
+        echo "<p class='detalhes'><b>Telefone :</b>". $telefone."</p>";
+        echo "<hr>";
+      }
+    }
     ?>  
 
 
 
 
   </body>
-</html>
+  </html>

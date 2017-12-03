@@ -33,7 +33,7 @@
 	$email 		  	 = $_POST["email_da_empresa"];
 	$telefone     	 = $_POST["telefone_da_empresa"];
 	$login 		  	 = $_POST["login_da_empresa"];
-	$senha 		  	 = $_POST["senha_da_empresa"];
+	$senha    	  	 = md5($_POST["senha_da_empresa"]);
 	$perfil       	 = md5($nome);
 
 	$sql = "INSERT INTO usuarios(USER_NOME,USER_EMPRESA,USER_CEP,USER_BAIRRO,USER_ESTADO,USER_CIDADE,USER_COMPLETO,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_LATITUDE,USER_LONGITUDE,USER_EMAIL,USER_LOGIN,USER_SENHA,USER_PERFIL,USER_DESCRICAO,USER_GOOGLE_PLUS,USER_FACEBOOK,USER_TWITTER,USER_LINKEDLN,USER_GITHUB)

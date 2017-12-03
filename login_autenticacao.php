@@ -29,7 +29,7 @@ session_start();
 
 <?php  
 $login = $_POST['login'];
-$senha = $_POST['senha'];
+$senha = md5($_POST['senha']);
 
 $sql ="SELECT * FROM usuarios WHERE USER_LOGIN = :login and USER_SENHA = :senha";
 $stmt = $conn->prepare($sql);

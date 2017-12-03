@@ -55,7 +55,7 @@ include 'security.php';
 		font-size: 20px;
 		overflow: auto;
 		margin-left: 10px;
-		height: 450px;
+		height: 300px;
 	}
 	.list-group-item{
 		border: 1px solid black;
