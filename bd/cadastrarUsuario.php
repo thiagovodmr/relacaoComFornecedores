@@ -17,29 +17,31 @@
 	$linkedln	  = $_POST["linkedln"];
 	$github       = $_POST["github"];
 	
+	$image = $_POST["destino"];
+
 	//Dados da empresa
-	$nome 		  	 = $_POST["nome_do_usuario"];
-	$nome_empresa 	 = $_POST["nome_da_empresa"];
+	$nome 		  	 = $_POST["nome"];
+	$nome_empresa 	 = $_POST["nome_empresa"];
 	$descricao 	  	 = $_POST["descricao"];
 	$cep 		  	 = $_POST["cep"];
-	$logradouro   	 = $_POST["logradouro_da_empresa"];
+	$logradouro   	 = $_POST["logradouro"];
 	$bairro		  	 = $_POST["bairro"];
-	$cidade 	  	 = $_POST["cidade_da_empresa"];
+	$cidade 	  	 = $_POST["cidade"];
 	$estado 	  	 = $_POST["estado"];
-	$latitude 	  	 = $_POST["lat"];
-	$longitude 	  	 = $_POST["lng"];
+	$latitude 	  	 = $_POST["latitude"];
+	$longitude 	  	 = $_POST["longitude"];
 	$complet_address = $_POST["complet_address"];
-	$cnpj 		   	 = $_POST["cnpj_da_empresa"];
-	$email 		  	 = $_POST["email_da_empresa"];
-	$telefone     	 = $_POST["telefone_da_empresa"];
-	$login 		  	 = $_POST["login_da_empresa"];
-	$senha    	  	 = md5($_POST["senha_da_empresa"]);
+	$cnpj 		   	 = $_POST["cnpj"];
+	$email 		  	 = $_POST["email"];
+	$telefone     	 = $_POST["telefone"];
+	$login 		  	 = $_POST["login"];
+	$senha    	  	 = md5($_POST["senha"]);
 	$perfil       	 = md5($nome);
 
-	$sql = "INSERT INTO usuarios(USER_NOME,USER_EMPRESA,USER_CEP,USER_BAIRRO,USER_ESTADO,USER_CIDADE,USER_COMPLETO,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_LATITUDE,USER_LONGITUDE,USER_EMAIL,USER_LOGIN,USER_SENHA,USER_PERFIL,USER_DESCRICAO,USER_GOOGLE_PLUS,USER_FACEBOOK,USER_TWITTER,USER_LINKEDLN,USER_GITHUB)
-			VALUES(:nome, :nome_empresa, :cep, :bairro, :estado ,:cidade, :endereco_completo, :telefone, :cnpj, :logradouro,:latitude,:longitude,:email, :login, :senha, :perfil, :descricao, :google_plus, :facebook, :twitter, :linkedln, :github)";
+	$sql = "INSERT INTO usuarios(USER_NOME,USER_EMPRESA,USER_CEP,USER_BAIRRO,USER_ESTADO,USER_CIDADE,USER_COMPLETO,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_LATITUDE,USER_LONGITUDE,USER_EMAIL,USER_LOGIN,USER_SENHA,USER_PERFIL,USER_DESCRICAO,USER_GOOGLE_PLUS,USER_FACEBOOK,USER_TWITTER,USER_LINKEDLN,USER_GITHUB,USER_IMAGEM)
+			VALUES(:nome, :nome_empresa, :cep, :bairro, :estado ,:cidade, :endereco_completo, :telefone, :cnpj, :logradouro,:latitude,:longitude,:email, :login, :senha, :perfil, :descricao, :google_plus, :facebook, :twitter, :linkedln, :github,:imagem)";
 	
-	var_dump($_POST);
+	var_dump($_POST["perfil"]);
 	$stmt = $conn->prepare( $sql );
 	$stmt->bindParam( ':nome', $nome );
 	$stmt->bindParam( ':nome_empresa', $nome_empresa);
@@ -63,11 +65,23 @@
 	$stmt->bindParam( ':twitter', $twitter);
 	$stmt->bindParam( ':linkedln', $linkedln);
 	$stmt->bindParam( ':github', $github);
+	$stmt->bindParam( ':imagem', $image);
 	$result = $stmt->execute();
 	if ( ! $result ){
 	    var_dump( $stmt->errorInfo() );
 	    exit;
 	}	  
-	// echo $stmt->rowCount() . "linhas inseridas";
-	header("location: ../login.php");
+	include( 'm2brimagem.class.php' );
+	$oImg = new m2brimagem( $_POST['img'] );
+	if( $oImg->valida() == 'OK' )
+	{
+		$oImg->posicaoCrop( $_POST['x'], $_POST['y'] );
+		$oImg->redimensiona( $_POST['w'], $_POST['h'], 'crop' );
+		$oImg->grava( $_POST['img'] );
+
+		copy($_POST["img"] , $_POST["destino"]);
+		unlink($_POST["img"]);
+	}
+// }
+exit;
 ?>
