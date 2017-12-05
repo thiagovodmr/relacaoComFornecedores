@@ -1,6 +1,5 @@
 <?php
 	session_start();
-	ob_start();
 	
 	$dbname = "id2846308_projeto1";
 	$usuario="id2846308_pep1";
