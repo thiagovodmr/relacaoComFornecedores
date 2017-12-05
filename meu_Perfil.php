@@ -33,7 +33,7 @@ while($registro = mysqli_fetch_array($resultado)){
   $twitter = $registro['USER_TWITTER'];
   $linkedln = $registro['USER_LINKEDLN'];
   $github = $registro['USER_GITHUB'];
-    $arquivo = $registro["USER_IMAGEM"];
+  $arquivo = $registro["USER_IMAGEM"];
 
 echo "<div class='container' id='contai'>
 

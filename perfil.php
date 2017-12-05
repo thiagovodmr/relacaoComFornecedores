@@ -31,7 +31,7 @@ while($registro = mysqli_fetch_array($resultado)){
   $cnpj = $registro['USER_CNPJ'];
   $email = $registro['USER_EMAIL'];
   $descricao = $registro['USER_DESCRICAO'];
-  $image = $registro["USER_IMAGEM"]
+  $image = $registro["USER_IMAGEM"];
 
   $google_plus = $registro['USER_GOOGLE_PLUS'];
   $facebook = $registro['USER_FACEBOOK'];
@@ -53,7 +53,7 @@ echo "<div class='container' id='contai'>
           <div class='col-lg-12'>
             <div class='col-xs-12 col-sm-4'>
               <figure>
-                <img class='img-circle img-responsive' alt='' src='http://placehold.it/300x300'>
+                <img class='img-circle img-responsive' alt='' src='$image'>
               </figure>
               
               <div class='row'>
