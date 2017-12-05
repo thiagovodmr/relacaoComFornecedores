@@ -31,6 +31,7 @@ while($registro = mysqli_fetch_array($resultado)){
   $cnpj = $registro['USER_CNPJ'];
   $email = $registro['USER_EMAIL'];
   $descricao = $registro['USER_DESCRICAO'];
+  $image = $registro["USER_IMAGEM"]
 
   $google_plus = $registro['USER_GOOGLE_PLUS'];
   $facebook = $registro['USER_FACEBOOK'];

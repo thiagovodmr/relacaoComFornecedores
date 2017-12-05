@@ -193,7 +193,8 @@ body, html {
 
 <div class="form-style-10">
 <h1>Cadastre-se Agora!<span>Cadastre-se e aproveite nossos recursos!</span></h1>
-<form method="POST" action="bd/cadastrarUsuario.php">
+
+<form name="frm-jcrop" id="frm-jcrop" method="POST" action="bd/crop_empresa.php" enctype="multipart/form-data">
     <div class="section"><span>1</span>Nomes e Endereços</div>
     <div class="inner-wrap">
 
@@ -259,8 +260,13 @@ body, html {
                 <label>Github:</label>
                 <input type="text" name="github" pattern="https?://.+" title="Inclua o http://">
                 
-    </div>   
+    </div> 
 
+    <div class="section"><span>5</span>Logo da Empresa</div>  
+    <div class="inner-wrap">
+        <label>Escolha a imagem</label>
+        <input type="file" name="imagem">
+    </div>
     <div class="button-section">
      <input type="submit" value="Enviar" />
     </div>
