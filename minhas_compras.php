@@ -85,7 +85,19 @@ include 'security.php';
 									<div class='panel-heading resume-heading'>
 										<div class="row">
 											<div class="col-md-5 col-sm-5">
-												<img class="largura" src=<?= $row1["PRO_ARQUIVO"] ?>>
+												<img class="largura" src=<?= $row1["PRO_ARQUIVO"] ?>> <br>
+													<?php
+													if($status==0){
+														echo "<h3><b>Status da compra:</b></h3> <p><h4>Aguardando confirmação do fornecedor</h4>";
+													}
+													elseif($status==1){
+														echo "<h3><b>Status da compra:</h3></b> <h4>Compra aceita, aguarde o produto!</h4>";	
+													}
+													elseif($status==2){
+														echo "<a href='bd/update_compra.php?status=$status&idcompra=$compraid'><button class='btn btn-success'>Confirma entrega</button></a>";	
+													}
+													echo "<hr>";
+													?>
 											</div>
 											<div class="col-md-6 col-sm-6">
 
@@ -115,21 +127,6 @@ include 'security.php';
 														<?=$horario  ?>
 													</li>
 												</ul>
-												<div class='bs-callout bs-callout-danger'>
-													<?php
-													if($status==0){
-														echo "Status da compra: Aguardando confirmação do fornecedor";
-													}
-													elseif($status==1){
-														echo "Status da compra: Compra aceita, aguarde o produto!";	
-													}
-													elseif($status==2){
-														echo "<a href='bd/update_compra.php?status=$status&idcompra=$compraid'><button class='btn btn-success'>Confirma entrega</button></a>";	
-													}
-													echo "<hr>";
-													?>
-												</div>
-
 											</div>
 										</div>
 										<p style="text-align: center;">Progresso da Venda</p>

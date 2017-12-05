@@ -122,9 +122,9 @@ include 'security.php';
 													elseif($status == 1):
 														echo "<a href='bd/update_venda.php?status=$status&idcompra=$compraid1'><button type='button' class='btn btn-success'>Produto em andamento</button></a>";
 													elseif ($status == 2):
-														echo "Produto em andamento!";
+														echo "<b>Produto em andamento!</b>";
 													elseif ($status == 3):
-														echo "Venda efetuada com sucesso!";
+														echo "<b>Venda efetuada com sucesso!</b>";
 													endif;
 													echo "<hr>";
 													?>
