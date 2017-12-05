@@ -1,9 +1,11 @@
 <?php
 	session_start();
 	ob_start();
+	
 	$dbname = "id2846308_projeto1";
 	$usuario="id2846308_pep1";
 	$senha = "@lunoifpe";
+	
 	try {
 	  	$conn = new PDO("mysql:host=localhost;dbname=$dbname", $usuario, $senha);
 	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -41,7 +43,7 @@
 	$sql = "INSERT INTO usuarios(USER_NOME,USER_EMPRESA,USER_CEP,USER_BAIRRO,USER_ESTADO,USER_CIDADE,USER_COMPLETO,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_LATITUDE,USER_LONGITUDE,USER_EMAIL,USER_LOGIN,USER_SENHA,USER_PERFIL,USER_DESCRICAO,USER_GOOGLE_PLUS,USER_FACEBOOK,USER_TWITTER,USER_LINKEDLN,USER_GITHUB,USER_IMAGEM)
 			VALUES(:nome, :nome_empresa, :cep, :bairro, :estado ,:cidade, :endereco_completo, :telefone, :cnpj, :logradouro,:latitude,:longitude,:email, :login, :senha, :perfil, :descricao, :google_plus, :facebook, :twitter, :linkedln, :github,:imagem)";
 	
-	var_dump($_POST["perfil"]);
+	var_dump($nome);
 	$stmt = $conn->prepare( $sql );
 	$stmt->bindParam( ':nome', $nome );
 	$stmt->bindParam( ':nome_empresa', $nome_empresa);
@@ -67,10 +69,12 @@
 	$stmt->bindParam( ':github', $github);
 	$stmt->bindParam( ':imagem', $image);
 	$result = $stmt->execute();
+	
 	if ( ! $result ){
 	    var_dump( $stmt->errorInfo() );
 	    exit;
 	}	  
+	
 	include( 'm2brimagem.class.php' );
 	$oImg = new m2brimagem( $_POST['img'] );
 	if( $oImg->valida() == 'OK' )

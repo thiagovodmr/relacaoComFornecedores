@@ -63,8 +63,9 @@
 					}
 				}
 			}
+			
 		?>
-		
+				
 		<?php if( $tem_crop === true ): ?>
 			<h2 id="tit-jcrop">Pra manter o padrão do nosso site</h2>
 			<div id="div-jcrop">
