@@ -6,6 +6,11 @@
 		<script type="text/javascript" src="js/jquery.Jcrop.js"></script>
 		<link rel="stylesheet" href="css/exemplo.css" type="text/css" />
 		<link rel="stylesheet" href="css/jquery.Jcrop.css" type="text/css" />
+		<style>
+		    #preview, #div-preview{
+		        border-radius: 50%;
+		    }
+		</style>
 	</head>
 	<body>
 		
