@@ -2,46 +2,19 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/rodape3.css">
+    <style>
+        hr{
+            margin-left: 0;
+        }
+    </style>
 </head>
 <body>
+
 <div class="rodape">
 <footer class="page-footer center-on-small-only unique-color-dark pt-0">
 
-    <div style="background-color: #6351ce;">
-        <div class="container">
-            <!--Grid row-->
-            <div class="row py-4 d-flex align-items-center">
-
-                <!--Grid column-->
-                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-                    <h3 class="mb-0 white-text">Nos siga nas redes sociais!</h3>
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-md-6 col-lg-7 text-center text-md-right">
-                    <!-- Github -->
-                    <a href="https://github.com/thiagovodmr/relacaoComFornecedores"><i class="fa fa-github fa-4x mr-3"></i></a>
-                    <!--Facebook-->
-                    <a href=""><i class="fa fa-facebook fa-4x mr-3"> </i></a>
-                    <!--Twitter-->
-                    <a href=""><i class="fa fa-twitter fa-4x mr-3"> </i></a>
-                    <!--Google +-->
-                    <a href=""><i class="fa fa-google-plus fa-4x mr-3"> </i></a>
-                    <!--Linkedin-->
-                    <a href=""><i class="fa fa-linkedin fa-4x mr-3"> </i></a>
-                    <!--Instagram-->
-                    <a href="""><i class="fa fa-instagram fa-4x mr-3"> </i></a>
-                </div>
-                <!--Grid column-->
-
-            </div>
-            <!--Grid row-->
-        </div>
-    </div>
-
     <!--Footer Links-->
-    <div class="container mt-5 mb-4 text-center text-md-left">
+    <div class="container mt-5 mb-4 text-md-left">
         <div class="row mt-3">
 
             <!--First column-->
@@ -81,6 +54,19 @@
                 <p><i class="fa fa-home mr-3"></i> Rod. Gov. Mário Covas, S/n - Centro, Igarassu - PE, 53630-220</p>
                 <p><i class="fa fa-envelope mr-3"></i> ssexpress@gmail.com</p>
                 <p><i class="fa fa-phone mr-3"></i> +55 081 99999-9999</p>
+                
+                <a href="https://github.com/thiagovodmr/relacaoComFornecedores"><i class="fa fa-github fa-4x mr-3"></i></a>
+                    <!--Facebook-->
+                    <a href=""><i class="fa fa-facebook fa-3x mr-3"> </i></a>
+                    <!--Twitter-->
+                    <a href=""><i class="fa fa-twitter fa-3x mr-3"> </i></a>
+                    <!--Google +-->
+                    <a href=""><i class="fa fa-google-plus fa-3x mr-3"> </i></a>
+                    <!--Linkedin-->
+                    <a href=""><i class="fa fa-linkedin fa-3x mr-3"> </i></a>
+                    <!--Instagram-->
+                    <a href="""><i class="fa fa-instagram fa-3x mr-3"> </i></a>
+            
             </div>
             <!--/.Fourth column-->
 

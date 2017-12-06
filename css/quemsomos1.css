@@ -1,6 +1,6 @@
-#somos{
+/*#somos{
 	width: 45%;
-}
+}*/
 #altura{
 	height: 100%;
 }
@@ -8,6 +8,6 @@
 	font-size: 40px;
 }
 .rodape{
-	position: absolute;
+	/*position: absolute;*/
 	bottom: 0;
 }
