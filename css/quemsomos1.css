@@ -11,3 +11,14 @@
 	/*position: absolute;*/
 	bottom: 0;
 }
+
+.rodape{
+	float: left;
+	width: 100%;
+	/*background-color: #00BFFF;*/
+	background-color: #191919;
+	color: gray;
+	position:absolute;
+    bottom:0;
+    width:100%;
+}

@@ -17,9 +17,7 @@
 		<h1>Recorte a imagem</h1>
 		
 		<?php
-
 		session_start();
-
 			// memory limit (nem todo server aceita)
 			ini_set("memory_limit","50M");
 			set_time_limit(0);
@@ -32,7 +30,6 @@
 			$ext = substr($imagem["name"], -4);
 			$dir = "../uploads/".$nome.$ext;
 			$dirTemp = "tmp_upload/".$nome.$ext;
-
 			// valida a imagem enviada
 			if( $imagem['tmp_name'] )
 			{
@@ -126,8 +123,6 @@
 							twitter: '<?= $_POST["twitter"]; ?>',	
 							linkedln: '<?= $_POST["linkedln"]; ?>',	
 							github: '<?= $_POST["github"]; ?>'	
-
-
 						}, function(){
 							$('#div-jcrop').html( '<img src="' + dir + '?' + Math.random() + '" width="'+$('#w').val()+'" height="'+$('#h').val()+'" />' );
 							$('#debug').hide();

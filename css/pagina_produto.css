@@ -1,0 +1,55 @@
+img{
+	border: 1px solid red;
+	/*width: 98%;*/
+}
+.largura{
+	width: 100%;
+}
+h2{
+	/*text-decoration: underline;*/
+	text-align: center;
+}
+.produtos_fornecedor{
+	padding: 10px;
+	border: 1px solid black;
+	overflow: auto;
+	overflow-x:hidden;
+	height: 350px;
+	margin-bottom: 40px;
+}
+.thumbnail{
+	width: 70%;
+	background-color: #C2EBDD;
+}
+.caption{
+	width: 100%;
+}
+input[type=number]{
+	width: 15%;
+}
+.comprar{
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	width: 90%;
+	background-color: red; 
+	border: 1px solid black;
+	border-radius: 15px;
+}
+a{
+	text-decoration: none;
+	font-size: 20px;
+	color: white;
+}
+#map{
+	height:300px;
+	width: 300px;
+	float: right;
+	border: 1px solid gray;
+}
+.hide{
+	visibility: hide;
+}
+.preto{
+	color: black;
+}

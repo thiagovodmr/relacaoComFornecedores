@@ -90,20 +90,12 @@ echo "<div class='container' id='contai'>
           
           echo "<li class='list-group-item'><b>Nome da Empresa: </b>".$empresa." <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true' data-toggle='modal' data-target='#nomedaempresa' id='oi'></i></li>";
           
-          echo "<li class='list-group-item'><b>Cidade: </b>".$cidade." <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true' data-toggle='modal' data-target='#cidade' id='oi'></i></li>";
-          
-          echo "<li class='list-group-item'><b>Logradouro: </b>".$logradouro." <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true' data-toggle='modal' data-target='#logradouro' id='oi'></i></li>";
-          
           echo "<li class='list-group-item'><b>CNPJ: </b>".$cnpj." <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true' data-toggle='modal' data-target='#cnpj' id='oi'></i></li>";
           
-          echo "<li class='list-group-item'><b>Latitude <i class='fa fa-map-marker'></i> :</b> ".$latitude." <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true' data-toggle='modal' data-target='#latitude' id='oi'></i></li>";
-
-          echo "<li class='list-group-item'><b>Longitude <i class='fa fa-map-marker'></i> :</b> ".$longitude." <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true' data-toggle='modal' data-target='#longitude' id='oi'></i></li>";
-
           echo "<li class='list-group-item'><b>Telefone <i class='fa fa-phone'></i> :</b> ".$telefone." <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true' data-toggle='modal' data-target='#telefone' id='oi'></i></li>";
           
           echo "<li class='list-group-item'><b>E-mail <i class='fa fa-envelope'></i> :</b> ".$email." <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true' data-toggle='modal' data-target='#email' id='oi'></i></li>";
-        
+                  
         echo "</ul>
             </div>
           </div>
@@ -215,92 +207,6 @@ echo "<!-- Modal -->
     </div>
 </div>";
 echo "<!-- Modal -->
-<div class='modal fade' id='cidade' tabindex='-1' role='dialog' 
-     aria-labelledby='myModalLabel' aria-hidden='true'>
-    <div class='modal-dialog'>
-        <div class='modal-content'>
-            <!-- Modal Header -->
-            <div class='modal-header'>
-                <button type='button' class='close' 
-                   data-dismiss='modal'>
-                       <span aria-hidden='true'>&times;</span>
-                       <span class='sr-only'>Close</span>
-                </button>
-                <h4 class='modal-title' id='myModalLabel'>
-                    <b class='branco'>Editar</b>
-                </h4>
-            </div>
-            
-            <!-- Modal Body -->
-            <div class='modal-body'>
-                
-                <form role='form' action='bd/update_usuarios/update_cidade.php' method='POST'>
-                  <div class='form-group'>
-                    <label for='exampleInputPassword1'>Alterar Cidade</label>
-                      <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' maxlength='25' value='".$cidade."' required autofocus/>
-                  </div>
-
-                  <button type='submit' class='btn btn-primary'>Alterar</button>
-                </form>
-                
-                
-            </div>
-            
-            <!-- Modal Footer -->
-            <div class='modal-footer'>
-                <button type='button' class='btn btn-primary'
-                        data-dismiss='modal'>
-                            Close
-                </button>
-            </div>
-        </div>
-    </div>
-</div>";
-echo "<!-- Modal -->
-<div class='modal fade' id='logradouro' tabindex='-1' role='dialog' 
-     aria-labelledby='myModalLabel' aria-hidden='true'>
-    <div class='modal-dialog'>
-        <div class='modal-content'>
-            <!-- Modal Header -->
-            <div class='modal-header'>
-                <button type='button' class='close' 
-                   data-dismiss='modal'>
-                       <span aria-hidden='true'>&times;</span>
-                       <span class='sr-only'>Close</span>
-                </button>
-                <h4 class='modal-title' id='myModalLabel'>
-                    <b class='branco'>Editar</b>
-                </h4>
-            </div>
-            
-            <!-- Modal Body -->
-            <div class='modal-body'>
-                
-                <form role='form' action='bd/update_usuarios/update_logradouro.php' method='POST'>
-                  <div class='form-group'>
-                    <label for='exampleInputPassword1'>Alterar Logradouro</label>
-                      <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' maxlength='45' value='".$logradouro."' required autofocus/>
-                  </div>
-
-                  <button type='submit' class='btn btn-primary'>Alterar</button>
-                </form>
-                
-                
-            </div>
-            
-            <!-- Modal Footer -->
-            <div class='modal-footer'>
-                <button type='button' class='btn btn-primary'
-                        data-dismiss='modal'>
-                            Close
-                </button>
-            </div>
-        </div>
-    </div>
-</div>";
-echo "<!-- Modal -->
 <div class='modal fade' id='cnpj' tabindex='-1' role='dialog' 
      aria-labelledby='myModalLabel' aria-hidden='true'>
     <div class='modal-dialog'>
@@ -344,92 +250,6 @@ echo "<!-- Modal -->
     </div>
 </div>";
 echo "<!-- Modal -->
-<div class='modal fade' id='latitude' tabindex='-1' role='dialog' 
-     aria-labelledby='myModalLabel' aria-hidden='true'>
-    <div class='modal-dialog'>
-        <div class='modal-content'>
-            <!-- Modal Header -->
-            <div class='modal-header'>
-                <button type='button' class='close' 
-                   data-dismiss='modal'>
-                       <span aria-hidden='true'>&times;</span>
-                       <span class='sr-only'>Close</span>
-                </button>
-                <h4 class='modal-title' id='myModalLabel'>
-                    <b class='branco'>Editar</b>
-                </h4>
-            </div>
-            
-            <!-- Modal Body -->
-            <div class='modal-body'>
-                
-                <form role='form' action='bd/update_usuarios/update_latitude.php' method='POST'>
-                  <div class='form-group'>
-                    <label for='exampleInputPassword1'>Alterar Latitude</label>
-                      <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' maxlength='20' value='".$latitude."' required autofocus/>
-                  </div>
-
-                  <button type='submit' class='btn btn-primary'>Alterar</button>
-                </form>
-                
-                
-            </div>
-            
-            <!-- Modal Footer -->
-            <div class='modal-footer'>
-                <button type='button' class='btn btn-primary'
-                        data-dismiss='modal'>
-                            Close
-                </button>
-            </div>
-        </div>
-    </div>
-</div>";
-echo "<!-- Modal -->
-<div class='modal fade' id='longitude' tabindex='-1' role='dialog' 
-     aria-labelledby='myModalLabel' aria-hidden='true'>
-    <div class='modal-dialog'>
-        <div class='modal-content'>
-            <!-- Modal Header -->
-            <div class='modal-header'>
-                <button type='button' class='close' 
-                   data-dismiss='modal'>
-                       <span aria-hidden='true'>&times;</span>
-                       <span class='sr-only'>Close</span>
-                </button>
-                <h4 class='modal-title' id='myModalLabel'>
-                    <b class='branco'>Editar</b>
-                </h4>
-            </div>
-            
-            <!-- Modal Body -->
-            <div class='modal-body'>
-                
-                <form role='form' action='bd/update_usuarios/update_longitude.php' method='POST'>
-                  <div class='form-group'>
-                    <label for='exampleInputPassword1'>Alterar Longitude</label>
-                      <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' maxlength='20' value='".$longitude."' required autofocus/>
-                  </div>
-
-                  <button type='submit' class='btn btn-primary'>Alterar</button>
-                </form>
-                
-                
-            </div>
-            
-            <!-- Modal Footer -->
-            <div class='modal-footer'>
-                <button type='button' class='btn btn-primary'
-                        data-dismiss='modal'>
-                            Close
-                </button>
-            </div>
-        </div>
-    </div>
-</div>";
-echo "<!-- Modal -->
 <div class='modal fade' id='telefone' tabindex='-1' role='dialog' 
      aria-labelledby='myModalLabel' aria-hidden='true'>
     <div class='modal-dialog'>
@@ -452,7 +272,7 @@ echo "<!-- Modal -->
                 <form role='form' action='bd/update_usuarios/update_telefone.php' method='POST'>
                   <div class='form-group'>
                     <label for='exampleInputPassword1'>Alterar Telefone</label>
-                      <input type='text' class='form-control'
+                      <input type='number' class='form-control'
                           id='exampleInputPassword1' name='atual' maxlength='15' value='".$telefone."' required autofocus/>
                   </div>
 
@@ -537,9 +357,9 @@ echo "<!-- Modal -->
                 
                 <form role='form' action='bd/update_usuarios/update_descricao.php' method='POST'>
                   <div class='form-group'>
-                    <label for='exampleInputPassword1'>Altere E-mail</label>
+                    <label for='exampleInputPassword1'>Alterar Descrição</label>
                       <input type='text' class='form-control'
-                          id='exampleInputPassword1' name='atual' maxlength='90' value='".$descricao."' required autofocus/>
+                          id='exampleInputPassword1' name='atual' value='".$descricao."' required autofocus/>
                   </div>
 
                   <button type='submit' class='btn btn-primary'>Alterar</button>

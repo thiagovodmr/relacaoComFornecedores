@@ -2,11 +2,6 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/rodape3.css">
-    <style>
-        hr{
-            margin-left: 0;
-        }
-    </style>
 </head>
 <body>
 

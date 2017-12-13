@@ -22,8 +22,8 @@
 	}
 
 	$login = $_SESSION['login'];
-	$nome_categoria = $_POST["nome_categoria"];
-	$descricao = $_POST["descricao"];
+	$nome_categoria = htmlspecialchars($_POST["nome_categoria"]);
+	$descricao = htmlspecialchars($_POST["descricao"]);
 
 	$sql = "INSERT INTO categorias(CAT_NOME,CAT_DESCRICAO) 
 		VALUES(:nome_categoria, :descricao)";	

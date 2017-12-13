@@ -14,11 +14,11 @@
 	}
 
 	$id = $_SESSION["id"];
-	$titulo = $_POST["titulo"];
-	$preco = $_POST["preco"];
-	$descricao = $_POST["descricao"];
-	$image = $_POST["destino"];
-	$categoria = $_POST["categoria"];
+	$titulo = htmlspecialchars($_POST["titulo"]);
+	$preco = htmlspecialchars($_POST["preco"]);
+	$descricao = htmlspecialchars($_POST["descricao"]);
+	$image = htmlspecialchars($_POST["destino"]);
+	$categoria = htmlspecialchars($_POST["categoria"]);
 
 	$sql = "INSERT INTO produtos(PRO_TITULO,PRO_PRECO,PRO_DESCRICAO,PRO_CATEGORIA,PRO_ARQUIVO,PRO_USER_ID) 
 				VALUES(:titulo, :preco, :descricao, :categoria, :imagem, :userId)";	

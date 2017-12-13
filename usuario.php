@@ -11,7 +11,7 @@ if(!isset($_SESSION['login'])){
 if(!isset($_SESSION['senha'])){
   $_SESSION['senha'] = [];
 }
-  //fim
+//fim
 $i = $_GET['i'];
 $llogin = $_SESSION['login'];
 $ssenha = $_SESSION['senha'];
@@ -26,38 +26,37 @@ $strcon = mysqli_connect("$host","$usuario","$senha","$bd") or die('Erro ao cone
 <head>
   <title>Produtos</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="css/usuario2.css">
+  <link rel="stylesheet" type="text/css" href="css/usuario.css">
 </head>
 <body>
-
-  <div class="row">
-    <div class="col-md-6 col-md-offset-4">
-      <form action="usuario.php" method="POST">
-        <label>Filtro por preço:</label>
-        <select name="filtro">
-          <option value="0,50">abaixo de 50</option>
-          <option value="51,100">51 a 100</option>
-          <option value="101,500">101 a 500</option>
-          <option value="501,1000">501 a 1000</option>
-          <option value="1001,2500">1001 a 2500</option>
-          <option value="2501,5000">2501 a 5000</option>
-          <option value="5001,200000">acima de 5001</option>
-        </select>
-        <input type="submit" Value="Filtrar">
-      </form>
-    </div>
-  </div>
 
   <div class="row">
     <div class="col-md-3 col-sm-3 text-center">
       <h1>Categorias</h1>
     </div>
 
-    <div class="col-md-6 col-sm-6 col-md-offset-2 col-sm-offset-2">
+    <div class="col-md-6 col-sm-6 col-md-offset-2">
       <div id="formu">
         <form action="usuario.php" method="POST">
           <input type="text" name="pesquisa" placeholder="Pesquisar Produtos">
           <input type="image" class="fa fa-search fa-3x" aria-hidden="true" value=" ">
+        </form>
+      </div>
+      <br>
+
+    <div class="filtro">
+        <form action="usuario.php" method="POST">
+          <label id="fil">Filtro por preço:</label>
+          <select name="filtro">
+            <option value="0,50">Abaixo de 50</option>
+            <option value="51,100">51 a 100</option>
+            <option value="101,500">101 a 500</option>
+            <option value="501,1000">501 a 1000</option>
+            <option value="1001,2500">1001 a 2500</option>
+            <option value="2501,5000">2501 a 5000</option>
+            <option value="5001,200000">Acima de 5001</option>
+          </select>
+          <input type="submit" Value="Filtrar">
         </form>
       </div>
     </div>
@@ -74,6 +73,7 @@ $strcon = mysqli_connect("$host","$usuario","$senha","$bd") or die('Erro ao cone
         while($registro = mysqli_fetch_array($resultado)):
           $nome = $registro['CAT_NOME'];
           $id = $registro['CAT_ID'];
+          $descricao = $registro['CAT_DESCRICAO'];
           $nnn = mysqli_query($strcon, "SELECT PRO_CATEGORIA FROM produtos WHERE PRO_CATEGORIA = '$id'") or die(mysqli_error($strcon));
 
           $tamanho = mysqli_num_rows($nnn);
@@ -83,14 +83,14 @@ $strcon = mysqli_connect("$host","$usuario","$senha","$bd") or die('Erro ao cone
             <a href='bd/excluir_Categoria.php?id=<?= $id ?>'>
               <i class='fa fa-window-close-o fa-2x' aria-hidden='true' id='icone'></i>
             </a>
-            <a href="usuario.php?i=<?=$id?>" class='list-group-item justify-content-between'><?= strtoupper($nome)?><span class="badge badge-success badge-pill" style="background-color: green;"><?= $tamanho?></span></a>
+            <a href="usuario.php?i=<?=$id?>" class='list-group-item justify-content-between' title="<?= $descricao ?>"><?= strtoupper($nome)?><span class="badge badge-success badge-pill" style="background-color: #5bc0de;"><?= $tamanho?></span></a>
             
           <?php else: ?>
-           <a href="usuario.php?i=<?=$id?>" class='list-group-item justify-content-between'><?= strtoupper($nome)?><span class="badge badge-success badge-pill" style="background-color: green;"><?= $tamanho?></span></a>
+           <a href="usuario.php?i=<?=$id?>" class='list-group-item justify-content-between' title="<?= $descricao ?>"><?= strtoupper($nome)?><span class="badge badge-success badge-pill" style="background-color: #5bc0de;"><?= $tamanho?></span></a>
          <?php endif ?>
 
        <?php else: ?>
-        <a href="usuario.php?i=<?=$id?>" class='list-group-item justify-content-between'><?= strtoupper($nome)?><span class="badge badge-success badge-pill" style="background-color: green;"><?= $tamanho?></span></a>
+        <a href="usuario.php?i=<?=$id?>" class='list-group-item justify-content-between' title="<?= $descricao ?>"><?= strtoupper($nome)?><span class="badge badge-success badge-pill" style="background-color: #5bc0de;"><?= $tamanho?></span></a>
 
         <?php 
       endif; 
@@ -161,7 +161,7 @@ $strcon = mysqli_connect("$host","$usuario","$senha","$bd") or die('Erro ao cone
 $arr = explode(",",$_POST["filtro"]);
 $sql = "SELECT p.PRO_ID,p.PRO_TITULO,p.PRO_PRECO,p.PRO_ARQUIVO,u.USER_EMPRESA,u.USER_PERFIL 
 FROM produtos as p inner join usuarios as u on p.PRO_USER_ID = u.USER_ID
-WHERE PRO_PRECO >= '$arr[0]' AND PRO_PRECO <= '$arr[1]' ";
+WHERE PRO_PRECO >= '$arr[0]' AND PRO_PRECO <= '$arr[1]'";
 $resultado = mysqli_query($strcon, $sql) or die('Erro ao tentar cadastrar registro');
 
 $r = mysqli_num_rows($resultado);
@@ -221,7 +221,7 @@ elseif($_GET['i']==[]):
 
   $cmd = "SELECT p.PRO_ID,p.PRO_TITULO,p.PRO_PRECO,p.PRO_ARQUIVO,u.USER_EMPRESA,u.USER_PERFIL 
   FROM produtos as p inner join usuarios as u on p.PRO_USER_ID = u.USER_ID 
-  LIMIT $inicio, $registros"; 
+  ORDER BY p.PRO_ID DESC LIMIT $inicio, $registros"; 
   $produtos = mysqli_query($strcon,$cmd) or die("falha no select dos produtos"); 
   $total = mysqli_num_rows($produtos); 
 

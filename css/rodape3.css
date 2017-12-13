@@ -2,15 +2,18 @@
 	float: left;
 	width: 100%;
 	/*background-color: #00BFFF;*/
-	background-color: black;
+	background-color: #191919;
 	color: gray;
 }
 .rodape i{
-	color: gray;
+	color: white;
 }
 .rodape strong{
 	font-size: 25px;
 }
 .deep-purple{
 	color: black;
+}
+hr{
+    margin-left: 0;
 }

@@ -29,60 +29,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 <html>
 <head>
 	<title>Comprar Produto</title>
-	<link rel="stylesheet" type="text/css" href="css/meu_Perfil.css">
-	<style>
-	img{
-		border: 1px solid red;
-		/*width: 98%;*/
-	}
-	.largura{
-		width: 90%;
-	}
-	h2{
-		/*text-decoration: underline;*/
-		text-align: center;
-	}
-	.produtos_fornecedor{
-		padding: 20px;
-		border: 1px solid black;
-		overflow: auto;
-		overflow-x:hidden;
-		height: 350px;
-		margin-bottom: 40px;
-	}
-	.thumbnail{
-		background-color: #C2EBDD;
-	}
-	.caption{
-		width: 100%;
-	}
-	input[type=number]{
-		width: 15%;
-	}
-	.comprar{
-		color: white;
-		font-size: 18px;
-		font-weight: bold;
-		width: 90%;
-		background-color: red; 
-		border: 1px solid black;
-		border-radius: 15px;
-	}
-	a{
-		text-decoration: none;
-		font-size: 20px;
-		color: white;
-	}
-	#map{
-		height:300px;
-		width: 300px;
-		float: right;
-		border: 1px solid gray;
-	}
-	.hide{
-		visibility: hide;
-	}
-</style>
+	<link rel="stylesheet" type="text/css" href="css/pagina_produto.css">
 </head>
 <body>
 	
@@ -253,7 +200,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 					<div class='col-sm-4 col-md-4'>
 						<div class='thumbnail'>
 							<a href=pagina_do_produto.php?id=<?= $id ?> >
-								<img class="largura" src=<?= $imagem ?> height='10' width='50'>  
+								<img class="largura" src=<?= $imagem ?> height='10' width='30'>  
 							</a> 
 							<div class='caption'>
 								<h3><a href=pagina_do_produto.php?id=<?= $id ?>><b class='preto'><?= $titulo ?></b></a></h3>

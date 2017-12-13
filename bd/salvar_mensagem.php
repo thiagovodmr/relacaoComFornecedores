@@ -14,7 +14,7 @@
 	$dat = date("Y-m-d H:i:s");
 	$data = date('Y-m-d H:i:s', strtotime($dat.' - 3 hours'));
 	$remetente = $_SESSION["perfil"];
-	$mensagem = $_POST["conteudo"];
+	$mensagem = htmlspecialchars($_POST["conteudo"]);
 	$destinatario = $_SESSION['dest'];
 
 	$sql = "INSERT INTO mensagens(MEN_REMETENTE, MEN_DESTINATARIO, MEN_CONTEUDO, MEN_HORARIO) 

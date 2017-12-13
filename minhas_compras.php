@@ -30,9 +30,6 @@ include 'security.php';
 	.caption{
 		width: 100%;
 	}
-	#contai{
-		margin-right: 500px; 
-	}
 	button:hover{
 
 	}
@@ -75,7 +72,8 @@ include 'security.php';
 			$data = date('d/m/Y', strtotime($explode[0]));
 			
 			?>
-
+	<div class="row">
+		<div class="col-md-8 col-md-offset-1">
 			<div class='container' id='contai'>
 				<div class="row">
 					<div class="col-md-8">
@@ -161,6 +159,8 @@ include 'security.php';
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
 			<br>
 			<hr>
 		<?php endforeach; ?>

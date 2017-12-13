@@ -14,10 +14,6 @@ include 'cabecalho.php';
   
       <h2 class="branco">Está começando seu próprio negócio agora?</h2>
     
-  
-  
-      <h3 class="branco">Aqui é o lugar certo!</h3>
-
   <div class="row">
     <div class="col-md-12">
   
@@ -100,12 +96,10 @@ include 'cabecalho.php';
     </div>
   </div>
 </div>
-<br>
 
 
 <?php
   include 'google-maps.html';
-  echo "<br>";
   include 'rodape.php';
 ?>
 </body>

@@ -19,7 +19,6 @@
 	$github       = $_POST["github"];
 	
 	$image = $_POST["destino"];
-
 	//Dados da empresa
 	$nome 		  	 = $_POST["nome"];
 	$nome_empresa 	 = $_POST["nome_empresa"];
@@ -38,7 +37,6 @@
 	$login 		  	 = $_POST["login"];
 	$senha    	  	 = md5($_POST["senha"]);
 	$perfil       	 = md5($nome);
-
 	$sql = "INSERT INTO usuarios(USER_NOME,USER_EMPRESA,USER_CEP,USER_BAIRRO,USER_ESTADO,USER_CIDADE,USER_COMPLETO,USER_TELEFONE,USER_CNPJ,USER_LOGRADOURO,USER_LATITUDE,USER_LONGITUDE,USER_EMAIL,USER_LOGIN,USER_SENHA,USER_PERFIL,USER_DESCRICAO,USER_GOOGLE_PLUS,USER_FACEBOOK,USER_TWITTER,USER_LINKEDLN,USER_GITHUB,USER_IMAGEM)
 			VALUES(:nome, :nome_empresa, :cep, :bairro, :estado ,:cidade, :endereco_completo, :telefone, :cnpj, :logradouro,:latitude,:longitude,:email, :login, :senha, :perfil, :descricao, :google_plus, :facebook, :twitter, :linkedln, :github,:imagem)";
 	
@@ -81,7 +79,6 @@
 		$oImg->posicaoCrop( $_POST['x'], $_POST['y'] );
 		$oImg->redimensiona( $_POST['w'], $_POST['h'], 'crop' );
 		$oImg->grava( $_POST['img'] );
-
 		copy($_POST["img"] , $_POST["destino"]);
 		unlink($_POST["img"]);
 	}

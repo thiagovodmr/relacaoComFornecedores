@@ -34,24 +34,6 @@
 <br>
 
 <div class="container">
-    <div class="row">
-        <div class="col-sm-2 col-md-2">
-            <img src="contacts_images/eu.jpg" alt="" class="img-rounded img-responsive" />
-        </div>
-        <div class="col-sm-4 col-md-4">
-            <blockquote>
-                <p>Davi Batista Guaraná</p> <small><cite title="Source Title">Cruz de Rebouças, Igarassu  <i class="glyphicon glyphicon-map-marker"></i></cite></small>
-            </blockquote>
-	            <i class="glyphicon glyphicon-envelope"></i> daviguarana20@gmail.com
-                <br /> <i class="fa fa-phone-square" aria-hidden="true"></i> 98792-3837
-                <br /> <i class="glyphicon glyphicon-gift"></i> 3 de Setembro de 1997
-                <br /> <i class="fa fa-map-marker" aria-hidden="true"></i> IFPE - Campus Igarassu
-        </div>
-        
-    </div>
-</div>
-<br><br><br>
-<div class="container">
     <div class="row">	
         <div class="col-sm-2 col-md-2">
             <img src="contacts_images/perfil.png" alt="" class="img-rounded img-responsive" />
@@ -95,66 +77,21 @@
                 <br /> <i class="fa fa-map-marker" aria-hidden="true"></i> IFPE - Campus Igarassu
         </div>
         <div class="col-sm-2 col-md-2">
-            <img src="contacts_images/perfil.png" alt="" class="img-rounded img-responsive" />
+            <img src="contacts_images/eu.jpg" alt="" class="img-rounded img-responsive" />
         </div>
         <div class="col-sm-4 col-md-4">
             <blockquote>
-                <p>Thomas</p> <small><cite title="Source Title">...  <i class="glyphicon glyphicon-map-marker"></i></cite></small>
+                <p>Davi Batista Guaraná</p> <small><cite title="Source Title">Cruz de Rebouças, Av. Inhamã<i class="glyphicon glyphicon-map-marker"></i></cite></small>
             </blockquote>
-	            <i class="glyphicon glyphicon-envelope"></i> tomascezar0@gmail.com
-                <br /> <i class="fa fa-phone-square" aria-hidden="true"></i> 98719-4694
-                <br /> <i class="glyphicon glyphicon-gift"></i> ...
-                <br /> <i class="fa fa-map-marker" aria-hidden="true"></i> IFPE - Campus Paulista
+	            <i class="glyphicon glyphicon-envelope"></i> daviguarana20@gmail.com
+                <br /> <i class="fa fa-phone-square" aria-hidden="true"></i> (81) 98792-3837
+                <br /> <i class="glyphicon glyphicon-gift"></i> 03/09/1997
+                <br /> <i class="fa fa-map-marker" aria-hidden="true"></i> IFPE - Campus Igarassu
         </div>
 	</div>
 </div>
 <br><br><br>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-2 col-md-2">
-            <img src="contacts_images/perfil.png" alt="" class="img-rounded img-responsive" />
-        </div>
-        <div class="col-sm-4 col-md-4">
-            <blockquote>
-                <p>Victor Souza</p> <small><cite title="Source Title">...  <i class="glyphicon glyphicon-map-marker"></i></cite></small>
-            </blockquote>
-	            <i class="glyphicon glyphicon-envelope"></i> victor_psouza@yahoo.com.br
-                <br /> <i class="fa fa-phone-square" aria-hidden="true"></i> ...
-                <br /> <i class="glyphicon glyphicon-gift"></i> ...
-                <br /> <i class="fa fa-map-marker" aria-hidden="true"></i> IFPE - Campus Paulista
-        </div>
-        <div class="col-sm-2 col-md-2">
-            <img src="contacts_images/perfil.png" alt="" class="img-rounded img-responsive" />
-        </div>
-        <div class="col-sm-4 col-md-4">
-            <blockquote>
-                <p>Jameson</p> <small><cite title="Source Title">...  <i class="glyphicon glyphicon-map-marker"></i></cite></small>
-            </blockquote>
-	            <i class="glyphicon glyphicon-envelope"></i> jamejame1000@gmail.com
-                <br /> <i class="fa fa-phone-square" aria-hidden="true"></i> ...
-                <br /> <i class="glyphicon glyphicon-gift"></i> ...
-                <br /> <i class="fa fa-map-marker" aria-hidden="true"></i> IFPE - Campus Olinda
-        </div>
-    </div>
-</div>
-<br><br><br>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-2 col-md-2">
-            <img src="contacts_images/perfil.png" alt="" class="img-rounded img-responsive" />
-        </div>
-        <div class="col-sm-4 col-md-4">
-            <blockquote>
-                <p>Caio</p> <small><cite title="Source Title">...  <i class="glyphicon glyphicon-map-marker"></i></cite></small>
-            </blockquote>
-	            <i class="glyphicon glyphicon-envelope"></i> caio_zack@hotmail.com
-                <br /> <i class="fa fa-phone-square" aria-hidden="true"></i> ...
-                <br /> <i class="glyphicon glyphicon-gift"></i> ...
-                <br /> <i class="fa fa-map-marker" aria-hidden="true"></i> IFPE - Campus Olinda
-        </div>
-    </div>
-</div>
-<br><br><br>
+
 <?php
 	include 'rodape.php';
 ?>
