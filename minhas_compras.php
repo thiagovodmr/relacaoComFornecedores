@@ -92,7 +92,7 @@ include 'security.php';
 														echo "<h3><b>Status da compra:</h3></b> <h4>Compra aceita, aguarde o produto!</h4>";	
 													}
 													elseif($status==2){
-														echo "<a href='bd/update_compra.php?status=$status&idcompra=$compraid'><button class='btn btn-success'>Confirma entrega</button></a>";	
+														echo "<h3><b>Status da compra:</h3><a href='bd/update_compra.php?status=$status&idcompra=$compraid'><button class='btn btn-success'>Confirma entrega</button></a>";	
 													}
 													echo "<hr>";
 													?>

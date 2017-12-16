@@ -7,13 +7,13 @@ include 'security.php';
 <head>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
-  <title>Traçar Rota <code>setPanel()</code></title>
+  <title>Traçar Rota</title>
   <style>
       /* Always set the map height explicitly to define the size of the div
       * element that contains the map. */
       #map {
-        margin-top: -20px;
-        height: 90%;
+        margin-top: -30px;
+        height: 92%;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {

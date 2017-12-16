@@ -79,7 +79,7 @@ $strcon = mysqli_connect("$host","$usuario","$senha","$bd") or die('Erro ao cone
           $tamanho = mysqli_num_rows($nnn);
           if ($_SESSION['logado']): 
 
-            if ($ssenha == "pep1" && $llogin == "admin"): ?>
+            if ($ssenha == "ae99fd4697031835c5c2d54d49409db4" && $llogin == "admin"): ?>
             <a href='bd/excluir_Categoria.php?id=<?= $id ?>'>
               <i class='fa fa-window-close-o fa-2x' aria-hidden='true' id='icone'></i>
             </a>

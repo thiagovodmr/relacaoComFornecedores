@@ -72,7 +72,7 @@
     <!-- Copyright-->
     <div class="footer-copyright">
         <div class="container-fluid" style="text-align: center;">
-            © 2017 Copyright: <a href="www.ifpe.edu.br/campus/Igarassu">IFPE - Campus Igarassu</a>
+            © 2017 Copyright: <a href="https://www.ifpe.edu.br/campus/Igarassu">IFPE - Campus Igarassu</a>
         </div>
     </div>
     <!--/.Copyright -->

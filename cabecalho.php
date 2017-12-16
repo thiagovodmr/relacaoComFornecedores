@@ -30,7 +30,7 @@ session_start();
     
     <ul class="nav navbar-nav navbar-right">
       <?php if($_SESSION['logado'] == True): ?>
-        <?php if($llogin == "admin" && $ssenha=="pep1"): ?>
+        <?php if($llogin == "admin" && $ssenha=="ae99fd4697031835c5c2d54d49409db4"): ?>
           <li><a href="/cadastro_Categoria.php">Inserir Categoria <i class="fa fa-cloud-upload" aria-hidden="true"></i></a></li>
         <?php endif ?>
       <li><a href="/rotas.php">Traçar Rotas <i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
